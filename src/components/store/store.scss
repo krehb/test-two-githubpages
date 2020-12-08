@@ -1,0 +1,175 @@
+$numberTestButton: #b8b8b8;
+$numberTestButtonSelect: #646464;
+$targetvetdarkblue: #094f70;
+$targetvetlightblue: #207595;
+
+.my-nav {
+    background-color: 	$targetvetlightblue;
+    color: #000;
+
+    .nav {
+        background-color: #ffffffea;
+        padding: 30px 10px 30px 30%;
+
+        .nav-img {
+            padding-left: 30%;
+        }
+
+        .my-nav-list {
+            padding-top: 20px;
+            padding-left: 0px;
+
+            .my-nav-item {
+                padding-right: 30px;
+                color: #5a5a5a;
+                font-weight: 600;
+                font-size: 17px;
+                &:hover {
+                    text-decoration: none;
+                    color: #000; 
+                }
+            }
+        }
+    }
+
+
+
+}
+
+.auth {
+    padding-left: 43%;
+    padding-right: 43%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .auth-item {
+        padding-left: 30px;
+        color: rgb(255, 255, 255);
+        &:hover {
+            text-decoration: none;
+            color: #cccccc; 
+        }
+    } 
+}
+
+.store {
+
+    margin-top: 20px;
+
+
+    .product-list {
+    
+    
+        .list-title {
+            color: rgb(24, 24, 24);
+            font-size: 18px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .product-title {
+            padding-top: 40px;
+            font-weight: 400;
+            font-size: 19px;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    .storefront {
+        
+        border-left: solid 1px rgb(221, 221, 221);
+        padding-left: 20px;
+
+    
+        .my-card {
+            height: 153px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            .text{
+                padding-top: 55px;
+                padding-left: 10px;
+                color: white;
+                font-weight: 500;
+                text-shadow: 2px 2px #1f1f1f;
+                font-family: Verdana, Geneva, Tahoma, sans-serif; 
+                font-size: 43px;
+            }
+        }
+        
+        .img {
+            height: 150px;
+            width: auto;
+            background-image: url('./husky.jpg');
+            background-position: center;
+            border-radius: 10px;
+            background-size: cover;
+        }
+
+
+        .title {
+            padding-top: 15px;
+        }
+        .subtitle {
+            font-size: 10px;
+        }
+
+        .learn-more {
+            background-color: transparent;
+            width: 100px;
+            border-bottom: none;
+            font-size: 12px;
+            padding-left: 0px;
+            padding-top: 0px;
+            padding-right: 0px;
+        }
+
+        .with-cube {
+            background-color: #ad4b4b;
+            text-align: center;
+            box-shadow: 4px 4px #723333;
+            margin-left: 0%;
+            margin-right: 0%;
+            margin-top: 10px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            cursor: pointer;
+        }
+        .cube-title {
+            margin-left: 19%;
+        }
+        
+        .product-buttons {
+            text-align: center;
+
+
+            .test {
+                margin-top: 5px;
+            }
+            .test-not {
+                margin-top: 7px;
+                margin-left: 5px;
+                margin-right: 5px;
+                background-color: $numberTestButton;
+                border-radius: 10px;
+            }
+            .test-selected {
+                margin-left: 5px;
+                margin-right: 5px;
+                box-shadow: 3px 3px $numberTestButtonSelect;
+                margin-top: 7px;
+                background-color: #e4e4e4;
+                border-radius: 10px;
+            }
+
+            .arrow {
+                width: 900;
+
+            }
+
+        }
+
+
+    }
+
+}
