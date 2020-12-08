@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/test-two-githubpages/static/css/main.91519c1d.chunk.css",
+    "main.js": "/test-two-githubpages/static/js/main.79b98cc1.chunk.js",
+    "main.js.map": "/test-two-githubpages/static/js/main.79b98cc1.chunk.js.map",
+    "runtime-main.js": "/test-two-githubpages/static/js/runtime-main.89d2767e.js",
+    "runtime-main.js.map": "/test-two-githubpages/static/js/runtime-main.89d2767e.js.map",
+    "static/js/2.4b88944e.chunk.js": "/test-two-githubpages/static/js/2.4b88944e.chunk.js",
+    "static/js/2.4b88944e.chunk.js.map": "/test-two-githubpages/static/js/2.4b88944e.chunk.js.map",
+    "index.html": "/test-two-githubpages/index.html",
+    "static/css/main.91519c1d.chunk.css.map": "/test-two-githubpages/static/css/main.91519c1d.chunk.css.map",
+    "static/js/2.4b88944e.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.4b88944e.chunk.js.LICENSE.txt",
+    "static/media/store.css": "/test-two-githubpages/static/media/husky.5f690e02.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.89d2767e.js",
+    "static/js/2.4b88944e.chunk.js",
+    "static/css/main.91519c1d.chunk.css",
+    "static/js/main.79b98cc1.chunk.js"
+  ]
+}
