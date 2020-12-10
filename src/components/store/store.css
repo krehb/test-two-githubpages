@@ -67,6 +67,21 @@
   text-decoration: underline;
 }
 
+.store .storefront-gallery .img-gallery-col {
+  padding-left: 0px;
+  width: 10px;
+}
+
+.store .storefront-gallery .img-gallery-col .img-gallery-text {
+  color: white;
+  text-shadow: 1px 1px 1px #424242;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 25px;
+}
+
 .store .storefront {
   border-left: solid 1px #dddddd;
   padding-left: 20px;

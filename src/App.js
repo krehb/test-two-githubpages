@@ -49,16 +49,17 @@ const products = [
   cube: true,
   test: [5,10],
   group: 2,
-},  {
-  title: 'Relaxin Pro',
-  subtitle: 'Canine Pregnancy Kit',
-  stripeCode: ['price_1HvsdfQBWCWoh7chuJQxv19c5zB','price_1HvsdfQBWCWoh7chuJQxv19c5zB'],
-  price: [50,95],
-  img: 'https://www.targetvet.com/wp-content/uploads/2019/11/c-Relaxin-Pro-600x490.jpg',
-  type: 'canine',
-  test: [2,5],
-  group: 2,
 },
+//   {
+//   title: 'Relaxin Pro',
+//   subtitle: 'Canine Pregnancy Kit',
+//   stripeCode: ['price_1HvsdfQBWCWoh7chuJQxv19c5zB','price_1HvsdfQBWCWoh7chuJQxv19c5zB'],
+//   price: [50,95],
+//   img: 'https://www.targetvet.com/wp-content/uploads/2019/11/c-Relaxin-Pro-600x490.jpg',
+//   type: 'canine',
+//   test: [2,5],
+//   group: 2,
+// },
 ]
 
 

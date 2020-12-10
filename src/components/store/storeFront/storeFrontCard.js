@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Button, Image, Container, Accordion, Card } from 'react-bootstrap';
-import './store.css'
+import '../store.css'
 
 
 export default function MyCard({data}) {

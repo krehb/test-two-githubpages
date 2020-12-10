@@ -75,6 +75,27 @@ $targetvetlightblue: #207595;
             }
         }
     }
+
+    .storefront-gallery {
+
+
+
+        .img-gallery-col {
+            padding-left: 0px;
+            width: 10px;
+            // background-image: url('./husky.jpg');
+            .img-gallery-text {
+                color: white;
+                text-shadow: 1px 1px 1px #424242;
+                text-align: center;
+                padding-top: 20px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 25px;
+            }
+        }
+    }
+
     
     .storefront {
         

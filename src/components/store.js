@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import ProductList from './store/productList';
-import StoreFront from './store/storeFront';
+import ProductList from './store/productList/productList';
+import StoreFront from './store/storeFront/storeFront';
 import './store/store.css'
 
 
 
 export default function Store(products) {
-
 
 
 
