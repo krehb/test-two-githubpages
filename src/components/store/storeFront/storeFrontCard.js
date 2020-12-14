@@ -1,71 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Button, Image, Container, Accordion, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import '../store.css'
 
 
-export default function MyCard({data}) {
+export default function MyCard({data, group, addToCartHandler}) {
 
     const [count, setCount] = useState(1);
     const [classes, setClasses] = useState('test-not');
     const [classes2, setClasses2] = useState('test-selected');
-    const [cubetext, setCube] = useState('No Cube')
+    // const [cubetext, setCube] = useState('No Cube')
     const [renderPrice, setRenderPrice] = useState();
-    const [cubePrice, setCubePrice] = useState(600);
-    const [cubeCount, setCubeCount] = useState(0);
+    // const [cubePrice, setCubePrice] = useState(600);
+    // const [cubeCount, setCubeCount] = useState(0);
 
     useEffect(() => {
         // Update the document title using the browser API
         setRenderPrice(data.price[1])
     },[]);
 
-    const selectTestHandler1 = () => {
-        setClasses('test-selected')
-        setClasses2('test-not')
-        setRenderPrice(data.price[0])
-    }
+    // const selectTestHandler1 = () => {
+    //     setClasses('test-selected')
+    //     setClasses2('test-not')
+    //     setRenderPrice(data.price[0])
+    // }
 
-    const selectTestHandler2 = () => {
-        setClasses2('test-selected')
-        setClasses('test-not')
-        setRenderPrice(data.price[1])
-    }
-
-
+    // const selectTestHandler2 = () => {
+    //     setClasses2('test-selected')
+    //     setClasses('test-not')
+    //     setRenderPrice(data.price[1])
+    // }
 
 
 
-    let cubeInput = null
 
 
-
-    if ( data.cube === true) {
-        cubeInput = (
-            <Row>
-                <Col sm >
-                <p className='with-cube' > Cube </p>                
-                </Col>
-                <Col sm  >
-                    <Row>
-                        <Col className='arrow' onClick={() => setCubeCount(cubeCount + 1)} >&#8593;</Col>
-                    </Row>
-                    <Row>
-                        <Col><span>Qty: {cubeCount}</span></Col>
-                    </Row>
-                    <Row>
-                        <Col className='arrow' onClick={() => {if(!(cubeCount=== 0)){
-                            setCubeCount(cubeCount - 1)
-                        }}} >&#8595;</Col>
-                    </Row>
-                </Col>
-            </Row>
-        )
-    }
 
 
 
     let productCard = null;
 
-    if( data.group === 2 ){
+    if( data.group === group ){
         productCard = (
             <div>
             <Accordion defaultActiveKey="0">
@@ -89,7 +64,6 @@ export default function MyCard({data}) {
                     <Col xs={2} >
                         <Row>
                             <Col  >
-                                {cubeInput}
                             </Col>
                         </Row>
                     </Col>
@@ -99,15 +73,12 @@ export default function MyCard({data}) {
                             <Col xs={4}>
                                 <div className='test' >
                                     <Row>
-                                        <Col className={classes} onClick={selectTestHandler1} >{data.test[0]} Tests</Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className={classes2} onClick={selectTestHandler2} >{data.test[1]} Tests</Col>
+                                        <Col className={classes}  >{data.test} Tests</Col>
                                     </Row>
                                 </div>
                             </Col>
                             <Col xs={3}>
-                                <Row>
+                                {/* <Row>
                                     <Col>
                                         <Row>
                                             <Col className='arrow' onClick={() => setCount(count + 1)} >&#8593;</Col>
@@ -121,14 +92,23 @@ export default function MyCard({data}) {
                                             }}} >&#8595;</Col>
                                         </Row>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </Col>
                             <Col xs={5}>
+                            {/* <Row>
+                                <Col>${data.price * count}.00</Col>
+                            </Row> */}
                             <Row>
-                                <Col>${(renderPrice * count ) + (cubePrice * cubeCount)}.00</Col>
+                                <Col>
+                                    <Button onClick={() => addToCartHandler(data)} >Add to Cart</Button>                        
+                                </Col>
                             </Row>
                             <Row>
-                                <Button>Add to Cart</Button>
+                                <Col>
+                                <Link mg to='/cart'  >
+                                    <Button className='cart-button' >Go to Cart</Button>
+                                </Link>
+                                </Col>
                             </Row>
                             </Col>
                         </Row>

@@ -1,0 +1,28 @@
+import React  from 'react';
+import { Container, Col, Row } from 'react-bootstrap';
+import ProductList from './productList/productList';
+import StoreFront from './storeFront/storeFront';
+import './store.css'
+
+
+
+const Store = ({products, group, categories, setCategoryHandler, category, addToCartHandler}) => {
+
+
+  return (
+    <div className='store' >
+        <Container  >
+            <Row>
+                <Col xs={2} >
+                    <ProductList products={products} setCategoryHandler={setCategoryHandler} categories={categories}  />
+                </Col>
+                <Col xs={10} >
+                    <StoreFront products={products} group={group} categories={categories} setCategoryHandler={setCategoryHandler} category={category} addToCartHandler={addToCartHandler} />
+                </Col>
+            </Row>
+        </Container>
+    </div>
+  );
+}
+
+export default Store;

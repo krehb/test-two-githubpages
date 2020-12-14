@@ -12,6 +12,7 @@ const app = firebase.initializeApp({
 });
 
 
+firebase.analytics();
 
 
 export default app;

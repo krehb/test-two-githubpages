@@ -1,6 +1,6 @@
 import React from 'react';
-import app from '../config/base';
-import { Container, Col, Row, Image } from 'react-bootstrap';
+// import app from '../config/base';
+import { Container, Image } from 'react-bootstrap';
 
 const Home = () => {
     return (

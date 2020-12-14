@@ -1,30 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { Card , Row, Col, Button, Image } from 'react-bootstrap';
+import React from 'react';
 import MyCard from './storeFrontCard';
 import StoreFrontGallery from './storeFrontGallery';
+import { Button, Row, Col } from 'react-bootstrap';
+import StoreFrontDeck from './storeFrontDeck';
+
+
+const StoreFront = ({products, categories, setCategoryHandler, setCategory , category, group, addToCartHandler }) => {
+
+  let store = null
 
 
 
-export default function StoreFront(products) {
 
 
+
+  if(category === 'none'){
+    store = (
+      <StoreFrontGallery setCategoryHandler={setCategoryHandler} products={products.products} setCategory={setCategory} categories={categories}  />
+    )
+  } else {
+    store = (
+      <StoreFrontDeck products={products} category={category} group={group} addToCartHandler={addToCartHandler} />
+    )
+  }
 
 
 
   return (
     <div className='storefront' >
-
-        <StoreFrontGallery products={products.products}  />
-
-        {/* <div className="bg-dark text-white my-card img ">
-            <h2 className='text' >TExtlekstjd</h2>
-        </div>
-
-        {products.products.products.map(x => 
-        <div>
-            <MyCard data={x} />
-        </div> )} */}
+      {store}
     </div>
   );
 }
 
+export default StoreFront;

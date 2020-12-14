@@ -1,17 +1,23 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './store/store.css';
 import AuthItems from './auth-items';
-import { AuthProvider } from '../config/Auth';
+import { AuthProvider } from '../../config/Auth';
+import TopAuthItems from './top-auth-items';
 
-export default function Nav() {
+const Nav = (cart) => {
+
 
 
   return (
     <div  >
         <nav className='my-nav' >
             <Container fluid >
+                <Row className='top-auth' >
+                    <Col>
+                        <TopAuthItems/>
+                    </Col>
+                </Row>
                 <Row className='nav' >
                     <Col>
                         <Link to='/'  >
@@ -32,6 +38,9 @@ export default function Nav() {
                         <Link className='my-nav-item' to='/store' >
                         Store
                         </Link>
+                        <Link className='my-nav-item' to='/cart' >
+                        Cart({cart.cart.length})
+                        </Link>
                     </Col>
                 </Row>
                 <AuthItems/>
@@ -41,3 +50,4 @@ export default function Nav() {
   );
 }
 
+export default Nav;

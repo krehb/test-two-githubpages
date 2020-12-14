@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import app from './base';
-import { Container, Row, Col } from 'react-bootstrap';
 
 export const AuthContext = React.createContext();
 

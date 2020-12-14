@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import app from '../config/base';
+import app from '../../config/base';
 
 
-export default function AuthItems() {
+export default function TopAuthItems() {
 
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -30,22 +30,23 @@ export default function AuthItems() {
 
     if (loggedIn === true){
         items = (
-            <Col className='auth' >
+            <div >
                 <Link className='auth-item' onClick={() => app.auth().signOut()} >
                     Sign Out
                 </Link>
-            </Col>
+            </div>
         )
     } else {
         items = (
-            <Col className='auth' >
-                <Link className='auth-item' to='/signup' >
-                    Sign Up
+            <div >
+                <Link className='auth-item' to='/sign-in' >
+                    <span className='sign-in' >Sign In</span>
                 </Link>
-                <Link className='auth-item' to='/login' >
-                    Login
+                <Link className='auth-item' to='/create-account' >
+                    <span className='create-account' >Create Account</span>
                 </Link>
-            </Col>
+            </div>
+            
         ) 
     }
 
@@ -53,11 +54,7 @@ export default function AuthItems() {
 
   return (
     <div  >
-        <Container>
-            <Row>
-                {items}
-            </Row>
-        </Container>
+        {items}
     </div>
   );
 }

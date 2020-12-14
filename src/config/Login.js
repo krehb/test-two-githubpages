@@ -33,7 +33,7 @@ const Login = ({ history }) => {
                 
                 <Form onSubmit={handleLogin} >
                 <Form.Group controlId="formBasicEmail">
-                    <h1>Log in</h1>
+                    <h1>Sign in</h1>
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Enter email" />
                 </Form.Group>

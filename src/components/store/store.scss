@@ -3,20 +3,47 @@ $numberTestButtonSelect: #646464;
 $targetvetdarkblue: #094f70;
 $targetvetlightblue: #207595;
 
+.no-hover :hover {
+    text-decoration: none;
+    color: none;
+}
+
 .my-nav {
     background-color: 	$targetvetlightblue;
     color: #000;
 
+    .top-auth {
+        background-color:  #ffffffea;
+        text-align: right;
+        padding-top: 10px;
+        .create-account {
+            background-color: #D73827;
+            color: #ffffff;
+            border-radius: 5px;
+            padding: 0px 5px 5px 5px;
+            margin-left: 10px;
+        }
+        .auth-item {
+            padding-left: 30px;
+            color:  #5a5a5a;
+            font-weight: 500;
+            &:hover {
+                text-decoration: none;
+                color: #1b1b1b; 
+            }
+        } 
+    }
+
     .nav {
         background-color: #ffffffea;
-        padding: 30px 10px 30px 30%;
+        padding: 0px 0px 30px 30%;
 
         .nav-img {
             padding-left: 30%;
         }
 
         .my-nav-list {
-            padding-top: 20px;
+            padding-top: 10px;
             padding-left: 0px;
 
             .my-nav-item {
@@ -37,8 +64,8 @@ $targetvetlightblue: #207595;
 }
 
 .auth {
-    padding-left: 43%;
-    padding-right: 43%;
+    padding-left: 40%;
+    padding-right: 40%;
     padding-top: 5px;
     padding-bottom: 5px;
 
@@ -62,22 +89,31 @@ $targetvetlightblue: #207595;
     
         .list-title {
             color: rgb(24, 24, 24);
-            font-size: 18px;
+            font-size: 16px;
+            font-weight: 900;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
         .product-title {
-            padding-top: 40px;
-            font-weight: 400;
-            font-size: 19px;
+            font-weight: 600;
+            color: rgb(95, 95, 95);
+            font-size: 15px;
+            padding: 10px 10px 10px 10px;
             &:hover {
                 cursor: pointer;
-                text-decoration: underline;
+                background-color: #ddf6ff;
+                border-radius: 5px;
+                text-decoration: none;
             }
         }
     }
 
     .storefront-gallery {
-
+        .header {
+            color: $targetvetdarkblue;
+            text-align: center;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
 
 
         .img-gallery-col {
@@ -96,12 +132,18 @@ $targetvetlightblue: #207595;
         }
     }
 
+
+
     
     .storefront {
         
         border-left: solid 1px rgb(221, 221, 221);
         padding-left: 20px;
 
+        .filter-button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
     
         .my-card {
             height: 153px;
@@ -116,6 +158,10 @@ $targetvetlightblue: #207595;
                 font-family: Verdana, Geneva, Tahoma, sans-serif; 
                 font-size: 43px;
             }
+        }
+
+        .cart-button {
+            margin-top: 10px;
         }
         
         .img {
