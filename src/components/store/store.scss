@@ -240,3 +240,22 @@ $targetvetlightblue: #207595;
     }
 
 }
+
+.cart {
+
+    .remove-item {
+        background-color: red;
+        padding-right: 5px;
+        padding-left: 5px;
+        border-radius: 5px;
+        margin-left: 5px;
+        color: rgb(255, 255, 255);
+        font-weight: 800;
+        cursor: pointer;
+    }
+
+}
+
+.shipping {
+    margin-top: 20px;
+}

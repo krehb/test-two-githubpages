@@ -8,6 +8,8 @@ const products = [
         price: 146,
         test: 12,
         group: 1,
+        qty: 1,
+        id: 1001,
     },
     {
         title: 'Target Progesterone',
@@ -18,6 +20,8 @@ const products = [
         type: 'canine',
         test: 6,
         group: 1,
+        qty: 1,
+        id: 1002,
     },
     {
         title: 'Blood Collection',
@@ -28,6 +32,8 @@ const products = [
         price: 4,
         test: 12,
         group: 1,
+        qty: 1,
+        id: 1003,
     },
     {
         title: 'Blood Collection',
@@ -38,6 +44,8 @@ const products = [
         price: 2,
         test: 6,
         group: 1,
+        qty: 1,
+        id: 1004,
     },
     {
         title: 'Quick P4 / Cube Quantitative Canine Ovulation Timing Kit',
@@ -48,6 +56,8 @@ const products = [
         price: 680,
         test: 10,
         group: 2,
+        qty: 1,
+        id: 1005,
     },
     {
         title: 'Quick P4 / Cube Quantitative Canine Ovulation Timing Kit',
@@ -58,6 +68,8 @@ const products = [
         price: 600,
         test: 5,
         group: 2,
+        qty: 1,
+        id: 1006,
     },
     {
         title: 'Quick P4 / Cube Quantitative Canine Ovulation Timing Kit',
@@ -68,6 +80,8 @@ const products = [
         price: 180,
         test: 10,
         group: 2,
+        qty: 1,
+        id: 1007,
     },
     {
         title: 'Quick P4 / Cube Quantitative Canine Ovulation Timing Kit',
@@ -78,6 +92,8 @@ const products = [
         price: 100,
         test: 5,
         group: 2,
+        qty: 1,
+        id: 1008,
     },
     {
         title: 'Relaxin Pro Canine Pregnancy Kit',
@@ -88,6 +104,8 @@ const products = [
         price: 95,
         test: 5,
         group: 3,
+        qty: 1,
+        id: 1009,
     },
     {
         title: 'Relaxin Pro Canine Pregnancy Kit',
@@ -98,6 +116,8 @@ const products = [
         price: 50,
         test: 2,
         group: 3,
+        qty: 1,
+        id: 1010,
     },
     {
         title: 'Quick P4 / Cube Quantitative Equine Progesterone Kit',
@@ -108,6 +128,8 @@ const products = [
         price: 580,
         test: 10,
         group: 4,
+        qty: 1,
+        id: 1011,
     },
     {
         title: 'Quick P4 / Cube Quantitative Equine Progesterone Kit',
@@ -118,6 +140,8 @@ const products = [
         price: 500,
         test: 5,
         group: 4,
+        qty: 1,
+        id: 1012,
     },
     {
         title: 'Quick P4 / Cube Quantitative Equine Progesterone Kit',
@@ -128,6 +152,8 @@ const products = [
         price: 180,
         test: 10,
         group: 4,
+        qty: 1,
+        id: 1013,
     },
     {
         title: 'Quick P4 / Cube Quantitative Equine Progesterone Kit',
@@ -138,6 +164,8 @@ const products = [
         price: 100,
         test: 5,
         group: 4,
+        qty: 1,
+        id: 1014,
     },
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
@@ -148,6 +176,8 @@ const products = [
         price: 150,
         test: 10,
         group: 5,
+        qty: 1,
+        id: 1015,
     },
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
@@ -158,6 +188,8 @@ const products = [
         price: 90,
         test: 5,
         group: 5,
+        qty: 1,
+        id: 1016,
     },
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
@@ -168,6 +200,8 @@ const products = [
         price: 550,
         test: 10,
         group: 5,
+        qty: 1,
+        id: 1017,
     },
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
@@ -178,6 +212,8 @@ const products = [
         price: 490,
         test: 5,
         group: 5,
+        qty: 1,
+        id: 1018,
     },
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
@@ -188,6 +224,8 @@ const products = [
         price: 150,
         test: 10,
         group: 5,
+        qty: 1,
+        id: 1019,
     },
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
@@ -198,6 +236,8 @@ const products = [
         price: 90,
         test: 5,
         group: 5,
+        qty: 1,
+        id: 1020,
     },
     {
         title: 'EquiChek™ SAA Kit',
@@ -208,6 +248,8 @@ const products = [
         price: 100,
         test: 5,
         group: 6,
+        qty: 1,
+        id: 1021,
     },
     {
         title: 'EquiChek™ SAA Kit',
@@ -218,6 +260,8 @@ const products = [
         price: 200,
         test: 10,
         group: 6,
+        qty: 1,
+        id: 1022,
     },
     {
         title: 'EquiChek™ SAA Kit',
@@ -228,6 +272,8 @@ const products = [
         price: 100,
         test: 5,
         group: 6,
+        qty: 1,
+        id: 1023,
     },
     {
         title: 'EquiChek™ SAA Kit',
@@ -238,6 +284,8 @@ const products = [
         price: 200,
         test: 10,
         group: 6,
+        qty: 1,
+        id: 1024,
     },
     {
         title: 'EquiChek™ SAA Kit',
@@ -248,6 +296,8 @@ const products = [
         price: 500,
         test: 5,
         group: 6,
+        qty: 1,
+        id: 1025,
     },
     {
         title: 'EquiChek™ SAA Kit',
@@ -258,6 +308,8 @@ const products = [
         price: 600,
         test: 10,
         group: 6,
+        qty: 1,
+        id: 1026,
     },
 ]
 

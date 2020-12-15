@@ -226,4 +226,19 @@
 .store .storefront .product-buttons .arrow {
   width: 900;
 }
+
+.cart .remove-item {
+  background-color: red;
+  padding-right: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.shipping {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=store.css.map */

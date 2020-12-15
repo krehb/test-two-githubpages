@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +15,8 @@ import SignUp from './config/SignUp';
 import Login from './config/Login';
 import products from './products';
 import Cart from './components/cart/cart';
+import Checkout from './components/checkout/checkout';
+import Success from './components/checkout/payment/success';
 
 export default function App() {
 
@@ -25,6 +27,7 @@ export default function App() {
   const [category, setCategory] = useState('none');
   const [group, setGroup] = useState(1)
   const [cart, setCart] = useState([])
+  const [priceTotal, setPriceTotal] = useState(0);
 
 
   const categories = [
@@ -66,7 +69,9 @@ export default function App() {
       }
   ]
 
-  
+  useEffect(() => {
+    totalPriceHandler();
+  },);
   
   const setCategoryHandler = (categorySelected) => {
       setCategory(categorySelected.name)
@@ -74,13 +79,45 @@ export default function App() {
   }
 
   const addToCartHandler = (itemSelected) => {
-      setCart(cart => [...cart, itemSelected ] );
+
+    setCart(cart => [...cart, itemSelected ] );
+
+    cart.forEach(item => {
+      if(item.id === itemSelected.id){
+        let newDouble = {
+          title: item.title,
+          subtitle: item.subtitle,
+          qty: item.qty + 1,
+          img: item.img,
+          price: item.price,
+          test: item.test,
+          id: item.id
+        }
+        setCart(cart.filter(item => item.id !== itemSelected.id))
+        setCart(cart => [...cart, newDouble ] );
+      }
+    });
+
+
+
   }
 
   const clearCartHandler = () => {
     setCart([])
   }
 
+  const removeItemHandler = (id) => {
+    setCart(cart.filter(item => item.id !== id))
+  }
+
+  const totalPriceHandler = () => {
+    const newGroup = [0]
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    cart.forEach(item => {
+        newGroup.push(item.price * item.qty)
+    });
+    setPriceTotal(newGroup.reduce(reducer))
+  }
 
 
   return (
@@ -105,13 +142,19 @@ export default function App() {
               addToCartHandler={addToCartHandler} />
             </Route>
             <Route path='/cart' >
-              <Cart cart={cart} clearCart={clearCartHandler} />
+              <Cart cart={cart} clearCart={clearCartHandler} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
+            </Route>
+            <Route path='/checkout' >
+              <Checkout cart={cart} priceTotal={priceTotal} />
             </Route>
             <Route path='/sign-in'>
               <Login/>
             </Route>
             <Route path='/create-account'>
               <SignUp/>
+            </Route>
+            <Route path='/success' >
+              <Success setCart={setCart} />
             </Route>
             <Route exact path='/' >
               <Home/>

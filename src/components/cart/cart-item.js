@@ -1,24 +1,44 @@
 import React  from 'react';
-import { Container, Col, Row, Button } from 'react-bootstrap';
+import { Container, Col, Row, Button, Image } from 'react-bootstrap';
 
 
 
-const CartItem = (item) => {
+const CartItem = ({item,removeItemHandler}) => {
+
 
 
   return (
     <tr>
         <td>
-            {item.item.title}
+            <Image src={item.img} width='100px' />
         </td>
         <td>
-            {item.item.subtitle}
+            <Row>
+            <Col xs={10} >
+                <Row>
+                    <Col>
+                    <h6>{item.title}</h6>
+                    </Col> 
+                </Row>
+                <Row>
+                    <Col>
+                    <h6>{item.subtitle}</h6>
+                    </Col> 
+                </Row>
+            </Col>
+            <Col xs={2}>
+                <span className='remove-item' onClick={() => removeItemHandler(item.id)} > X</span>
+            </Col>
+            </Row>
         </td>
         <td>
-            {item.item.test}
+            {item.qty}
         </td>
         <td>
-            ${item.item.price}.00
+            {item.test * item.qty}
+        </td>
+        <td>
+            ${item.price * item.qty}.00
         </td>
     </tr>
   );
