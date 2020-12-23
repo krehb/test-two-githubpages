@@ -63,7 +63,7 @@ const StoreFrontDeck = ({products, category, group, addToCartHandler }) => {
 
 
   return (
-    <div className='storefront' >
+    <div >
         <div>
             <div className="bg-dark text-white my-card img ">
                 <h2 className='text' >{category}</h2>
