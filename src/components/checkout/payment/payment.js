@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from 'react';
+import React, {useState}  from 'react';
 import { Container, Col, Row, Button, Form, Card } from 'react-bootstrap';
 
 
@@ -10,12 +10,10 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
     const [address, setAddress] = useState();
     const [city, setCity] = useState();
     const [state, setState] = useState();
-    const [zip, setZip] = useState();
     const [change, setChange] = useState(false);
 
 
     const saveAddressHandler = () => {
-        console.log(name, address, city, state, zip)
         setChange(false)
     }
 
@@ -34,7 +32,7 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
                 <Form>
                     <Form.Group controlId="formGridname">
                         <Form.Label>Card</Form.Label>
-                        <Form.Control onChange={(e)=> setName(e.target.value)} type="card" placeholder="xxxx-xxxx-xxxx-xxxx" />
+                        <Form.Control onChange={(e)=> setAddress(e.target.value)} type="card" placeholder="xxxx-xxxx-xxxx-xxxx" />
                     </Form.Group>
 
 
@@ -46,7 +44,7 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
                     <Form.Row>
                         <Form.Group as={Col} controlId="formGridState">
                         <Form.Label>Month</Form.Label>
-                        <Form.Control onChange={(e)=> setState(e.target.value)} as="select" defaultValue="Choose...">
+                        <Form.Control onChange={(e)=> setCity(e.target.value)} as="select" defaultValue="Choose...">
                             <option>MM</option>
                             <option>01</option>
                         </Form.Control>
@@ -90,7 +88,7 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
                             </Row>
                             <Row>
                                 <Col>
-                                {address}, {state}, {zip}
+                                {address}, {state}, {city}
                                 </Col>
                             </Row>
                             <Row>

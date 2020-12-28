@@ -3,15 +3,12 @@ import { Row, Col, Button, Image, Container, Accordion, Card } from 'react-boots
 import { Link } from 'react-router-dom';
 import '../store.css'
 
-
 export default function MyCard({data, group, addToCartHandler}) {
 
-    const [count, setCount] = useState(1);
-    const [classes, setClasses] = useState('test-not');
-    const [classes2, setClasses2] = useState('test-selected');
+
     const [renderPrice, setRenderPrice] = useState();
     const [info, setInfo] = useState([]);
-
+    const [show, setShow] = useState(false);
 
     useEffect(() => {
         // Update the document title using the browser API
@@ -34,7 +31,11 @@ export default function MyCard({data, group, addToCartHandler}) {
     }
 
 
+    const combineAddtoCartHandler = (data) => {
+        addToCartHandler(data);
 
+    }
+    
 
     let productCard = null;
 
@@ -51,10 +52,10 @@ export default function MyCard({data, group, addToCartHandler}) {
                                 <Image fluid src={data.img} />
                             </Col>
                             <Col xs={9} >
-                                <h6 className='title' >{data.title}</h6>
+                                <span className='title' >{data.title}</span><span> {data.test} tests</span>
                                 <h6 className='subtitle' >{data.subtitle}</h6>
                                 <Accordion.Toggle className='learn-more' as={Card.Header} eventKey="1">
-                                   + Addition Info
+                                    Additional Info
                                 </Accordion.Toggle>
                             </Col>
                         </Row>
@@ -62,17 +63,10 @@ export default function MyCard({data, group, addToCartHandler}) {
                     <Col xs={4} className='product-buttons' >
                         <Container>
                         <Row>
-                            {/* <Col>
-                                <div className='test' >
-                                    <Row>
-                                        <Col className={classes}  >{data.test} Tests</Col>
-                                    </Row>
-                                </div>
-                            </Col> */}
                             <Col >
                             <Row>
                                 <Col>
-                                    <Button onClick={() => addToCartHandler(data)} >Add to Cart</Button>                        
+                                    <Button onClick={() => combineAddtoCartHandler(data)} >Add to Cart</Button>                        
                                 </Col>
                             </Row>
                             <Row>

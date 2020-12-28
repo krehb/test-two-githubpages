@@ -214,20 +214,7 @@ $targetvetlightblue: #207595;
             color: rgb(65, 65, 65);
         }
 
-        .with-cube {
-            background-color: #ad4b4b;
-            text-align: center;
-            box-shadow: 4px 4px #723333;
-            margin-left: 0%;
-            margin-right: 0%;
-            margin-top: 10px;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            cursor: pointer;
-        }
-        .cube-title {
-            margin-left: 19%;
-        }
+
         
         .product-buttons {
             text-align: center;
@@ -277,6 +264,12 @@ $targetvetlightblue: #207595;
         cursor: pointer;
     }
 
+
+    .qty-change {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+    }
 }
 
 .shipping {

@@ -7,6 +7,18 @@ import TopAuthItems from './top-auth-items';
 
 const Nav = (cart) => {
 
+    let navCart = null
+
+    if(cart.cart.length === 0){
+        navCart = null
+    } else {
+        navCart = (
+            <Link className='my-nav-item' to='/cart' >
+            Cart({cart.cart.length})
+            </Link>
+        )
+    }
+
 
 
   return (
@@ -38,9 +50,7 @@ const Nav = (cart) => {
                         <Link className='my-nav-item' to='/store' >
                         Store
                         </Link>
-                        <Link className='my-nav-item' to='/cart' >
-                        Cart({cart.cart.length})
-                        </Link>
+                        {navCart}
                     </Col>
                 </Row>
                 <AuthItems/>

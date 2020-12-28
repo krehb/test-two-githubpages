@@ -46,7 +46,7 @@ const StoreFrontDeck = ({products, category, group, addToCartHandler }) => {
         <Button onClick={allHandler} className='filter-button' >All</Button>
         <Button onClick={viusalHandler} className='filter-button' >Visual</Button>
         <Button onClick={refillHandler} className='filter-button' >Quantitative Refill</Button>
-        <Button onClick={cubeHandler} className='filter-button' >Cube</Button>
+        <Button onClick={cubeHandler} className='filter-button' >Cube + Kit</Button>
       </Col>
     </Row>
     )
@@ -71,7 +71,7 @@ const StoreFrontDeck = ({products, category, group, addToCartHandler }) => {
             {filterButtons}
             {list.map(x => 
             <div>
-                <MyCard key={products.indexOf(x)} data={x} group={group} addToCartHandler={addToCartHandler} />
+                <MyCard key={x.id} data={x} group={group} addToCartHandler={addToCartHandler} />
             </div> )}
         </div>
     </div>

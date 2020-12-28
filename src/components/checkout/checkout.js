@@ -1,5 +1,5 @@
-import React, {useState, useEffect}  from 'react';
-import { Container, Col, Row, Button, Form } from 'react-bootstrap';
+import React  from 'react';
+import { Container, Col, Row } from 'react-bootstrap';
 import Shipping from './shippingAddress';
 import Payment from './payment/payment';
 import Review from './review';

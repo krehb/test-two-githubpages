@@ -10,7 +10,6 @@ import Canine from './pages/canine';
 import Equine from './pages/equine';
 import Home from './pages/home';
 import { AuthProvider } from './config/Auth';
-import PrivateRoute from './config/PrivateRoute';
 import SignUp from './config/SignUp';
 import Login from './config/Login';
 import products from './products';
@@ -142,7 +141,7 @@ export default function App() {
               addToCartHandler={addToCartHandler} />
             </Route>
             <Route path='/cart' >
-              <Cart cart={cart} clearCart={clearCartHandler} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
+              <Cart cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
             </Route>
             <Route path='/checkout' >
               <Checkout cart={cart} priceTotal={priceTotal} />

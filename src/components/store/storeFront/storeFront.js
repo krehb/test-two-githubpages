@@ -1,7 +1,5 @@
 import React from 'react';
-import MyCard from './storeFrontCard';
 import StoreFrontGallery from './storeFrontGallery';
-import { Button, Row, Col } from 'react-bootstrap';
 import StoreFrontDeck from './storeFrontDeck';
 
 
