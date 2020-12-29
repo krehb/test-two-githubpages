@@ -28,7 +28,7 @@ const Checkout = ({cart, priceTotal }) => {
                 </Container>
             </Col>
             <Col  xs={4}>
-                <Summary priceTotal={priceTotal} />
+                <Summary priceTotal={priceTotal} cart={cart} />
             </Col>
             </Row>
         </Container>
