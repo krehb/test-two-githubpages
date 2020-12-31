@@ -28,7 +28,6 @@ export default function App() {
   const [cart, setCart] = useState([])
   const [priceTotal, setPriceTotal] = useState(0);
 
-
   const categories = [
       {
         name: 'Target Canine Progesterone',

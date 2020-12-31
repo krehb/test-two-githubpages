@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Button, Image, Container, Accordion, Card } from 'react-bootstrap';
+import { Row, Col, Button, Image, Container, Accordion, Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import '../store.css'
 
@@ -9,6 +9,7 @@ export default function MyCard({data, group, addToCartHandler}) {
     const [renderPrice, setRenderPrice] = useState();
     const [info, setInfo] = useState([]);
     const [show, setShow] = useState(false);
+    const [loadSpinner, setLoadSpinner] = useState(false);
 
     useEffect(() => {
         // Update the document title using the browser API
@@ -33,9 +34,27 @@ export default function MyCard({data, group, addToCartHandler}) {
 
     const combineAddtoCartHandler = (data) => {
         addToCartHandler(data);
-
+        setLoadSpinner(true);
+        setTimeout(function() {
+            setLoadSpinner(false);
+        }, 400);
     }
     
+
+    //for adding a spinner for signaling that adding to cart has taken place
+    let addingButton = null
+    if (loadSpinner){
+        addingButton = (
+            <Spinner animation="border" variant="primary" />
+        )
+    } else {
+        addingButton = (
+            <Button onClick={() => combineAddtoCartHandler(data)} >Add to Cart</Button>  
+        )
+    }
+
+
+
 
     let productCard = null;
 
@@ -66,7 +85,7 @@ export default function MyCard({data, group, addToCartHandler}) {
                             <Col >
                             <Row>
                                 <Col>
-                                    <Button onClick={() => combineAddtoCartHandler(data)} >Add to Cart</Button>                        
+                                     {addingButton}                      
                                 </Col>
                             </Row>
                             <Row>

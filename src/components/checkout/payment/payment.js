@@ -25,23 +25,26 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
     if(change){
         shipping = (
             <Container>
-            <Row>
-            {/* <Col className='payment-header'>
+            {/* <Row>
+            <Col className='payment-header'>
                 <h4>Pay</h4>
-            </Col> */}
+            </Col>
             <br></br>
             </Row>
             <Row>
-            <Col>
+            <Col></Col>
+            <Col xs={6}>
             <Paypal/>
-            {/* <PaymentOptions paymentOption={paymentOption} setPaymentOption={setPaymentOption} /> */}
+            <PaymentOptions paymentOption={paymentOption} setPaymentOption={setPaymentOption} />
             <div className='save' >
-            {/* <Button  variant="secondary" onClick={() => saveAddressHandler()} >
+            <Button  variant="secondary" onClick={() => saveAddressHandler()} >
                 Save
-            </Button> */}
+            </Button>
             </div>
             </Col>
-            </Row>
+            <Col></Col>
+            </Row> */}
+            <br></br>
             </Container>
         )
     } else {

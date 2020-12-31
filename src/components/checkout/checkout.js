@@ -1,5 +1,6 @@
 import React  from 'react';
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row, Button } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import Shipping from './shippingAddress';
 import Payment from './payment/payment';
 import Review from './review';
@@ -24,6 +25,14 @@ const Checkout = ({cart, priceTotal }) => {
                     </Row>
                     <Row>
                         <Review cart={cart} priceTotal={priceTotal} />
+                    </Row>
+                    <Row>
+                        <Col>
+                            <br></br>
+                            <Link to='/cart' >
+                                <Button>Back to Cart</Button>
+                            </Link>
+                        </Col>
                     </Row>
                 </Container>
             </Col>

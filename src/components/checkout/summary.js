@@ -4,6 +4,7 @@ import {useHistory} from 'react-router-dom';
 import app from '../../config/base';
 import firebase from 'firebase';
 import emailjs from 'emailjs-com';
+import Paypal from './payment/Paypal';
 
 
 const Summary = ({priceTotal, cart}) => {
@@ -32,34 +33,34 @@ const Summary = ({priceTotal, cart}) => {
     }
 
 
-    const sendConfirmationEmail = () => {
+    // const sendConfirmationEmail = () => {
 
-        if (cart.length > 0){
+    //     if (cart.length > 0){
 
-            setSpinner(true)
+    //         setSpinner(true)
 
-            var templateParams = {
-                name: 'James',
-                email: currentUser.email,
-                cart: sendingCart,
-                total_price: priceTotal,
-                shipping: '217 Pleasant St.',
-            };
+    //         var templateParams = {
+    //             name: 'James',
+    //             email: currentUser.email,
+    //             cart: sendingCart,
+    //             total_price: priceTotal,
+    //             shipping: '217 Pleasant St.',
+    //         };
     
-            emailjs.send('service_12x6qif', 'template_5h83g8t', templateParams , 'user_CqDTkQBUriwIbjinTaVaw')
-                .then(function(response) {
-                   console.log('SUCCESS!', response.status, response.text);
-                   setSpinner(false)
-                   handleClick();
-                }, function(error) {
-                   console.log('FAILED...', error);
-                });
+    //         emailjs.send('service_12x6qif', 'template_5h83g8t', templateParams , 'user_CqDTkQBUriwIbjinTaVaw')
+    //             .then(function(response) {
+    //                console.log('SUCCESS!', response.status, response.text);
+    //                setSpinner(false)
+    //                handleClick();
+    //             }, function(error) {
+    //                console.log('FAILED...', error);
+    //             });
 
-        } else {
-            console.log('no items in the cart')
-        }
+    //     } else {
+    //         console.log('no items in the cart')
+    //     }
 
-    }
+    // }
 
     let buyButton = null
 
@@ -69,9 +70,10 @@ const Summary = ({priceTotal, cart}) => {
         )
     } else {
         buyButton = (
-            <Button onClick={sendConfirmationEmail} variant="primary" >
-                Buy Items
-            </Button>
+            // <Button onClick={sendConfirmationEmail} variant="primary" >
+            //     Buy Items
+            // </Button>
+            <Paypal cart={cart} priceTotal={priceTotal} /> 
         )
     }
 
