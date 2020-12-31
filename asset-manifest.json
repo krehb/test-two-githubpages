@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/test-two-githubpages/static/css/main.e4d0c239.chunk.css",
-    "main.js": "/test-two-githubpages/static/js/main.362addee.chunk.js",
-    "main.js.map": "/test-two-githubpages/static/js/main.362addee.chunk.js.map",
+    "main.css": "/test-two-githubpages/static/css/main.7f0a3295.chunk.css",
+    "main.js": "/test-two-githubpages/static/js/main.b27ba8cc.chunk.js",
+    "main.js.map": "/test-two-githubpages/static/js/main.b27ba8cc.chunk.js.map",
     "runtime-main.js": "/test-two-githubpages/static/js/runtime-main.89d2767e.js",
     "runtime-main.js.map": "/test-two-githubpages/static/js/runtime-main.89d2767e.js.map",
-    "static/js/2.dad44d60.chunk.js": "/test-two-githubpages/static/js/2.dad44d60.chunk.js",
-    "static/js/2.dad44d60.chunk.js.map": "/test-two-githubpages/static/js/2.dad44d60.chunk.js.map",
+    "static/js/2.5d4b0106.chunk.js": "/test-two-githubpages/static/js/2.5d4b0106.chunk.js",
+    "static/js/2.5d4b0106.chunk.js.map": "/test-two-githubpages/static/js/2.5d4b0106.chunk.js.map",
     "index.html": "/test-two-githubpages/index.html",
-    "static/css/main.e4d0c239.chunk.css.map": "/test-two-githubpages/static/css/main.e4d0c239.chunk.css.map",
-    "static/js/2.dad44d60.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.dad44d60.chunk.js.LICENSE.txt",
+    "static/css/main.7f0a3295.chunk.css.map": "/test-two-githubpages/static/css/main.7f0a3295.chunk.css.map",
+    "static/js/2.5d4b0106.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.5d4b0106.chunk.js.LICENSE.txt",
     "static/media/store.css": "/test-two-githubpages/static/media/husky.5f690e02.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.89d2767e.js",
-    "static/js/2.dad44d60.chunk.js",
-    "static/css/main.e4d0c239.chunk.css",
-    "static/js/main.362addee.chunk.js"
+    "static/js/2.5d4b0106.chunk.js",
+    "static/css/main.7f0a3295.chunk.css",
+    "static/js/main.b27ba8cc.chunk.js"
   ]
 }
