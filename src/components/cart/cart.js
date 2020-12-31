@@ -12,16 +12,27 @@ const Cart = ({cart, clearCart, setCart, removeItemHandler, priceTotal}) => {
 
     useEffect(() => {
         // Update the document title using the browser API
-
         app.auth().onAuthStateChanged(function(user) {
             if (user) {
               // User is signed in.
               setLoggedIn(true)
-              setPath('/checkout')
+              if (cart.length > 0){
+                  console.log('items in cart')
+                  setPath('/checkout')
+              } else {
+                  console.log('no items')
+                  setPath('/store')
+              }
             } else {
               // No user is signed in.
               setLoggedIn(false)
-              setPath('/sign-in')
+              if (cart.length > 0){
+                console.log('items in cart')
+                setPath('/sign-in')
+              } else {
+                console.log('no items')
+                setPath('/store')
+              }
             }
         });
 
@@ -66,7 +77,7 @@ const Cart = ({cart, clearCart, setCart, removeItemHandler, priceTotal}) => {
                 </Col>
                 <Col>
                     <Link to={path} >
-                    <Button >Proceed to checkout</Button>
+                        <Button >Proceed to checkout</Button>
                     </Link>
                 </Col>
             </Row>

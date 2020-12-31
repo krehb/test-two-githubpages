@@ -1,5 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect } from 'react-router';
+import {Link} from 'react-router-dom';
 import app from './base';
 import { AuthContext, AuthProvider } from './Auth';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
@@ -46,7 +47,9 @@ const Login = ({ history }) => {
                     Submit
                 </Button>
                 </Form>
-
+                <Link to='/create-account' >
+                    Create Account
+                </Link>
 
                 </Col>
             </Row>

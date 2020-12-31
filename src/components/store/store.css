@@ -257,4 +257,45 @@
 .shipping {
   margin-top: 20px;
 }
+
+.payment .payment-header {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.payment .paymentOptions .collapse-head {
+  padding: 5px 10px 5px 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #8a8a8a;
+  cursor: pointer;
+}
+
+.payment .paymentOptions .collapse-body {
+  margin-top: 10px;
+}
+
+.payment .paymentOptions .selected {
+  background-color: #ddf6ff;
+  -webkit-box-shadow: 2px 2px 2px  #cae0e9;
+          box-shadow: 2px 2px 2px  #cae0e9;
+  color: #414141;
+}
+
+.payment .paymentOptions .Card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.payment .save {
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.bold {
+  font-weight: 700;
+}
 /*# sourceMappingURL=store.css.map */

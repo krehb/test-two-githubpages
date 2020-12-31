@@ -275,3 +275,56 @@ $targetvetlightblue: #207595;
 .shipping {
     margin-top: 20px;
 }
+
+
+.payment {
+
+
+    .payment-header {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    .paymentOptions {
+
+
+
+        .collapse-head {
+            padding: 5px 10px 5px 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(138, 138, 138);
+            cursor: pointer;
+        }
+        .collapse-body {
+            margin-top: 10px;
+        }
+        .selected {
+            background-color: #ddf6ff;
+            box-shadow: 2px 2px 2px  #cae0e9;
+            color: rgb(65, 65, 65);
+        }
+    
+    
+    
+        .Card {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+    }
+
+    .save {
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+
+
+}
+
+
+.bold{
+    font-weight: 700;
+}

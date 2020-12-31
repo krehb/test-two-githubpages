@@ -1,5 +1,7 @@
 import React, {useState}  from 'react';
 import { Container, Col, Row, Button, Form, Card } from 'react-bootstrap';
+import PaymentOptions from './paymentOptions';
+import Paypal from './Paypal';
 
 
 
@@ -10,8 +12,9 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
     const [address, setAddress] = useState();
     const [city, setCity] = useState();
     const [state, setState] = useState();
-    const [change, setChange] = useState(false);
+    const [change, setChange] = useState(true);
 
+    const [paymentOption, setPaymentOption] = useState('none');
 
     const saveAddressHandler = () => {
         setChange(false)
@@ -23,47 +26,20 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
         shipping = (
             <Container>
             <Row>
-            <Col>
-                <h4>Payment Method</h4>
-            </Col>
+            {/* <Col className='payment-header'>
+                <h4>Pay</h4>
+            </Col> */}
+            <br></br>
             </Row>
             <Row>
             <Col>
-                <Form>
-                    <Form.Group controlId="formGridname">
-                        <Form.Label>Card</Form.Label>
-                        <Form.Control onChange={(e)=> setAddress(e.target.value)} type="card" placeholder="xxxx-xxxx-xxxx-xxxx" />
-                    </Form.Group>
-
-
-                    <Form.Group controlId="formGridname">
-                        <Form.Label>Name on Card</Form.Label>
-                        <Form.Control onChange={(e)=> setName(e.target.value)} type="name" placeholder="Name" />
-                    </Form.Group>
-
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>Month</Form.Label>
-                        <Form.Control onChange={(e)=> setCity(e.target.value)} as="select" defaultValue="Choose...">
-                            <option>MM</option>
-                            <option>01</option>
-                        </Form.Control>
-                        </Form.Group>
-
-                        <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>Year</Form.Label>
-                        <Form.Control onChange={(e)=> setState(e.target.value)} as="select" defaultValue="Choose...">
-                            <option>YY</option>
-                            <option>20</option>
-                        </Form.Control>
-                        </Form.Group>
-                    </Form.Row>
-
-
-                    <Button variant="primary" onClick={() => saveAddressHandler()} >
-                        Save
-                    </Button>
-                </Form>
+            <Paypal/>
+            {/* <PaymentOptions paymentOption={paymentOption} setPaymentOption={setPaymentOption} /> */}
+            <div className='save' >
+            {/* <Button  variant="secondary" onClick={() => saveAddressHandler()} >
+                Save
+            </Button> */}
+            </div>
             </Col>
             </Row>
             </Container>
@@ -75,26 +51,14 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
                 <Col>
                     <Card >
                     <Card.Body>
-                        <Row>
-                        <Col>
-                        <h4>Payment Method</h4>
+                        <Row >
+                        <Col >
+                        <h4>Pay</h4>
                         </Col>
                         <Col>
                         <Container>
                             <Row>
-                                <Col>
-                                {name}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                {address}, {state}, {city}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    add delivery instructions
-                                </Col>
+                                {paymentOption}
                             </Row>
                         </Container>
                         </Col>
@@ -113,7 +77,7 @@ const Payment = ({cart, clearCart, removeItemHandler}) => {
 
 
   return (
-        <Col>
+        <Col className='payment' >
             {shipping}
         </Col>
   );

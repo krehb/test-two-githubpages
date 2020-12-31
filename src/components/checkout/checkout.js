@@ -16,9 +16,9 @@ const Checkout = ({cart, priceTotal }) => {
             <Row>
             <Col xs={8}>
                 <Container fluid >
-                    <Row>
+                    {/* <Row>
                         <Shipping/>
-                    </Row>
+                    </Row> */}
                     <Row>
                         <Payment/>
                     </Row>
