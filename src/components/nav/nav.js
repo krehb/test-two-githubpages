@@ -22,41 +22,48 @@ const Nav = (cart) => {
 
 
   return (
-    <div  >
-        <nav className='my-nav' >
-            <Container fluid >
+        <div className='my-nav' >
+            <Container fluid  >
                 <Row className='top-auth' >
-                    <Col>
-                        <TopAuthItems/>
-                    </Col>
+                    <TopAuthItems />
                 </Row>
-                <Row className='nav' >
-                    <Col>
-                        <Link to='/'  >
-                            <img
-                                alt=""
-                                src="https://www.targetvet.com/wp-content/uploads/elementor/thumbs/biometallics-logo-oiu6b3tt63fywipsrkni4fjfhftxi93fxb5nopm164.png"
-                                className=" nav-img"
-                            />
-                        </Link>
-                    </Col>
-                    <Col className='my-nav-list' >
-                        <Link className='my-nav-item' to='/canine' >
-                        Canine 
-                        </Link>
-                        <Link className='my-nav-item' to='/equine' >
-                        Equine
-                        </Link>
-                        <Link className='my-nav-item' to='/store' >
-                        Store
-                        </Link>
-                        {navCart}
-                    </Col>
-                </Row>
-                <AuthItems/>
+                <div className='nav-parent'>
+                    <div className='nav-child1' >
+                        <div className='nav-child-img' >
+                            <Link to='/'  >
+                                <img
+                                    alt=""
+                                    src="https://www.targetvet.com/wp-content/uploads/elementor/thumbs/biometallics-logo-oiu6b3tt63fywipsrkni4fjfhftxi93fxb5nopm164.png"
+                                    className='nav-child-img'
+                                />
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='nav-child2' >
+                        <div className='nav-child-list no-hover' >
+                            <Link className='my-nav-item' to='/canine' >
+                            Canine 
+                            </Link>
+                        </div>
+                        <div className='nav-child-list no-hover' >
+                            <Link className='my-nav-item' to='/equine' >
+                            Equine
+                            </Link>
+                        </div>
+                        <div className='nav-child-list no-hover ' >
+                            <Link className='my-nav-item' to='/store' >
+                            Store
+                            </Link>
+                        </div>
+                        <div className='nav-child-list no-hover' >
+                            {navCart}
+                        </div>
+                    </div>
+                </div>
+
             </Container>
-        </nav>
-    </div>
+            <AuthItems/>
+        </div>
   );
 }
 

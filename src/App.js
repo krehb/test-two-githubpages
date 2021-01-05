@@ -78,20 +78,30 @@ export default function App() {
 
   const addToCartHandler = (itemSelected) => {
 
-    setCart(cart => [...cart, itemSelected ] );
+    let newProduct = {
+      title: itemSelected.product.title,
+      subtitle: itemSelected.product.subtitle,
+      qty: itemSelected.productQty ,
+      img: itemSelected.product.img,
+      price: itemSelected.product.price,
+      test: itemSelected.product.test,
+      id: itemSelected.product.id
+    }
+
+    setCart(cart => [...cart, newProduct ] );
 
     cart.forEach(item => {
-      if(item.id === itemSelected.id){
+      if(item.id === itemSelected.product.id){
         let newDouble = {
           title: item.title,
           subtitle: item.subtitle,
-          qty: item.qty + 1,
+          qty: item.qty + itemSelected.productQty,
           img: item.img,
           price: item.price,
           test: item.test,
           id: item.id
         }
-        setCart(cart.filter(item => item.id !== itemSelected.id))
+        setCart(cart.filter(item => item.id !== itemSelected.product.id))
         setCart(cart => [...cart, newDouble ] );
       }
     });
@@ -137,7 +147,9 @@ export default function App() {
               categories={categories} 
               setCategoryHandler={setCategoryHandler} 
               category={category} 
-              addToCartHandler={addToCartHandler} />
+              addToCartHandler={addToCartHandler}
+              cart={cart}
+              setCart={setCart} />
             </Route>
             <Route path='/cart' >
               <Cart cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />

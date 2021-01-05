@@ -29,7 +29,7 @@ export default function TopAuthItems() {
 
     if (loggedIn === true){
         items = (
-            <div >
+            <div className='top-auth-child' >
                 <Link className='auth-item' onClick={() => app.auth().signOut()} >
                     Sign Out
                 </Link>
@@ -37,12 +37,12 @@ export default function TopAuthItems() {
         )
     } else {
         items = (
-            <div >
+            <div className='top-auth-child no-hover' >
                 <Link className='auth-item' to='/sign-in' >
-                    <span className='sign-in' >Sign In</span>
+                    <span className='sign-in  ' >Sign In</span>
                 </Link>
-                <Link className='auth-item' to='/create-account' >
-                    <span className='create-account' >Create Account</span>
+                <Link className='auth-item ' to='/create-account' >
+                    <span className='create-account ' >Create Account</span>
                 </Link>
             </div>
             

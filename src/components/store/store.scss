@@ -3,19 +3,27 @@ $numberTestButtonSelect: #646464;
 $targetvetdarkblue: #094f70;
 $targetvetlightblue: #207595;
 
+
+$small: 500px;
+$medium: 900px;
+
 .no-hover :hover {
     text-decoration: none;
     color: none;
 }
 
 .my-nav {
-    background-color: 	$targetvetlightblue;
+    background-color: 	#eafbffea;
     color: #000;
 
+
+    
     .top-auth {
-        background-color:  #ffffffea;
-        text-align: right;
-        padding-top: 10px;
+        justify-content: flex-end;
+        .top-auth-child {
+            padding: 10px 10px 10px 10px;
+        }
+
         .create-account {
             background-color: #D73827;
             color: #ffffff;
@@ -24,7 +32,7 @@ $targetvetlightblue: #207595;
             margin-left: 10px;
         }
         .auth-item {
-            padding-left: 30px;
+            padding-left: 10px;
             color:  #5a5a5a;
             font-weight: 500;
             &:hover {
@@ -34,50 +42,86 @@ $targetvetlightblue: #207595;
         } 
     }
 
-    .nav {
-        background-color: #ffffffea;
-        padding: 0px 0px 30px 30%;
+    .nav-parent {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
 
-        .nav-img {
-            padding-left: 30%;
+        //img
+        .nav-child1 {
+            width: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex-grow: 2;
+            .nav-child-img {
+                margin-bottom: 10px;
+            }
+            @media screen and (max-width: $small) {
+                justify-content: center;
+                .nav-child-img {
+                    margin-bottom: 0px;
+                }
+            }
         }
 
-        .my-nav-list {
-            padding-top: 10px;
-            padding-left: 0px;
+        //nav links
+        .nav-child2 {
+            width: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            .nav-child-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
 
-            .my-nav-item {
-                padding-right: 30px;
-                color: #5a5a5a;
-                font-weight: 600;
-                font-size: 17px;
-                &:hover {
-                    text-decoration: none;
-                    color: #000; 
+                .my-nav-item {
+                    padding-left: 18px;
+                    padding-bottom: 30px;
+                    font-size: 20px;
+                    color: rgb(107, 107, 107);
+                    @media screen and (max-width: $small) {
+                        padding-bottom: 10px;
+                    }
                 }
+            }
+            @media screen and (max-width: $small) {
+                justify-content: center;
             }
         }
     }
 
+    @media screen and (max-width: $small) {
+        border-bottom: solid $targetvetlightblue 10px;
+    }
 
+    .auth-bottom {
+        background-color: $targetvetlightblue;
 
-}
-
-.auth {
-    padding-left: 40%;
-    padding-right: 40%;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-    .auth-item {
-        padding-left: 30px;
-        color: rgb(255, 255, 255);
-        &:hover {
-            text-decoration: none;
-            color: #cccccc; 
+        .auth {
+            display: flex;
+            justify-content: center;
+            .auth-item {
+                color: white;
+                padding: 5px 0px 5px 0px;
+                @media screen and (max-width: $small) {
+                    display: none;
+                }
+            }
         }
-    } 
+
+    }
+
+
 }
+
+
+
+
+
 
 .store {
 
@@ -86,6 +130,9 @@ $targetvetlightblue: #207595;
 
     .product-list {
     
+        @media screen and (max-width: $small) {
+            display: none;
+        }
     
         .list-title {
             color: rgb(24, 24, 24);
@@ -143,6 +190,7 @@ $targetvetlightblue: #207595;
         .filter-button {
             margin-right: 10px;
             margin-bottom: 10px;
+            background-color: #338fb1;
         }
     
         .my-card {
@@ -160,9 +208,7 @@ $targetvetlightblue: #207595;
             }
         }
 
-        .cart-button {
-            margin-top: 10px;
-        }
+
         
         .img {
             height: 150px;
@@ -219,29 +265,43 @@ $targetvetlightblue: #207595;
         .product-buttons {
             text-align: center;
 
-
-            .test {
-                margin-top: 5px;
-            }
-            .test-not {
-                margin-top: 7px;
-                margin-left: 5px;
-                margin-right: 5px;
-                background-color: $numberTestButton;
-                border-radius: 10px;
-            }
-            .test-selected {
-                margin-left: 5px;
-                margin-right: 5px;
-                box-shadow: 3px 3px $numberTestButtonSelect;
-                margin-top: 7px;
-                background-color: #e4e4e4;
-                border-radius: 10px;
+            .add-to-cart-button {
+                background-color: #338fb1;
+                color: white;
+                padding: 6px 8px 6px 12px;
+                border: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                &:hover {
+                    background-color:#287794;
+                }
             }
 
-            .arrow {
-                width: 900;
-
+            .qty {
+                background-color: #caf1ff;
+                cursor: pointer;
+                border: none;
+                padding-top: 7px;
+                padding-bottom: 8px;
+            }
+            .right {
+                padding-right: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        
+            .checkout {
+                margin-top: 10px;
+                margin-left: 20%;
+                font-size: 12px;
+                background-color: #34cc34;
+                color: white;
+                padding: 6px 12px 6px 12px;
+                border: none;
+                border-radius: 5px;
+                &:hover {
+                    background-color:#29a329;
+                }
             }
 
         }
@@ -252,6 +312,8 @@ $targetvetlightblue: #207595;
 }
 
 .cart {
+
+    margin-top: 20px;
 
     .remove-item {
         background-color: red;

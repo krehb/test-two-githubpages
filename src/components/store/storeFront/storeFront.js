@@ -3,7 +3,7 @@ import StoreFrontGallery from './storeFrontGallery';
 import StoreFrontDeck from './storeFrontDeck';
 
 
-const StoreFront = ({products, categories, setCategoryHandler, setCategory , category, group, addToCartHandler }) => {
+const StoreFront = ({products, categories, setCategoryHandler, setCategory , category, group, addToCartHandler, cart, setCart }) => {
 
   let store = null
 
@@ -18,7 +18,7 @@ const StoreFront = ({products, categories, setCategoryHandler, setCategory , cat
     )
   } else {
     store = (
-      <StoreFrontDeck products={products} category={category} group={group} addToCartHandler={addToCartHandler} />
+      <StoreFrontDeck products={products} category={category} group={group} cart={cart} setCart={setCart} addToCartHandler={addToCartHandler} />
     )
   }
 

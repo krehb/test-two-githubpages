@@ -3,13 +3,14 @@ import { Row, Col, Button, Image, Container, Accordion, Card, Spinner } from 're
 import { Link } from 'react-router-dom';
 import '../store.css'
 
-export default function MyCard({data, group, addToCartHandler}) {
+export default function MyCard({data, group, addToCartHandler, cart, setCart }) {
 
 
     const [renderPrice, setRenderPrice] = useState();
     const [info, setInfo] = useState([]);
     const [show, setShow] = useState(false);
     const [loadSpinner, setLoadSpinner] = useState(false);
+    const [qty, setQty] = useState(1);
 
     useEffect(() => {
         // Update the document title using the browser API
@@ -32,14 +33,40 @@ export default function MyCard({data, group, addToCartHandler}) {
     }
 
 
+    let renderQty = null
+    if(1 > qty){
+        renderQty = 1
+    }else {
+        renderQty = qty
+    }
+
+    let renderCheckout = null
+    if(cart.length > 0){
+        renderCheckout = (
+            <Link to='/cart' >
+                <button className='checkout' >Checkout &#8594;</button>
+            </Link>
+        )
+    } else {
+        renderCheckout = null
+    }
+
+
+
     const combineAddtoCartHandler = (data) => {
-        addToCartHandler(data);
+        let passingElement = {
+            product: data,
+            productQty: renderQty,
+        }
+
+        addToCartHandler(passingElement);
         setLoadSpinner(true);
         setTimeout(function() {
             setLoadSpinner(false);
         }, 400);
     }
-    
+
+
 
     //for adding a spinner for signaling that adding to cart has taken place
     let addingButton = null
@@ -49,7 +76,15 @@ export default function MyCard({data, group, addToCartHandler}) {
         )
     } else {
         addingButton = (
-            <Button onClick={() => combineAddtoCartHandler(data)} >Add to Cart</Button>  
+            <div>
+                <Row>
+                    <Col  sm={1} ></Col>
+                    <Col  >
+                        <button className='add-to-cart-button'  onClick={() => combineAddtoCartHandler(data, qty)} >Add to Cart</button>
+                        <span className='qty' onClick={() => setQty(qty + 1)}> +</span><span className='qty'> ({renderQty}) </span><span className='qty right' onClick={() => setQty(qty - 1)} >- </span>
+                    </Col>
+                </Row>
+            </div>
         )
     }
 
@@ -81,21 +116,12 @@ export default function MyCard({data, group, addToCartHandler}) {
                     </Col>
                     <Col xs={4} className='product-buttons' >
                         <Container>
+                        {addingButton}
                         <Row>
-                            <Col >
-                            <Row>
-                                <Col>
-                                     {addingButton}                      
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                <Link mg to='/cart'  >
-                                    <Button className='cart-button' >Go to Cart</Button>
-                                </Link>
-                                </Col>
-                            </Row>
-                            </Col>
+                        <Col  sm={1} ></Col>
+                        <Col>
+                            {renderCheckout}
+                        </Col>
                         </Row>
                         </Container>    
                     </Col>

@@ -30,34 +30,30 @@ export default function AuthItems() {
 
     if (loggedIn === true){
         items = (
-            <Col className='auth' >
+            <div className='auth' >
                 <Link className='auth-item' onClick={() => app.auth().signOut()} >
                     Sign Out
                 </Link>
-            </Col>
+            </div>
         )
     } else {
         items = (
-            <Col className='auth' >
+            <div className='auth' >
                 <Link className='auth-item' to='/sign-in' >
                     Sign In
                 </Link>
                 <Link className='auth-item' to='/create-account' >
                     Create Account
                 </Link>
-            </Col>
+            </div>
         ) 
     }
 
 
 
   return (
-    <div  >
-        <Container>
-            <Row>
-                {items}
-            </Row>
-        </Container>
+    <div className='auth-bottom' >
+        {items}
     </div>
   );
 }
