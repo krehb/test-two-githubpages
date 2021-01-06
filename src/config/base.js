@@ -4,6 +4,7 @@ import 'firebase/auth';
 const app = firebase.initializeApp({
     apiKey: "AIzaSyDuL18j5wjWjUIu4ei-TaUjPqps6_6OvtA",
     authDomain: "targetvet-b5f03.firebaseapp.com",
+    databaseURL: "https://targetvet-b5f03-default-rtdb.firebaseio.com/",
     projectId: "targetvet-b5f03",
     storageBucket: "targetvet-b5f03.appspot.com",
     messagingSenderId: "581361429049",

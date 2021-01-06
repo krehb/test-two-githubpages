@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Button, Image, Container, Accordion, Card, Spinner } from 'react-bootstrap';
+import { Image, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import products from '../../../products';
 import '../store.css'
+import InfoAccordion from './infoAccordion';
 
-export default function MyCard({data, group, addToCartHandler, cart, setCart }) {
+export default function MyCard({data, group, addToCartHandler, cart, instockArray }) {
 
 
     const [renderPrice, setRenderPrice] = useState();
@@ -11,11 +13,20 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
     const [show, setShow] = useState(false);
     const [loadSpinner, setLoadSpinner] = useState(false);
     const [qty, setQty] = useState(1);
+    const [accordion, setAccordion] = useState(false);
+    const [instock, setInstock] = useState(false)
 
     useEffect(() => {
         // Update the document title using the browser API
         setRenderPrice(data.price[1])
         setInfo(data.description)
+
+        instockArray.forEach(product => {
+            if (product.id === data.id && product.instock ){
+                setInstock(true) 
+            }
+        });
+
     },[]);
 
 
@@ -33,13 +44,13 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
     }
 
 
+    // Rendering different things
     let renderQty = null
     if(1 > qty){
         renderQty = 1
     }else {
         renderQty = qty
     }
-
     let renderCheckout = null
     if(cart.length > 0){
         renderCheckout = (
@@ -50,8 +61,35 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
     } else {
         renderCheckout = null
     }
-
-
+    let renderAccordion = null
+    if (accordion){
+        renderAccordion = (
+            <InfoAccordion data={data} />
+        )
+    } else {
+        renderAccordion = null
+    }
+    let expanded = null
+    if (accordion){
+        expanded = '-'
+    } else {
+        expanded = '+'
+    }
+    let renderInstock = null
+    if (!instock){
+        renderInstock = (
+            <div className='out-of-stock'  >
+                <h6 >Out of Stock</h6>
+            </div>
+        )
+    } else {
+        renderInstock = (
+            <>
+            <button className='add-to-cart-button'  onClick={() => combineAddtoCartHandler(data, qty)} >Add to Cart</button>
+            <span className='qty' onClick={() => setQty(qty + 1)}> +</span><span className='qty'> ({renderQty}) </span><span className='qty right' onClick={() => setQty(qty - 1)} >- </span>
+            </>
+        )
+    }
 
     const combineAddtoCartHandler = (data) => {
         let passingElement = {
@@ -68,6 +106,9 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
 
 
 
+
+
+
     //for adding a spinner for signaling that adding to cart has taken place
     let addingButton = null
     if (loadSpinner){
@@ -76,14 +117,8 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
         )
     } else {
         addingButton = (
-            <div>
-                <Row>
-                    <Col  sm={1} ></Col>
-                    <Col  >
-                        <button className='add-to-cart-button'  onClick={() => combineAddtoCartHandler(data, qty)} >Add to Cart</button>
-                        <span className='qty' onClick={() => setQty(qty + 1)}> +</span><span className='qty'> ({renderQty}) </span><span className='qty right' onClick={() => setQty(qty - 1)} >- </span>
-                    </Col>
-                </Row>
+            <div className='adding' >
+                {renderInstock}
             </div>
         )
     }
@@ -95,52 +130,25 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
 
     if( data.group === group ){
         productCard = (
-            <div>
-            <Accordion defaultActiveKey="0">
-            <Card>
-            <Card.Header>
-                <Row>
-                    <Col xs={8} >
-                        <Row>
-                            <Col xs={3} >
-                                <Image fluid src={data.img} />
-                            </Col>
-                            <Col xs={9} >
-                                <span className='title' >{data.title}</span><span> {data.test} tests</span>
-                                <h6 className='subtitle' >{data.subtitle}</h6>
-                                <Accordion.Toggle className='learn-more' as={Card.Header} eventKey="1">
-                                    Additional Info
-                                </Accordion.Toggle>
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col xs={4} className='product-buttons' >
-                        <Container>
-                        {addingButton}
-                        <Row>
-                        <Col  sm={1} ></Col>
-                        <Col>
-                            {renderCheckout}
-                        </Col>
-                        </Row>
-                        </Container>    
-                    </Col>
-                </Row>
-            </Card.Header>
-                    <Accordion.Collapse eventKey="1">
-                    <Card.Body>
-                    <span onClick={() => selectionCollapseHandler(data.description)} className={isSelected(data.description)} >Description</span>
-                    <span onClick={() => selectionCollapseHandler(data.info)} className={isSelected(data.info)} >Info</span>
-                    <span onClick={() => selectionCollapseHandler(data.highlights)} className={isSelected(data.highlights)} >Highlights</span>
-                    <span onClick={() => selectionCollapseHandler(data.instructions)} className={isSelected(data.instructions)} >Instruction</span>
-                    <div className='collapse-body'>
-                    {info.map(text => <p>{text}</p>)}
-                    </div>
-                    </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
-            </Accordion>
-            <br></br>
+
+        <div className='card-parent' >
+
+            <div className='child1' >
+                <Image className='img' src={data.img} />
+            </div>
+
+            <div className='child2' >
+                <h6 className='title' >{data.title}<span> {data.test} tests</span></h6>
+                <h6 className='subtitle' >{data.subtitle}</h6>
+                <h6 className='info' onClick={() => {setAccordion(!accordion)}} ><span className='button' >Additional Info</span><span className='plus' >{expanded}</span></h6>
+            </div>
+
+            <div className='child3' >
+                {addingButton}
+                <div className='child' >
+                    {renderCheckout}
+                </div>
+            </div>
         </div>
     )
     }else {
@@ -153,6 +161,7 @@ export default function MyCard({data, group, addToCartHandler, cart, setCart }) 
   return (
     <div>
         {productCard}
+        {renderAccordion}
     </div>
   );
 }

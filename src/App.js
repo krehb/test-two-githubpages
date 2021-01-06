@@ -4,6 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import firebase from 'firebase';
+
 import Store from './components/store/store';
 import Nav from './components/nav/nav';
 import Canine from './pages/canine';
@@ -17,16 +19,45 @@ import Cart from './components/cart/cart';
 import Checkout from './components/checkout/checkout';
 import Success from './components/checkout/payment/success';
 
+
+
 export default function App() {
 
+  // firebase requirements
+  const database = firebase.database();
+  const ref = database.ref('products');
 
-
-
+  // firebase products array for showing either product is in stock or not
+  const [instockArray, setInstockArray] = useState([]);
 
   const [category, setCategory] = useState('none');
   const [group, setGroup] = useState(1)
   const [cart, setCart] = useState([])
   const [priceTotal, setPriceTotal] = useState(0);
+  
+
+
+
+  useEffect(() => {
+    ref.on('value', gotDataHandler, errDataHandler);
+
+
+  },[])
+
+  const gotDataHandler = (data) => {
+    const dataBookings = data.val();
+    const keys = Object.keys(dataBookings);
+    for (let i = 0; i < keys.length; i ++){
+      let k = keys[i]
+      const list = dataBookings[k]
+      setInstockArray(instockArray => [...instockArray, list]);
+    }
+  }
+  const errDataHandler = (err) => {
+    console.log('Error!')
+    console.log(err)
+  }
+
 
   const categories = [
       {
@@ -72,8 +103,13 @@ export default function App() {
   },);
   
   const setCategoryHandler = (categorySelected) => {
+
+    if (categorySelected === 'none'){
+      setCategory('none')
+    } else {
       setCategory(categorySelected.name)
       setGroup(categorySelected.group)
+    }
   }
 
   const addToCartHandler = (itemSelected) => {
@@ -128,6 +164,7 @@ export default function App() {
   }
 
 
+
   return (
     <AuthProvider>
       <Router>
@@ -149,7 +186,8 @@ export default function App() {
               category={category} 
               addToCartHandler={addToCartHandler}
               cart={cart}
-              setCart={setCart} />
+              setCart={setCart}
+              instockArray={instockArray} />
             </Route>
             <Route path='/cart' >
               <Cart cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />

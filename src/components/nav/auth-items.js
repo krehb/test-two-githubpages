@@ -38,7 +38,7 @@ export default function AuthItems() {
         )
     } else {
         items = (
-            <div className='auth' >
+            <div className='auth no-hover' >
                 <Link className='auth-item' to='/sign-in' >
                     Sign In
                 </Link>

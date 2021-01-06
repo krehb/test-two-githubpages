@@ -6,7 +6,7 @@ import './store.css'
 
 
 
-const Store = ({products, group, categories, setCategoryHandler, category, addToCartHandler, cart, setCart}) => {
+const Store = ({products, group, categories, setCategoryHandler, category, addToCartHandler, cart, setCart, instockArray}) => {
 
 
   return (
@@ -16,8 +16,8 @@ const Store = ({products, group, categories, setCategoryHandler, category, addTo
                 <Col className='product-list' xs={2} >
                     <ProductList products={products} setCategoryHandler={setCategoryHandler} categories={categories}  />
                 </Col>
-                <Col xs={10} >
-                    <StoreFront products={products} cart={cart} setCart={setCart} group={group} categories={categories} setCategoryHandler={setCategoryHandler} category={category} addToCartHandler={addToCartHandler} />
+                <Col  >
+                    <StoreFront instockArray={instockArray} products={products} cart={cart} setCart={setCart} group={group} categories={categories} setCategoryHandler={setCategoryHandler} category={category} addToCartHandler={addToCartHandler} />
                 </Col>
             </Row>
         </Container>

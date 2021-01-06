@@ -17,20 +17,16 @@ const Cart = ({cart, clearCart, setCart, removeItemHandler, priceTotal}) => {
               // User is signed in.
               setLoggedIn(true)
               if (cart.length > 0){
-                  console.log('items in cart')
                   setPath('/checkout')
               } else {
-                  console.log('no items')
                   setPath('/store')
               }
             } else {
               // No user is signed in.
               setLoggedIn(false)
               if (cart.length > 0){
-                console.log('items in cart')
                 setPath('/sign-in')
               } else {
-                console.log('no items')
                 setPath('/store')
               }
             }
