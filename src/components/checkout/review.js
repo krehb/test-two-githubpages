@@ -1,7 +1,7 @@
 import React, {useState}  from 'react';
-import { Container, Col, Row, Image, Card } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import ReviewCard from './reviewCard';
-
+import {Link} from 'react-router-dom';
 
 
 const Review = ({cart}) => {
@@ -19,28 +19,17 @@ const Review = ({cart}) => {
 
 
   return (
-        <Col>
-            <Container>
-                <Row>
-                <Col>
-                    <Card >
-                    <Card.Body>
-                        <Row>
-                        <Col xs={3}>
-                        <h3>Review Order</h3>
-                        </Col>
-                        <Col xs={9} >
-                        <Container fluid>
-                            {cart.map( x => <ReviewCard x={x} key={x.id} /> )}
-                        </Container>
-                        </Col>
-                        </Row>
-                    </Card.Body>
-                    </Card> 
-                </Col>
-                </Row>
-            </Container>
-        </Col>
+    <div className='review' >
+        <div>
+        <h3>Review Order</h3>
+
+        {cart.map( x => <ReviewCard x={x} key={x.id} /> )}
+
+        <Link to='/cart' >
+            <Button>Back to Cart</Button>
+        </Link>
+        </div>
+    </div>
   );
 }
 

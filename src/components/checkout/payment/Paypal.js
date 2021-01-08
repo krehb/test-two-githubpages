@@ -56,6 +56,8 @@ export default function Paypal( {cart, priceTotal} ) {
         });
         setSendingCart(newArray.join(' '))
 
+        let total = priceTotal
+
 
 
         //sending payment through paypal
@@ -68,7 +70,7 @@ export default function Paypal( {cart, priceTotal} ) {
                             description: "Cool and accurate kit",
                             amount: {
                                 currency_code: 'USD',
-                                value: 1 
+                                value: priceTotal
                             }  
                         }
                     ]

@@ -46,24 +46,24 @@ const CartItem = ({item,removeItemHandler, setCart, cart}) => {
   return (
     <tr>
         <td>
-            <Image src={item.img} width='100px' />
+            <Image className='cart-img' src={item.img}  />
         </td>
         <td>
             <Row>
             <Col xs={10} >
                 <Row>
                     <Col>
-                    <h6>{item.title}</h6>
+                        <h6 className='cart-title' >{item.title}</h6>
                     </Col> 
                 </Row>
                 <Row>
                     <Col>
-                    <h6>{item.subtitle}</h6>
+                        <h6 className='cart-title'>{item.subtitle}</h6>
                     </Col> 
                 </Row>
                 <Row>
                     <Col>
-                    <h6>({item.qty * item.test}) {units}</h6>
+                    <h6 className='cart-title'>({item.qty * item.test}) {units}</h6>
                     </Col> 
                 </Row>
             </Col>

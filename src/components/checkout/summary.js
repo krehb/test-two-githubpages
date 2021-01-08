@@ -59,8 +59,8 @@ const Summary = ({priceTotal, cart}) => {
         } else {
             console.log('no items in the cart')
         }
-
     }
+
 
     let buyButton = null
 
@@ -79,62 +79,52 @@ const Summary = ({priceTotal, cart}) => {
 
 
   return (
-        <Col>
-            <Container fluid className='shipping' >
-                <Row>
-                <Col>
-                    <Card >
-                    <Card.Body>
-                        <Container fluid>
-                        <Row>
-                            <Col>
-                                <h4>Summary</h4>
-                            </Col>
-                        </Row>  
-                        <Row>
-                            <Col>
-                               <span className='bold' >({cart.length})</span> item(s)
-                            </Col>
-                            <Col>
-                                ${priceTotal}
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                Shipping
-                            </Col>
-                            <Col>
-                                $0
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                Tax
-                            </Col>
-                            <Col>
-                                $0
-                                <hr></hr>
-                            </Col>
-                        </Row>
-                        <Row>
-                        <Col>
-                                Total
-                            </Col>
-                            <Col>
-                                ${priceTotal}
-                            </Col>
-                        </Row>
-                        <br></br>
-                        <Row>
-                            {buyButton}
-                        </Row>
-                        </Container>
-                    </Card.Body>
-                    </Card> 
-                </Col>
-                </Row>
-            </Container>
-        </Col>
+        <div className='summary' >
+            <div className='parent' >
+                <div className='child' >
+                    Summary
+                </div>
+            </div>
+
+            <div className='parent2' >
+                <div className='child1' >
+                    <div className='child-text' >             
+                        <span className='bold' >({cart.length})</span> item(s)
+                    </div>
+                    <div className='child-text' >
+                        Shipping
+                    </div>
+                    <div className='child-text' >
+                        Tax
+                    </div>
+                    <div className='child-text' >
+                        Total
+                    </div>
+                </div>
+
+                <div className='child2' >
+                    <div className='child-text' >             
+                        ${priceTotal}
+                    </div>
+                    <div className='child-text' >
+                        $0
+                    </div>
+                    <div className='child-text' >
+                        $0
+                    </div>
+                    <div className='child-text' >
+                        ${priceTotal}
+                    </div>
+                </div>
+            </div>
+
+            <div className='parent3' >
+                <div  className='child' >
+                    {buyButton} 
+                </div>
+            </div>
+
+        </div>
   );
 }
 
