@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import firebase from 'firebase';
 import app from './base';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
@@ -8,6 +9,26 @@ import emailjs from 'emailjs-com';
 
 const SignUp = ({ history }) => {
 
+    const db = firebase.firestore();
+
+    const [firebaseUid, setFirebaseUid] = useState();
+    const [userName, setUserName] = useState();
+
+    useEffect(() => {
+        // Update the document title using the browser API
+
+        app.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+                setFirebaseUid(user.uid);
+            } else {
+              // No user is signed in.
+
+            }
+        });
+    },[]);
+
+
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
 
@@ -15,16 +36,24 @@ const SignUp = ({ history }) => {
         try {
             await app
                 .auth()
-                .createUserWithEmailAndPassword(email.value, password.value, );
-            history.push('/');
+                .createUserWithEmailAndPassword(email.value, password.value).then(cred => {
+                    return db.collection('users').doc(cred.user.uid).set({
+                        name: userName
+                    })
+                })
+            console.log('sent')
+
+            // history.push('/');
         } catch (error) {
             alert(error);
         }
 
         //send the welcome email from emailjs
-        sendWelcomeEmail(event);
+        // sendWelcomeEmail(event);
 
     }, [history]);
+
+
 
 
     const sendWelcomeEmail = (e) => {
@@ -48,7 +77,7 @@ const SignUp = ({ history }) => {
                         <Form.Group controlId="formBasicName">
                             <h1>Create Account</h1>
                             <Form.Label>Name</Form.Label>
-                            <Form.Control name='name' type="text" placeholder="Enter name" />
+                            <Form.Control onChange={(e) => {setUserName(e.target.value)}} name='name' type="text" placeholder="Enter name" />
                         </Form.Group>
 
                         <Form.Group controlId="formBasicEmail">

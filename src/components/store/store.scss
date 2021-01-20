@@ -580,6 +580,167 @@ $medium: 900px;
 }
 
 
+.account {
+    background-color:     rgb(230, 230, 230);
+    border: 1px solid rgb(238, 238, 238);
+    color: rgb(104, 104, 104);
+    border-radius: 5px;
+    margin: 20px 20% 20px 20%;
+    padding: 20px;
+    @media screen and (max-width: $small) {
+        margin: 5px
+    }
+    display: flex;
+    flex-direction: column;
+    .account-top {
+        display: flex;
+        .account-head {
+            display: flex;
+            flex-direction: column;
+            color: rgb(255, 255, 255);
+            text-align: center;
+    
+            .head-title {
+                padding: 10px;
+                background-color: #297ca3;
+                border-bottom: solid 1px white;
+            }
+            .top {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+            .bottom {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
+        }
+        .account-body {
+            margin-left: 30px;
+            text-align: center;
+            .head-title {
+                padding: 10px;
+                background-color: white;
+                h6 {
+                    padding-top: 5px;
+                    font-size: 14px;
+                    .email {
+                        font-style: italic;
+                        font-size: 12px;
+                        padding-left: 40px;
+                        @media screen and (max-width: $small) {
+                            padding-left: 20px;
+                        }
+                    }
+                }
+                .edit-address {
+                    display: flex;
+                    .edit-label {
+                        justify-content: space-evenly   ;
+                        display: flex;
+                        flex-direction: column;
+                        .label{
+                            padding: 0px 10px 0px 10px;
+                            border: solid 1px rgb(146, 146, 146);
+                            border-radius: 10px;
+                        }
+                    }
+                    .edit-input {
+                        display: flex;
+                        flex-direction: column;
+                        .input {
+                            border: none;
+                        }
+                        ::placeholder {
+                            font-size: 12px;
+                            text-align: center;
+                            border: none;
+                        }
+                        :placeholder-shown {
+                            border-radius: 10px;
+                        }
+                        
+                        input:focus {
+                            background-color: rgb(233, 233, 233);
+                            border: none;
+                            border-radius: 10px;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+            .top {
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                border-bottom: solid 1px rgb(104, 104, 104);
+            }
+            .bottom {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+                .change-address {
+                    padding: 3px;
+                    border: solid 1px rgb(104, 104, 104);
+                    background-color: yellow;
+                    cursor: pointer;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .order-history {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        border-radius: 5px;
+
+
+        .title {
+            padding-top: 8px;
+            padding-left: 10px;
+            
+            .date {
+                font-style: italic;
+                font-size: 14px;
+            }
+        }
+
+        .details {
+            cursor: pointer;
+            padding-right: 10px;
+            &:hover {
+                font-style: italic;
+                text-decoration: underline;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .table-details {
+        background-color: #ffffffea;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        @media screen and (max-width: $small) {
+            width: 50%;
+            font-size: 12px;
+            h6 {
+                font-size: 12px;
+            }
+        }
+        .order-img {
+            width: 100px;
+            @media screen and (max-width: $small) {
+                width: 80px;
+            }
+        }
+    }
+
+}
+
+
+
+
 .bold{
     font-weight: 700;
 }

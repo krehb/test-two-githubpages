@@ -6,18 +6,27 @@ import {
 } from "react-router-dom";
 import firebase from 'firebase';
 
-import Store from './components/store/store';
-import Nav from './components/nav/nav';
+//pages
 import Canine from './pages/canine';
 import Equine from './pages/equine';
 import Home from './pages/home';
-import { AuthProvider } from './config/Auth';
-import SignUp from './config/SignUp';
-import Login from './config/Login';
-import products from './products';
+import AccountInfo from './pages/AccountPage/accountInfoPage';
+
+//components
+import Store from './components/store/store';
+import Nav from './components/nav/nav';
 import Cart from './components/cart/cart';
 import Checkout from './components/checkout/checkout';
 import Success from './components/checkout/payment/success';
+
+//config
+import { AuthProvider } from './config/Auth';
+import SignUp from './config/SignUp';
+import Login from './config/Login';
+
+
+import products from './products';
+
 
 
 
@@ -203,6 +212,9 @@ export default function App() {
             </Route>
             <Route path='/success' >
               <Success setCart={setCart} />
+            </Route>
+            <Route path='/account' >
+              <AccountInfo cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
             </Route>
             <Route exact path='/' >
               <Home/>

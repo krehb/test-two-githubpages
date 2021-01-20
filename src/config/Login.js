@@ -13,8 +13,10 @@ const Login = ({ history }) => {
             try {
                 await app
                     .auth()
-                    .signInWithEmailAndPassword(email.value, password.value);
-                history.push('/');
+                    .signInWithEmailAndPassword(email.value, password.value).then(cred => {
+                        // console.log(cred.user.uid)
+                    })
+                history.push('/account');
             } catch (error) {
                 alert(error);
             }

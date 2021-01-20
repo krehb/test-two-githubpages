@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import app from '../../config/base';
+import firebase from 'firebase';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AuthItems from './auth-items';
@@ -7,8 +9,24 @@ import TopAuthItems from './top-auth-items';
 
 const Nav = (cart) => {
 
-    let navCart = null
+    const db = firebase.firestore();
+    
+    const [loggedIn, setLoggedIn] = useState(false);
 
+    useEffect(() => {
+        // Update the document title using the browser API
+        app.auth().onAuthStateChanged(function(user) {
+            if (user) {
+              // User is signed in.
+               setLoggedIn(true)
+            } else {
+              // No user is signed in.
+              setLoggedIn(false)
+            }
+        });
+    },[]);
+
+    let navCart = null
     if(cart.cart.length === 0){
         navCart = null
     } else {
@@ -18,7 +36,14 @@ const Nav = (cart) => {
             </Link>
         )
     }
-
+    let navAccount = null
+    if(loggedIn){
+        navAccount = (
+            <Link className='my-nav-item' to='/account' >
+                Your Account
+            </Link>
+        )
+    } else { navAccount = null}
 
 
   return (
@@ -57,6 +82,9 @@ const Nav = (cart) => {
                         </div>
                         <div className='nav-child-list no-hover' >
                             {navCart}
+                        </div>
+                        <div className='nav-child-list no-hover' >
+                            {navAccount}
                         </div>
                     </div>
                 </div>

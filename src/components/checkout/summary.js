@@ -5,24 +5,40 @@ import app from '../../config/base';
 import firebase from 'firebase';
 import emailjs from 'emailjs-com';
 import Paypal from './payment/Paypal';
+import moment from 'moment';
 
 
 const Summary = ({priceTotal, cart}) => {
 
+    const db = firebase.firestore();
+
     const [currentUser, setCurrentUser] = useState('no email yet');
     const [sendingCart, setSendingCart] = useState('');
     const [spinner, setSpinner] = useState(false);
-
+    const [orders, setOrder] = useState(['']);
+    const [userId, setUserId] = useState('')
 
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
             setCurrentUser(user);
+            setUserId(user.uid)
+            db.collection('users').doc(user.uid).get().then( doc => {
+                let numOfOrders = doc.data().orderCount
+                console.log(numOfOrders)
+                setOrder(numOfOrders)
+            })
         })
         let newArray = []
         cart.forEach(item => {
             newArray.push(` ${item.title} ${item.subtitle} ${item.test * item.qty} tests for $${item.price * item.qty}.00    |`)
         });
         setSendingCart(newArray.join(' '))
+
+        setOrder(orders => [...orders, cart]);
+
+
+
+
     }, [])
 
     //going to success page after payment
@@ -60,6 +76,28 @@ const Summary = ({priceTotal, cart}) => {
             console.log('no items in the cart')
         }
     }
+
+
+
+    
+
+
+    // fake button test to show order's history
+    const fakePayHandler = () => {
+
+        db.collection('users').doc(userId).set({
+            orderCount: orders + 1,
+            name: 'James Krehbiel',
+            address: '1207 s Busey'
+        })
+        db.collection('users').doc(userId).collection('orders').add({
+            order: cart,
+            timeStamp: moment().format('MM/DD/YY h:mm:ss a')
+        }) 
+        console.log('fake paid, add order to database');
+        history.push("/success");
+    }
+
 
 
     let buyButton = null
@@ -122,6 +160,9 @@ const Summary = ({priceTotal, cart}) => {
                 <div  className='child' >
                     {buyButton} 
                 </div>
+            </div>
+            <div>
+                <button onClick={fakePayHandler} >Fake Pay</button>
             </div>
 
         </div>
