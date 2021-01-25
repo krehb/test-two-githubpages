@@ -208,9 +208,47 @@ $medium: 900px;
             .img-gallery-col {
                 margin-left: 50px;
                 width: 200px;
+                .img-cat-1 {
+                    background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+                .img-cat-2 {
+                    background-image: url('../../assets/img/products/igg-cube-10.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+                .img-cat-3 {
+                    background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+                .img-cat-4 {
+                    background-image: url('../../assets/img/products/igg-cube-10.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+                .img-cat-5 {
+                    background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
+                .img-cat-6 {
+                    background-image: url('../../assets/img/products/igg-cube-10.jpg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: cover;
+                }
                 .img-gallery-text {
                     color: white;
-                    text-shadow: 1px 1px 1px #424242;
+                    border-radius: 15px;
+                    width: 200px;
+                    height: 160px;
                     text-align: center;
                     padding-top: 20px;
                     padding-left: 10px;
@@ -409,10 +447,15 @@ $medium: 900px;
         .img {
             height: 150px;
             width: auto;
-            background-image: url('./husky.jpg');
             background-position: center;
             border-radius: 10px;
             background-size: cover;
+        }
+        .img-front {
+            background-image: url('./husky.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
         }
     }
 }

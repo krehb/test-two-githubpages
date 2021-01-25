@@ -7,7 +7,7 @@ import AuthItems from './auth-items';
 import { AuthProvider } from '../../config/Auth';
 import TopAuthItems from './top-auth-items';
 
-const Nav = (cart) => {
+const Nav = ({cart, setCategory}) => {
 
     const db = firebase.firestore();
     
@@ -27,12 +27,12 @@ const Nav = (cart) => {
     },[]);
 
     let navCart = null
-    if(cart.cart.length === 0){
+    if(cart.length === 0){
         navCart = null
     } else {
         navCart = (
             <Link className='my-nav-item' to='/cart' >
-            Cart({cart.cart.length})
+            Cart({cart.length})
             </Link>
         )
     }
@@ -76,7 +76,7 @@ const Nav = (cart) => {
                             </Link>
                         </div>
                         <div className='nav-child-list no-hover ' >
-                            <Link className='my-nav-item' to='/store' >
+                            <Link onClick={() => setCategory('none')} className='my-nav-item' to='/store' >
                             Store
                             </Link>
                         </div>

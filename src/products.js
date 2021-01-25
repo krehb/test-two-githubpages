@@ -2,7 +2,7 @@ const products = [
     {
         title: 'Target Progesterone',
         subtitle: 'Visual Canine Ovulation Timing Kit',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/canine-ovulation-kit-12.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/canine-ovulation-kit-12.jpg',
         type: 'canine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 146,
@@ -29,7 +29,7 @@ const products = [
         subtitle: 'Visual Canine Ovulation Timing Kit',
         stripeCode: 'price_1HvsdfQBWCWofh7chuJQxv19c5zB',
         price: 90,
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/canine-ovulation-kit-6.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/canine-ovulation-kit-6.jpg',
         type: 'canine',
         test: 6,
         group: 1,
@@ -352,7 +352,7 @@ const products = [
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
         subtitle: 'Visual-Semi-Quantitative with Color',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/igg-visual-10.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/igg-visual-10.jpg',
         type: 'equine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 150,
@@ -377,7 +377,7 @@ const products = [
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
         subtitle: 'Visual-Semi-Quantitative with Color',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/igg-visual-5.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/igg-visual-5.jpg',
         type: 'equine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 90,
@@ -402,7 +402,7 @@ const products = [
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
         subtitle: 'Quantitative Kit + Cube Reader',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/igg-cube-10.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/igg-cube-10.jpg',
         type: 'equine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 550,
@@ -427,7 +427,7 @@ const products = [
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
         subtitle: 'Quantitative Kit + Cube Reader',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/igg-cube-5.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/igg-cube-5.jpg',
         type: 'equine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 490,
@@ -452,7 +452,7 @@ const products = [
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
         subtitle: 'kit refill',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/igg-refill-10.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/igg-refill-10.jpg',
         type: 'equine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 150,
@@ -477,7 +477,7 @@ const products = [
     {
         title: 'Equine Immuno-Chek G Foal IgG Kit',
         subtitle: 'kit refill',
-        img: 'https://storage.googleapis.com/www.inputllc.net/assets/igg-refill-5.jpg',
+        img: 'https://storage.googleapis.com/www.inputllc.net/products/igg-refill-5.jpg',
         type: 'equine',
         stripeCode: 'price_1HvsdfQBWCWoh7chuJQxv19c5zB',
         price: 90,

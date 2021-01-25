@@ -240,9 +240,53 @@
   width: 200px;
 }
 
+.store .storefront-gallery .img-group .img-gallery-col .img-cat-1 {
+  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.store .storefront-gallery .img-group .img-gallery-col .img-cat-2 {
+  background-image: url("../../assets/img/products/igg-cube-10.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.store .storefront-gallery .img-group .img-gallery-col .img-cat-3 {
+  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.store .storefront-gallery .img-group .img-gallery-col .img-cat-4 {
+  background-image: url("../../assets/img/products/igg-cube-10.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.store .storefront-gallery .img-group .img-gallery-col .img-cat-5 {
+  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.store .storefront-gallery .img-group .img-gallery-col .img-cat-6 {
+  background-image: url("../../assets/img/products/igg-cube-10.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .store .storefront-gallery .img-group .img-gallery-col .img-gallery-text {
   color: white;
-  text-shadow: 1px 1px 1px #424242;
+  border-radius: 15px;
+  width: 200px;
+  height: 160px;
   text-align: center;
   padding-top: 20px;
   padding-left: 10px;
@@ -507,10 +551,16 @@
 .store .storefront .img {
   height: 150px;
   width: auto;
-  background-image: url("./husky.jpg");
   background-position: center;
   border-radius: 10px;
   background-size: cover;
+}
+
+.store .storefront .img-front {
+  background-image: url("./husky.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .cart {

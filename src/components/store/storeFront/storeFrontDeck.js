@@ -65,7 +65,7 @@ const StoreFrontDeck = ({products, category, group, addToCartHandler, cart, setC
   return (
     <div >
         <div>
-            <div className="bg-dark text-white my-card img ">
+            <div className="bg-dark text-white my-card img-front ">
                 <h2 className='text' >{category}</h2>
             </div>
             {filterButtons}

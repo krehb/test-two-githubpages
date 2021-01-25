@@ -1,0 +1,220 @@
+.home {
+  background-color: blueviolet;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.home .col-top {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.home .col-top .col-top-left {
+  background-color: #FAEEC8;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  color: #317C97;
+  padding-left: 10%;
+}
+
+.home .col-top .col-top-left .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+}
+
+.home .col-top .col-top-left .text .text-1 {
+  margin-top: 50px;
+  font-stretch: ultra-condensed;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.home .col-top .col-top-left .text .text-2 {
+  font-size: 50px;
+  font-stretch: ultra-condensed;
+  font-weight: 600;
+}
+
+.home .col-top .col-top-left .text-3 {
+  margin-bottom: 100px;
+  margin-top: 20px;
+  font-size: large;
+}
+
+.home .col-top .col-top-right {
+  width: 50%;
+  height: 310px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-image: url("../assets/img/home/horse-dog.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1500px) {
+  .home .col-top .col-top-right {
+    width: 45%;
+    height: 510px;
+  }
+}
+
+.home .col-mid {
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.home .col-mid .mid-head {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  color: #317C97;
+  font-size: 36px;
+  font-stretch: ultra-condensed;
+  font-weight: 600;
+}
+
+.home .col-mid .underline-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #317C97;
+  height: 5px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home .col-mid .mid-body {
+  padding: 30px 100px 30px 100px;
+}
+
+@media screen and (max-width: 500px) {
+  .home .col-mid .mid-body {
+    padding: 10px;
+  }
+}
+
+.home .col-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #BEC8D4;
+  padding-bottom: 20px;
+}
+
+.home .col-bottom .cols {
+  width: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+.home .col-bottom .cols img {
+  width: 100px;
+}
+
+.home .col-bottom .cols .head {
+  margin-bottom: 10px;
+  color: #317C97;
+  font-size: 36px;
+  font-stretch: ultra-condensed;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.home .col-bottom .cols .product-link {
+  padding: 10px 0px 10px 0px;
+  color: #3b3b3b;
+  cursor: pointer;
+}
+
+.home .col-bottom .cols .product-link:hover {
+  text-decoration: none;
+  color: #D16000;
+}
+
+.home .col-bottom .cols .underline-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #317C97;
+  height: 1px;
+  width: 100px;
+  margin: 10px auto 10px auto;
+}
+
+.home .col-bottom .cols button {
+  background-color: #D16000;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  margin: 0px 100px 0px 100px;
+  padding: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .home .col-bottom .cols button {
+    margin: 0px 10px 0px 10px;
+  }
+}
+
+.home .col-bottom .cols button:hover {
+  text-decoration: none;
+  background-color: #b65500;
+}
+
+.home .col-bottom .cols button:focus {
+  background-color: #51779b;
+  border: none;
+  outline: none;
+}
+/*# sourceMappingURL=pages.css.map */

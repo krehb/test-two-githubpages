@@ -15,6 +15,7 @@ import AccountInfo from './pages/AccountPage/accountInfoPage';
 //components
 import Store from './components/store/store';
 import Nav from './components/nav/nav';
+import Footer from './components/footer/footer';
 import Cart from './components/cart/cart';
 import Checkout from './components/checkout/checkout';
 import Success from './components/checkout/payment/success';
@@ -73,36 +74,42 @@ export default function App() {
         name: 'Target Canine Progesterone',
         group: 1,
         type: 'Canine',
+        class: 'img-cat-1',
         id: 124,
       },
       {
         name: 'Equine IgG',
         group: 5,
         type: 'Equine',
+        class: 'img-cat-2',
         id: 123,
       },
       {
         name: 'Equine SAA',
         group: 6,
         type: 'Equine',
+        class: 'img-cat-3',
         id: 154,
       },        
       {
           name: 'Canine Pregnancy Relaxin',
           group: 3,
           type: 'Canine',
+          class: 'img-cat-4',
           id: 224,
       },
       {
           name: 'Equine P4 Quick Progesterone',
           group: 4,
           type: 'Equine',
+          class: 'img-cat-5',
           id: 824,
       },
       {
           name: 'Canine Quick P4 Progesterone',
           group: 2,
           type: 'Canine',
+          class: 'img-cat-6',
           id: 924,
       }
   ]
@@ -178,7 +185,7 @@ export default function App() {
     <AuthProvider>
       <Router>
         <div>
-          <Nav cart={cart} />
+          <Nav cart={cart} setCategory={setCategory} />
           <Switch>
             <Route path="/canine">
               <Canine />
@@ -221,6 +228,7 @@ export default function App() {
             </Route>
             {/* <PrivateRoute exact path='/' component={Home} /> */}
           </Switch>
+          <Footer />
         </div>
       </Router>
     </AuthProvider>
