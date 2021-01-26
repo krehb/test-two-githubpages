@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import app from '../../config/base';
 
 
 export default function AuthItems() {
 
     const [loggedIn, setLoggedIn] = useState(false);
+    const [currentUrl, setCurrentUrl] = useState('');
 
 
+    let location = useLocation();
+
+    
 
     useEffect(() => {
         // Update the document title using the browser API
+
+        setCurrentUrl(location.pathname)
 
         app.auth().onAuthStateChanged(function(user) {
             if (user) {
@@ -23,7 +29,7 @@ export default function AuthItems() {
             }
         });
 
-    },[]);
+    },[location]);
 
 
     let items = null
@@ -50,10 +56,18 @@ export default function AuthItems() {
     }
 
 
+    let renderItems = null
+    if(currentUrl === '/canine' || currentUrl === '/equine'){
+        renderItems = null
+    }else {
+        renderItems = items
+    }
+
+
 
   return (
     <div className='auth-bottom' >
-        {items}
+        {renderItems}
     </div>
   );
 }

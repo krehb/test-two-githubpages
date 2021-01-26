@@ -1,8 +1,7 @@
 import React  from 'react';
 import Review from './review';
 import Summary from './summary';
-import { Button} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import Shipping from './shippingAddress';
 
 
 const Checkout = ({cart, priceTotal }) => {
@@ -13,6 +12,7 @@ const Checkout = ({cart, priceTotal }) => {
         <div>
             <div className='checkout-parent' >
                 <div>
+                    <Shipping/>
                     <Review cart={cart} priceTotal={priceTotal} />
                 </div>
                 <div className='child' >

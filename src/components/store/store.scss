@@ -148,7 +148,7 @@ $medium: 900px;
 //Store
 .store {
     margin-top: 20px;
-
+    margin-bottom: 12%;
 
     //Filter Products on Left hand side
     .product-list {
@@ -195,6 +195,9 @@ $medium: 900px;
 
 
     .storefront-gallery {
+
+        margin-bottom: 10%;
+
         .header {
             color: $targetvetdarkblue;
             text-align: center;
@@ -452,7 +455,7 @@ $medium: 900px;
             background-size: cover;
         }
         .img-front {
-            background-image: url('./husky.jpg');
+            background-image: url('../../assets/img/siberian-huskies-play-with-pup-3-1024x682.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -467,6 +470,7 @@ $medium: 900px;
 .cart {
 
     margin-top: 20px;
+    margin-bottom: 28%;
 
     .cart-img {
         width: 100px;
@@ -507,6 +511,7 @@ $medium: 900px;
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 18%;
 
     .review {
         @media screen and (max-width: $small) {
@@ -707,6 +712,7 @@ $medium: 900px;
                             border: none;
                             border-radius: 10px;
                             outline: none;
+                            text-align: center;
                         }
                     }
                 }
@@ -719,6 +725,7 @@ $medium: 900px;
             .bottom {
                 border-bottom-left-radius: 8px;
                 border-bottom-right-radius: 8px;
+                text-transform: capitalize;
                 .change-address {
                     padding: 3px;
                     border: solid 1px rgb(104, 104, 104);
@@ -783,6 +790,57 @@ $medium: 900px;
 
 
 
+
+
+
+
+
+//for the checkout address form field (copied from accountInfoPage.js styling)
+
+.edit-address {
+    display: flex;
+    .edit-label {
+        justify-content: space-evenly   ;
+        display: flex;
+        flex-direction: column;
+        .label{
+            padding: 0px 10px 0px 10px;
+            border: solid 1px rgb(146, 146, 146);
+            border-radius: 10px;
+        }
+    }
+    .edit-input {
+        display: flex;
+        flex-direction: column;
+        .input {
+            border: none;
+        }
+        ::placeholder {
+            font-size: 12px;
+            text-align: center;
+            border: none;
+        }
+        :placeholder-shown {
+            border-radius: 10px;
+        }
+        
+        input:focus {
+            background-color: rgb(233, 233, 233);
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            text-align: center;
+        }
+    }
+}
+.change-address {
+    padding: 3px;
+    border: solid 1px rgb(104, 104, 104);
+    background-color: yellow;
+    cursor: pointer;
+    font-size: 10px;
+    text-transform: uppercase;
+}
 
 .bold{
     font-weight: 700;

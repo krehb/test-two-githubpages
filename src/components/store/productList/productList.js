@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import '../store.css';
 import { Form} from 'react-bootstrap';
 
-const ProductList = ({categories, setCategoryHandler}) => {
+const ProductList = ({categories, setCategoryHandler, setAccordion}) => {
 
   const [list, setList] = useState(categories)
 
@@ -24,7 +24,10 @@ const ProductList = ({categories, setCategoryHandler}) => {
 
 
 
-
+  const selectingCategoryHandler = (x) => {
+    setAccordion(false);
+    setCategoryHandler(x);
+  }
 
 
 
@@ -37,7 +40,7 @@ const ProductList = ({categories, setCategoryHandler}) => {
           <option>Equine</option>
         </Form.Control>
         {list.map(x => 
-            <h6 className='product-title' onClick={()=>setCategoryHandler(x)} key={x.id} >{x.name}</h6>
+            <h6 className='product-title' onClick={()=>selectingCategoryHandler(x)} key={x.id} >{x.name}</h6>
         )}
     </div>
   );

@@ -1,127 +1,97 @@
-import React, {useState}  from 'react';
-import { Container, Col, Row, Button, Form, Card } from 'react-bootstrap';
+import React, {useState, useEffect}  from 'react';
+import firebase from 'firebase';
+import app from '../../config/base';
+import { Button } from 'react-bootstrap';
 
 
+const Shipping = () => {
 
-
-const Shipping = ({cart, clearCart, removeItemHandler}) => {
-
-    const [name, setName] = useState();
-    const [address, setAddress] = useState();
-    const [city, setCity] = useState();
-    const [state, setState] = useState();
-    const [zip, setZip] = useState();
-    const [change, setChange] = useState(false);
-
-
-    const saveAddressHandler = () => {
-        console.log(name, address, city, state, zip)
-        setChange(false)
-    }
-
-    let shipping = null
-
-    if(change){
-        shipping = (
-            <Container className='shipping' >
-            <Row>
-            <Col>
-                <h2>Shipping Address</h2>
-            </Col>
-            </Row>
-            <Row>
-            <Col>
-                <Form>
-                    <Form.Group controlId="formGridname">
-                        <Form.Label>Full Name</Form.Label>
-                        <Form.Control onChange={(e)=> setName(e.target.value)} type="name" placeholder="Full Name" />
-                    </Form.Group>
-
-                    <Form.Group controlId="formGridAddress1">
-                        <Form.Label>Address</Form.Label>
-                        <Form.Control onChange={(e)=> setAddress(e.target.value)} placeholder="1234 Main St" />
-                    </Form.Group>
-
-                    <Form.Row>
-                        <Form.Group as={Col} controlId="formGridCity">
-                        <Form.Label>City</Form.Label>
-                        <Form.Control onChange={(e)=> setCity(e.target.value)} />
-                        </Form.Group>
-
-                        <Form.Group as={Col} controlId="formGridState">
-                        <Form.Label>State</Form.Label>
-                        <Form.Control onChange={(e)=> setState(e.target.value)} as="select" defaultValue="Choose...">
-                            <option>Choose...</option>
-                            <option>IL</option>
-                        </Form.Control>
-                        </Form.Group>
-
-                        <Form.Group as={Col} controlId="formGridZip">
-                        <Form.Label>Zip</Form.Label>
-                        <Form.Control onChange={(e)=> setZip(e.target.value)} />
-                        </Form.Group>
-                    </Form.Row>
-{/* 
-                    <Form.Group id="formGridCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group> */}
-
-                    <Button variant="primary" onClick={() => saveAddressHandler()} >
-                        Save
-                    </Button>
-                </Form>
-            </Col>
-            </Row>
-            </Container>
-        )
-    } else {
-        shipping = (
-            <Container className='shipping' >
-                <Row>
-                <Col>
-                    <Card >
-                    <Card.Body>
-                        <Row>
-                        <Col>
-                        <h3>Shipping Address</h3>
-                        </Col>
-                        <Col>
-                        <Container>
-                            <Row>
-                                <Col>
-                                {name}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                {address}, {state}, {zip}
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col>
-                                    add delivery instructions
-                                </Col>
-                            </Row>
-                        </Container>
-                        </Col>
-                        <Col>
-                        <button onClick={() => setChange(true)} >Change</button>
-                        </Col>
-                        </Row>
-                    </Card.Body>
-                    </Card> 
-                </Col>
-                </Row>
-            </Container>
-        )
-    }
+  const db = firebase.firestore();
     
+  const [userData, setUserData] = useState('');
+  const [userId, setUserId] = useState('');
+  const [edit, setEdit] = useState(false);
+  const [renderedAddress, setRenderedAddress] = useState('')
+
+  const [street, setStreet] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [zip, setZip] = useState('')
+  const [country, setCountry] = useState('')
+
+
+
+  useEffect(() => {
+      app.auth().onAuthStateChanged((user) => {
+          setUserId(user.uid)
+          db.collection('users').doc(user.uid).get().then( doc => {
+              let currentUserData = doc.data()
+              setUserData(currentUserData)
+              setRenderedAddress(currentUserData.address)
+          })
+      })
+  }, [])
+
+
+  const saveEditingHandler = () => {
+    console.log('clicked, saving...')
+
+    let savedText = `${street}, ${city}, ${state}, ${zip}, ${country}`
+
+    setRenderedAddress(savedText)
+
+    db.collection('users').doc(userId).set({
+        orderCount: userData.orderCount,
+        name: userData.name,
+        address: savedText,
+    })
+
+    setEdit(false)
+
+  }
+
+
+  let renderAddressForm = null
+
+  if (edit) {
+    renderAddressForm = (
+      <div>
+          <div className='edit-address' >
+              <div className='edit-label' >
+                  <div className='label' >Street</div>
+                  <div className='label'>City</div>
+                  <div className='label'>State/Province</div>
+                  <div className='label'>Zip</div>
+                  <div className='label'>Country</div>
+              </div>
+              <div className='edit-input'>
+                  <input className='input' onChange={(e) => setStreet(e.target.value)} placeholder='123 Main St.' />
+                  <input className='input' onChange={(e) => setCity(e.target.value)} placeholder='Springfield' />
+                  <input className='input' onChange={(e) => setState(e.target.value)} placeholder='New Jersey' />
+                  <input className='input' onChange={(e) => setZip(e.target.value)} placeholder='61215' />
+                  <input className='input' onChange={(e) => setCountry(e.target.value)} placeholder='United States' />
+              </div>
+          </div>
+          <span className='change-address' onClick={() => setEdit(false)}  >back</span>
+          <span className='change-address' onClick={saveEditingHandler}  >Save</span>
+      </div>
+    )
+  } else {
+    renderAddressForm = (
+      <div>
+        {renderedAddress}
+        <Button onClick={() => setEdit(true)} >edit</Button>
+      </div>
+    )
+  }
+
 
 
   return (
-        <Col>
-            {shipping}
-        </Col>
+    <div>
+        <h3>Shipping</h3>
+        {renderAddressForm}
+    </div>
   );
 }
 

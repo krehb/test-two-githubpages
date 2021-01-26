@@ -13,28 +13,48 @@ export default function Canine(products) {
 
 
   return (
+    <div>
+    <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav ">
+      <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul className="navbar-nav align-items-center">
+            <li className="nav-item my-item">
+                <a className="nav-link"  >Target Progesterone (Visual)</a>
+            </li>
+            <li className="nav-item my-item">
+                <a className="nav-link" >|</a>
+            </li>
+            <li className="nav-item my-item">
+                <a className="nav-link" >Cube Progesterone (Quantitative)</a>
+            </li>
+            <li className="nav-item my-item">
+                <a className="nav-link" >|</a>
+            </li>
+            <li className="nav-item my-item">
+                <a className="nav-link" >Pregnancy Testing</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
     <Container>
-      <div className='home' >
+      <div className='canine' >
         <div className='col-top' >
             <div className='col-top-left' >
                 <div className='text' >
-                    <span className='text-1' >Caring For Your Animals</span>
+                    <span className='text-1' >timing is</span>
                     <span className='text-2' >
-                        With Easy Tests
+                        everything
                     </span>
                 </div>
                 <div className='text-3' >
-                    Advanced. Accurate. Simple.
+                Improve success from breeding to birth.
                 </div>
             </div>
             <div className='col-top-right' ></div>
         </div>
         <div className='col-mid' >
-            <div className='mid-head' >Answers You Need, In Your Hands!</div>
-            <div className='underline-bar' ></div>
+            <div className='mid-head' ></div>
             <div className='mid-body' >
-                <p>Playing the guessing game is no fun when it comes to breeding, pregnancy, birth and infection detection. There is too much to lose.</p>
-                <p>Start your winning streak with a revolutionary, hand-held test giving you lab-quality data in minutes. Know exactly. Time perfectly. Respond early. You’ve got this.</p>
+                <p>Accurately predict ovulation. Detect pregnancy early. Know exactly when to time a C-section for the healthiest puppies. Worry less. Achieve more.</p>
             </div>
         </div>
         <div className='col-bottom' >
@@ -65,6 +85,7 @@ export default function Canine(products) {
         </div>
     </div>
   </Container>
+  </div>
   );
 }
 

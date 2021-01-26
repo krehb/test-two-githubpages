@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Col, Row, Button, Card, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 import app from '../../config/base';
 import firebase from 'firebase';
@@ -18,14 +18,19 @@ const Summary = ({priceTotal, cart}) => {
     const [orders, setOrder] = useState(['']);
     const [userId, setUserId] = useState('')
 
+    const [userData, setUserData] = useState();
+
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
             setCurrentUser(user);
             setUserId(user.uid)
             db.collection('users').doc(user.uid).get().then( doc => {
                 let numOfOrders = doc.data().orderCount
-                console.log(numOfOrders)
                 setOrder(numOfOrders)
+
+                let currentUserData = doc.data()
+                // console.log(currentUserData)
+                setUserData(currentUserData)
             })
         })
         let newArray = []
@@ -86,9 +91,9 @@ const Summary = ({priceTotal, cart}) => {
     const fakePayHandler = () => {
 
         db.collection('users').doc(userId).set({
-            orderCount: orders + 1,
-            name: 'James Krehbiel',
-            address: '1207 s Busey'
+            orderCount: userData.orderCount + 1,
+            name: userData.name,
+            address: userData.address
         })
         db.collection('users').doc(userId).collection('orders').add({
             order: cart,

@@ -5,7 +5,7 @@ import products from '../../../products';
 import '../store.css'
 import InfoAccordion from './infoAccordion';
 
-export default function MyCard({data, group, addToCartHandler, cart, instockArray }) {
+export default function MyCard({data, group, addToCartHandler, cart, instockArray, accordion, setAccordion }) {
 
 
     const [renderPrice, setRenderPrice] = useState();
@@ -13,7 +13,6 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
     const [show, setShow] = useState(false);
     const [loadSpinner, setLoadSpinner] = useState(false);
     const [qty, setQty] = useState(1);
-    const [accordion, setAccordion] = useState(false);
     const [instock, setInstock] = useState(false)
 
     useEffect(() => {
@@ -54,7 +53,7 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
     let renderCheckout = null
     if(cart.length > 0){
         renderCheckout = (
-            <Link to='/cart' >
+            <Link onClick={() => setAccordion(false)} to='/cart' >
                 <button className='checkout' >Checkout &#8594;</button>
             </Link>
         )

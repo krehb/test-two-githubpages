@@ -3,7 +3,7 @@ import MyCard from './storeFrontCard';
 import { Button, Row, Col } from 'react-bootstrap';
 
 
-const StoreFrontDeck = ({products, category, group, addToCartHandler, cart, setCart, instockArray }) => {
+const StoreFrontDeck = ({products, category, group, addToCartHandler, cart, setCart, instockArray, accordion, setAccordion }) => {
 
     const [list, setList] = useState(products)
 
@@ -71,7 +71,7 @@ const StoreFrontDeck = ({products, category, group, addToCartHandler, cart, setC
             {filterButtons}
             {list.map(x => 
             <div>
-                <MyCard instockArray={instockArray} key={x.id} cart={cart} setCart={setCart} data={x} group={group} addToCartHandler={addToCartHandler} />
+                <MyCard accordion={accordion} setAccordion={setAccordion} instockArray={instockArray} key={x.id} cart={cart} setCart={setCart} data={x} group={group} addToCartHandler={addToCartHandler} />
             </div> )}
         </div>
     </div>

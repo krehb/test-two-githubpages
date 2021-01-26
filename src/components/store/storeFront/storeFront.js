@@ -3,10 +3,9 @@ import StoreFrontGallery from './storeFrontGallery';
 import StoreFrontDeck from './storeFrontDeck';
 
 
-const StoreFront = ({products, categories, setCategoryHandler, setCategory , category, group, addToCartHandler, cart, setCart, instockArray }) => {
+const StoreFront = ({products, categories, setCategoryHandler, setCategory , category, group, addToCartHandler, cart, setCart, instockArray, accordion, setAccordion }) => {
 
   let store = null
-
 
 
 
@@ -20,7 +19,7 @@ const StoreFront = ({products, categories, setCategoryHandler, setCategory , cat
     store = (
       <div>
         <div className='mobile-categories' onClick={() => setCategoryHandler('none')} >Categories</div>
-        <StoreFrontDeck products={products} instockArray={instockArray} category={category} group={group} cart={cart} setCart={setCart} addToCartHandler={addToCartHandler} />
+        <StoreFrontDeck accordion={accordion} setAccordion={setAccordion} products={products} instockArray={instockArray} category={category} group={group} cart={cart} setCart={setCart} addToCartHandler={addToCartHandler} />
       </div>
     )
   }
