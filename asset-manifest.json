@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/test-two-githubpages/static/css/main.0cb19efe.chunk.css",
-    "main.js": "/test-two-githubpages/static/js/main.2b978c58.chunk.js",
-    "main.js.map": "/test-two-githubpages/static/js/main.2b978c58.chunk.js.map",
+    "main.css": "/test-two-githubpages/static/css/main.2c3ff80a.chunk.css",
+    "main.js": "/test-two-githubpages/static/js/main.eaff9bff.chunk.js",
+    "main.js.map": "/test-two-githubpages/static/js/main.eaff9bff.chunk.js.map",
     "runtime-main.js": "/test-two-githubpages/static/js/runtime-main.89d2767e.js",
     "runtime-main.js.map": "/test-two-githubpages/static/js/runtime-main.89d2767e.js.map",
-    "static/js/2.968b385f.chunk.js": "/test-two-githubpages/static/js/2.968b385f.chunk.js",
-    "static/js/2.968b385f.chunk.js.map": "/test-two-githubpages/static/js/2.968b385f.chunk.js.map",
+    "static/js/2.eba2b094.chunk.js": "/test-two-githubpages/static/js/2.eba2b094.chunk.js",
+    "static/js/2.eba2b094.chunk.js.map": "/test-two-githubpages/static/js/2.eba2b094.chunk.js.map",
     "index.html": "/test-two-githubpages/index.html",
-    "static/css/main.0cb19efe.chunk.css.map": "/test-two-githubpages/static/css/main.0cb19efe.chunk.css.map",
-    "static/js/2.968b385f.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.968b385f.chunk.js.LICENSE.txt",
-    "static/media/store.css": "/test-two-githubpages/static/media/igg-cube-10.b4563f2c.jpg",
+    "static/css/main.2c3ff80a.chunk.css.map": "/test-two-githubpages/static/css/main.2c3ff80a.chunk.css.map",
+    "static/js/2.eba2b094.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.eba2b094.chunk.js.LICENSE.txt",
+    "static/media/store.css": "/test-two-githubpages/static/media/siberian-huskies-play-with-pup-3-1024x682.b183e868.jpg",
     "static/media/dog-icon.016eaeaf.png": "/test-two-githubpages/static/media/dog-icon.016eaeaf.png",
-    "static/media/pages.css": "/test-two-githubpages/static/media/horse-dog.9b6c48e9.png",
+    "static/media/pages.css": "/test-two-githubpages/static/media/pug-with-puppies-1024x682.e9e7b336.jpg",
     "static/media/horse-icon.75960328.png": "/test-two-githubpages/static/media/horse-icon.75960328.png"
   },
   "entrypoints": [
     "static/js/runtime-main.89d2767e.js",
-    "static/js/2.968b385f.chunk.js",
-    "static/css/main.0cb19efe.chunk.css",
-    "static/js/main.2b978c58.chunk.js"
+    "static/js/2.eba2b094.chunk.js",
+    "static/css/main.2c3ff80a.chunk.css",
+    "static/js/main.eaff9bff.chunk.js"
   ]
 }
