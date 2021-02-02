@@ -6,11 +6,15 @@ import {
 } from "react-router-dom";
 import firebase from 'firebase';
 
+
+
+
 //pages
 import Canine from './pages/canine';
 import Equine from './pages/equine';
 import Home from './pages/home';
 import AccountInfo from './pages/AccountPage/accountInfoPage';
+import IgG from './pages/equine/igg';
 
 //components
 import Store from './components/store/store';
@@ -192,6 +196,9 @@ export default function App() {
             </Route>
             <Route path="/equine">
               <Equine />
+            </Route>
+            <Route path="/equine-igg">
+              <IgG />
             </Route>
             <Route path="/store">
               <Store className='store'

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row, Image } from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 import Video from '../components/video/video';
 
 import dogIcon from '../assets/img/home/dog-icon.png';
@@ -26,7 +26,9 @@ export default function Equine(products) {
                 <a className="nav-link" >|</a>
             </li>
             <li className="nav-item my-item">
-                <a className="nav-link" >Cube Foal IgG</a>
+                <Link className='nav-link' to='/equine-igg' >
+                    Cube Foal IgG
+                </Link>
             </li>
             <li className="nav-item my-item">
                 <a className="nav-link" >|</a>

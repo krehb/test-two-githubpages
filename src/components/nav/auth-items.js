@@ -57,7 +57,7 @@ export default function AuthItems() {
 
 
     let renderItems = null
-    if(currentUrl === '/canine' || currentUrl === '/equine'){
+    if(currentUrl === '/canine' || currentUrl === '/equine' || currentUrl === '/equine-igg'){
         renderItems = null
     }else {
         renderItems = items

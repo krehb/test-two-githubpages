@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import AuthItems from './auth-items';
 import { AuthProvider } from '../../config/Auth';
 import TopAuthItems from './top-auth-items';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = ({cart, setCategory}) => {
 
@@ -40,7 +42,7 @@ const Nav = ({cart, setCategory}) => {
     if(loggedIn){
         navAccount = (
             <Link className='my-nav-item' to='/account' >
-                Your Account
+                <FontAwesomeIcon icon={faUserCircle} />
             </Link>
         )
     } else { navAccount = null}
