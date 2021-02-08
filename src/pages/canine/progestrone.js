@@ -1,11 +1,10 @@
 import React from 'react';
 import { Container, Col, Row, Image } from 'react-bootstrap';
-import dogIcon from '../assets/img/home/dog-icon.png';
-import horseIcon from '../assets/img/home/horse-icon.png'
+
+import SideNav from '../../components/side-nav-pages/sideNavPages'
 
 
-
-export default function Canine(products) {
+export default function Progesterone(products) {
 
 
 
@@ -35,7 +34,8 @@ export default function Canine(products) {
         </ul>
       </div>
     </nav>
-    <Container>
+    <div className='container-w-side-nav' >
+    <SideNav/>
       <div className='canine' >
         <div className='col-top' >
             <div className='col-top-left' >
@@ -57,34 +57,8 @@ export default function Canine(products) {
                 <p>Accurately predict ovulation. Detect pregnancy early. Know exactly when to time a C-section for the healthiest puppies. Worry less. Achieve more.</p>
             </div>
         </div>
-        <div className='col-bottom' >
-            <div className='cols' >
-                <div  >
-                    <img src={dogIcon} />
-                </div>
-                <div className='head' >Canine Tests</div>
-                <div className='product-link' >Target Progesterone (Visual)</div>
-                <div className='underline-bar' ></div>
-                <div className='product-link' >Quick P4 Progesterone + Cube (Quantitative Number Result)</div>
-                <div className='underline-bar' ></div>
-                <div className='product-link' >Relaxin - Pregnancy Testing</div>
-                <button >Browse Canine Tests</button>
-            </div>
-            <div className='cols' >
-                <div  >
-                    <img src={horseIcon} />
-                </div>
-                <div className='head' >Equine Tests</div>
-                <div className='product-link' >Quick P4 Progesterone + Cube – Mare Breeding & Pregnancy Monitoring</div>
-                <div className='underline-bar' ></div>
-                <div className='product-link' >Foal IgG – Immune Deficiency Testing</div>
-                <div className='underline-bar' ></div>
-                <div className='product-link' >SAA (Serum Amyloid A ) – Infection Detection</div>
-                <button>Browse Equine Tests</button>
-            </div>
-        </div>
     </div>
-  </Container>
+  </div>
   </div>
   );
 }

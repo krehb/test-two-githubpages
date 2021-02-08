@@ -170,36 +170,40 @@
   color: #b4b4b4;
 }
 
-.store {
-  margin-top: 20px;
-  margin-bottom: 12%;
-}
-
 @media screen and (max-width: 500px) {
-  .store .product-list {
+  .product-list {
     display: none;
   }
 }
 
-.store .product-list .list-title {
+.product-list .list-title {
   color: #181818;
   font-size: 16px;
   font-weight: 900;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.store .product-list .product-title {
+.product-list .product-title {
   font-weight: 600;
   color: #5f5f5f;
   font-size: 15px;
   padding: 10px 10px 10px 10px;
 }
 
-.store .product-list .product-title:hover {
+.product-list .product-title:hover {
   cursor: pointer;
   background-color: #ddf6ff;
   border-radius: 5px;
   text-decoration: none;
+}
+
+.product-list .product-title .side-nav-link {
+  color: #5f5f5f;
+}
+
+.store {
+  margin-top: 20px;
+  margin-bottom: 12%;
 }
 
 .store .mobile-categories {

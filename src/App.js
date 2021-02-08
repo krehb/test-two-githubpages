@@ -10,11 +10,19 @@ import firebase from 'firebase';
 
 
 //pages
-import Canine from './pages/canine';
-import Equine from './pages/equine';
 import Home from './pages/home';
-import AccountInfo from './pages/AccountPage/accountInfoPage';
+
+import Canine from './pages/canine/canine';
+import Progesterone from './pages/canine/progestrone';
+import QuickP4Canine from './pages/canine/quickp4';
+import Relaxin from './pages/canine/relaxin';
+
+import Equine from './pages/equine/equine';
 import IgG from './pages/equine/igg';
+import QuickP4Equine from './pages/equine/quickp4';
+import Saa from './pages/equine/saa';
+
+import AccountInfo from './pages/AccountPage/accountInfoPage';
 
 //components
 import Store from './components/store/store';
@@ -194,11 +202,26 @@ export default function App() {
             <Route path="/canine">
               <Canine />
             </Route>
+            <Route path="/canine-progesterone">
+              <Progesterone />
+            </Route>
+            <Route path="/canine-quickp4">
+              <QuickP4Canine />
+            </Route>
+            <Route path="/canine-relaxin">
+              <Relaxin />
+            </Route>
             <Route path="/equine">
               <Equine />
             </Route>
             <Route path="/equine-igg">
               <IgG />
+            </Route>
+            <Route path="/equine-saa">
+              <Saa />
+            </Route>
+            <Route path="/equine-quickp4">
+              <QuickP4Equine />
             </Route>
             <Route path="/store">
               <Store className='store'

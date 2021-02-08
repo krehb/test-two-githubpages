@@ -21,11 +21,11 @@ function Video(){
     <ControlBar disableCompletely={true}  className="my-class" />
     </Player> */}
 
-    <video id="background-video" loop muted controls autoPlay>
+    {/* <video id="background-video" loop muted controls autoPlay>
                 <source src={url} type="video/mp4" />
                 Your browser does not support the video tag.
-    </video>
-
+    </video> */}
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Kk0XluyIxaY?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
   </div>
   );

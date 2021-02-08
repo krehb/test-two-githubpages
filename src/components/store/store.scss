@@ -122,9 +122,34 @@ $medium: 900px;
 
 
 
+//product list on both sideNavPages and store productlist
 
-
-
+.product-list {
+    @media screen and (max-width: $small) {
+        display: none;
+    }
+    .list-title {
+        color: rgb(24, 24, 24);
+        font-size: 16px;
+        font-weight: 900;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .product-title {
+        font-weight: 600;
+        color: rgb(95, 95, 95);
+        font-size: 15px;
+        padding: 10px 10px 10px 10px;
+        &:hover {
+            cursor: pointer;
+            background-color: #ddf6ff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .side-nav-link {
+            color: rgb(95, 95, 95);
+        }
+    }
+}
 
 
 
@@ -151,29 +176,7 @@ $medium: 900px;
     margin-bottom: 12%;
 
     //Filter Products on Left hand side
-    .product-list {
-        @media screen and (max-width: $small) {
-            display: none;
-        }
-        .list-title {
-            color: rgb(24, 24, 24);
-            font-size: 16px;
-            font-weight: 900;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        .product-title {
-            font-weight: 600;
-            color: rgb(95, 95, 95);
-            font-size: 15px;
-            padding: 10px 10px 10px 10px;
-            &:hover {
-                cursor: pointer;
-                background-color: #ddf6ff;
-                border-radius: 5px;
-                text-decoration: none;
-            }
-        }
-    }
+
 
     //small screen size "button" will show up
     .mobile-categories{

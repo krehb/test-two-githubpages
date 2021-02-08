@@ -2,11 +2,12 @@ import React from 'react';
 import './pages.css'
 import dogIcon from '../assets/img/home/dog-icon.png';
 import horseIcon from '../assets/img/home/horse-icon.png'
-import { Image } from 'react-bootstrap';
+import { Container, Image } from 'react-bootstrap';
 
 
 const Home = () => {
     return (
+        <Container>
         <div className='home' >
             <div className='col-top' >
                 <div className='col-top-left' >
@@ -57,6 +58,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        </Container>
     )
 }
 

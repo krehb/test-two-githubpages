@@ -1,6 +1,9 @@
 import React, {useRef} from 'react';
 import { Container, Table, Jumbotron } from 'react-bootstrap';
 
+import SideNav from '../../components/side-nav-pages/sideNavPages';
+import ReactPlayer from 'react-player/youtube'
+
 import Video from '../../components/video/video';
 import Logo from '../../assets/img/equine/logo-small.png'
 import snap1 from '../../assets/img/equine/snap1.png'
@@ -55,7 +58,8 @@ export default function IgG(products) {
         </ul>
       </div>
     </nav>
-    <Container>
+    <div className='container-w-side-nav' >
+        <SideNav/>
       <div className='equine-igg' >
         <div className='col-top' >
             <div className='col-top-left' >
@@ -69,7 +73,9 @@ export default function IgG(products) {
                 Reduce the risk. Protect your foals.
                 </div>
             </div>
-            <div className='col-top-right' ><Video/></div>
+            <div className='col-top-right' >
+                <ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' controls={true} playing={true} muted loop={true} />
+            </div>
         </div>
         
 
@@ -295,7 +301,7 @@ export default function IgG(products) {
 
 
     </div>
-  </Container>
+    </div>
   </div>
   );
 }
