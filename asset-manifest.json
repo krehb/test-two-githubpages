@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/test-two-githubpages/static/css/main.65b28ba1.chunk.css",
-    "main.js": "/test-two-githubpages/static/js/main.6c22ef9f.chunk.js",
-    "main.js.map": "/test-two-githubpages/static/js/main.6c22ef9f.chunk.js.map",
+    "main.css": "/test-two-githubpages/static/css/main.b7b3e865.chunk.css",
+    "main.js": "/test-two-githubpages/static/js/main.d257c4e8.chunk.js",
+    "main.js.map": "/test-two-githubpages/static/js/main.d257c4e8.chunk.js.map",
     "runtime-main.js": "/test-two-githubpages/static/js/runtime-main.89d2767e.js",
     "runtime-main.js.map": "/test-two-githubpages/static/js/runtime-main.89d2767e.js.map",
-    "static/js/2.81fe7c9c.chunk.js": "/test-two-githubpages/static/js/2.81fe7c9c.chunk.js",
-    "static/js/2.81fe7c9c.chunk.js.map": "/test-two-githubpages/static/js/2.81fe7c9c.chunk.js.map",
+    "static/js/2.6fefeb81.chunk.js": "/test-two-githubpages/static/js/2.6fefeb81.chunk.js",
+    "static/js/2.6fefeb81.chunk.js.map": "/test-two-githubpages/static/js/2.6fefeb81.chunk.js.map",
     "index.html": "/test-two-githubpages/index.html",
-    "static/css/main.65b28ba1.chunk.css.map": "/test-two-githubpages/static/css/main.65b28ba1.chunk.css.map",
-    "static/js/2.81fe7c9c.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.81fe7c9c.chunk.js.LICENSE.txt",
+    "static/css/main.b7b3e865.chunk.css.map": "/test-two-githubpages/static/css/main.b7b3e865.chunk.css.map",
+    "static/js/2.6fefeb81.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.6fefeb81.chunk.js.LICENSE.txt",
     "static/media/store.css": "/test-two-githubpages/static/media/siberian-huskies-play-with-pup-3-1024x682.b183e868.jpg",
     "static/media/cube.570ea56c.png": "/test-two-githubpages/static/media/cube.570ea56c.png",
     "static/media/cube110.c7314fb6.png": "/test-two-githubpages/static/media/cube110.c7314fb6.png",
     "static/media/cube712.ea4e8c42.png": "/test-two-githubpages/static/media/cube712.ea4e8c42.png",
     "static/media/dog-icon.016eaeaf.png": "/test-two-githubpages/static/media/dog-icon.016eaeaf.png",
+    "static/media/horse-and-foal.402ae1c7.jpg": "/test-two-githubpages/static/media/horse-and-foal.402ae1c7.jpg",
     "static/media/pages.css": "/test-two-githubpages/static/media/pug-with-puppies-1024x682.e9e7b336.jpg",
     "static/media/horse-icon.75960328.png": "/test-two-githubpages/static/media/horse-icon.75960328.png",
     "static/media/igg.80f52b40.png": "/test-two-githubpages/static/media/igg.80f52b40.png",
@@ -26,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.89d2767e.js",
-    "static/js/2.81fe7c9c.chunk.js",
-    "static/css/main.65b28ba1.chunk.css",
-    "static/js/main.6c22ef9f.chunk.js"
+    "static/js/2.6fefeb81.chunk.js",
+    "static/css/main.b7b3e865.chunk.css",
+    "static/js/main.d257c4e8.chunk.js"
   ]
 }
