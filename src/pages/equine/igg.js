@@ -299,6 +299,9 @@ export default function IgG(products) {
             </div>           
         </div>
 
+        <div>
+            <p>Note: The same Cube Reader can be used with the Immuno-Chek G and Equichek-SAA kits to get a number result!</p>
+        </div>
 
     </div>
     </div>

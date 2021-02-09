@@ -16,7 +16,11 @@ export default function Equine(products) {
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul className="navbar-nav align-items-center">
             <li className="nav-item my-item">
-                <a className="nav-link"  >Equine Progesterone</a>
+                <a className="nav-link"  >
+                <Link className='nav-link' to='/equine-quickp4' >
+                    Equine Progesterone
+                </Link>
+                </a>
             </li>
             <li className="nav-item my-item">
                 <a className="nav-link" >|</a>
