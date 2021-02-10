@@ -59,7 +59,7 @@ export default function Data1(products) {
         <td>137</td>
         <td>NO Suppl.</td>
     </tr>
-    <tr>
+    <tr style={{backgroundColor: '#FAEEC8'}} >
         <td>3.7</td>
         <td>&lt;0.06</td>
         <td></td>

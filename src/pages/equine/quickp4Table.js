@@ -8,6 +8,7 @@ import pdf from '../../assets/img/equine/Equine-QuickP4-vs-Lab-data.pdf';
 
 import Data1 from './data1';
 import Data2 from './data2';
+import Logo from '../../assets/img/equine/logo-small.png'
 
 export default function QuickP4EquineTable(products) {
 
@@ -32,9 +33,9 @@ export default function QuickP4EquineTable(products) {
 
 
   return (
-    <div>
-            <h3>Table 1. Quick P4 vs. Lab Results for Pregnant Mares</h3>
-            <Table striped bordered hover>
+    <div style={{backgroundColor: 'rgb(219, 235, 248)', paddingTop: '50px'}} >
+            <h3>Table 1. <span style={{color: 'rgb(14, 87, 119)', fontWeight: 600, fontStyle: 'italic'}} >Quick P4 </span><img src={Logo} width='30px' /> vs. Lab Results for Pregnant Mares</h3>
+            <Table style={{backgroundColor: 'white', marginTop: '30px'}} striped bordered hover>
                 <thead>
                     <tr>
                         <th>Lateral Flow Quick P4</th>
@@ -52,8 +53,8 @@ export default function QuickP4EquineTable(products) {
             </div>
             <br></br>
             
-            <h3>Table 1. Quick P4 vs. Lab Results for Pregnant Mares</h3>
-            <Table striped bordered hover>
+            <h3>Table 1. <span style={{color: 'rgb(14, 87, 119)', fontWeight: 600, fontStyle: 'italic'}} >Quick P4 </span><img src={Logo} width='30px' /> vs. Lab Results for Pregnant Mares</h3>
+            <Table style={{backgroundColor: 'white', marginTop: '30px'}} striped bordered hover>
                 <thead>
                     <tr>
                         <th>Lateral Flow Quick P4</th>
@@ -103,7 +104,7 @@ export default function QuickP4EquineTable(products) {
             </div>
 
             <div style={{textAlign: 'right', paddingRight: '10%',paddingBottom: '20px'}} >
-                <a  href={pdf} download='data' style={{color: 'red'}} >
+                <a  href={pdf} download='TargetVet Data Table' style={{color: 'red'}} >
                     <FontAwesomeIcon size="2x" icon={faFileDownload} />
                 </a>
             </div>
