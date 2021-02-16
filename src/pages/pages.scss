@@ -25,7 +25,7 @@ $large: 1500px;
         width: 15%;
         .side-nav {
             position: fixed;
-            width: 10%;
+            width: 200px;
             @media screen and (max-width: $medium) {
                 position: relative;
                 width: 100%;
@@ -35,6 +35,18 @@ $large: 1500px;
             padding: 20px;
             width: 80%;
         }
+    }
+    .canine-side-nav {
+        background-color: rgb(255, 197, 197);
+        border-radius: 5px;
+    }
+    .equine-nav {
+        background-color: rgb(255, 255, 180);
+        border-radius: 5px;
+    }
+    .other-side-nav {
+        background-color: rgb(240, 249, 250);
+        border-radius: 5px;
     }
 }
 
@@ -199,6 +211,7 @@ $large: 1500px;
 //canine small nav
 .canine-nav {
     background-color: #207595 !important;
+    width: 100%;
     .nav-link {
         color: white !important;
         font-weight: 600;
@@ -212,127 +225,39 @@ $large: 1500px;
 }
 
 
-
-
-.canine {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+.col-top {
+    padding: 0;
     font-family: $font;
-    .col-top {
-        padding: 0;
-        font-family: $font;
-        margin: 0;
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        text-transform: uppercase;
-        text-align: left;
+    margin: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-transform: capitalize;
+    text-align: left;
 
-        .col-top-left {
-            background-color: $targetvet-text-blue;
-            flex-grow: 2;
-            color: $targetvet-pale-tan;
-            padding-left: 5%;
-            .text{
-                display: flex;
-                flex-direction: column;
-                margin: 0px;
-                padding: 0px;
-
-                .text-1 {
-                    margin-top: 50px;
-                    font-stretch: ultra-condensed;
-                    font-weight: 600;
-                    font-size: 50px;
-                }
-                .text-2 {
-                    font-size: 50px;
-                    font-stretch: ultra-condensed;
-                    font-weight: 600;
-                }
-            }
-            .text-3 {
-                margin-bottom: 100px;
-                margin-top: 20px;
-                font-size: large;
-            }
-        }
-        .col-top-right{
-            width: 50%;
-            height: 400px;
-            @media screen and (min-width: $large) {
-                width: 45%;
-                height: 510px;
-            }
-            flex-grow: 1;
-            background-image: url('../assets/img/canine/pug-with-puppies-1024x682.jpg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-        }
-    }
-    .col-mid {
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-
-        .mid-head {
-            margin-top: 50px;
-            margin-bottom: 10px;
-            color: $targetvet-text-blue;
-            font-size: 36px;
-            font-stretch: ultra-condensed;
-            font-weight: 600;
-        }
-        .underline-bar {
-            display: flex;
-            justify-content: center;
-            background-color: $targetvet-text-blue;
-            height: 5px;
-            width: 100px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .mid-body {
-            padding: 30px 100px 30px 100px;
-            @media screen and (max-width: $small) {
-                padding: 10px;
-            }
+    .col-top-left {
+        background-color: #247695;
+        color: $targetvet-pale-tan;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 100;
+        font-stretch: condensed;
+        width: 400px;
+        img {
+            width: 100%;
+            height: 270px;
         }
     }
 }
+
+
 
 .equine {
     display: flex;
     flex-direction: column;
     text-align: center;
     font-family: $font;
-    .col-top {
-        padding: 0;
-        font-family: $font;
-        margin: 0;
-        margin-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-transform: capitalize;
-        text-align: left;
-
-        .col-top-left {
-            background-color: #247695;
-            color: $targetvet-pale-tan;
-            text-align: center;
-            font-size: 30px;
-            font-weight: 100;
-            font-stretch: condensed;
-            width: 400px;
-            img {
-                width: 100%;
-                height: 270px;
-            }
-        }
-    }
     .col-mid {
         background-color: white;
         display: flex;
@@ -364,52 +289,12 @@ $large: 1500px;
     }
 }
 
+
 .equine-igg {
     display: flex;
     flex-direction: column;
     text-align: center;
     font-family: $font;
-    .col-top {
-        padding: 0;
-        font-family: $font;
-        margin: 0;
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        text-transform: uppercase;
-        text-align: left;
-
-        .col-top-left {
-            background-color: #247695;
-            color: $targetvet-pale-tan;
-            padding-left: 5%;
-            width: 400px;
-            .text{
-                display: flex;
-                flex-direction: column;
-                margin: 0px;
-                padding: 0px;
-
-                .text-1 {
-                    margin-top: 50px;
-                    font-stretch: ultra-condensed;
-                    font-weight: 600;
-                    font-size: 30px;
-                }
-                .text-2 {
-                    font-size: 30px;
-                    font-stretch: ultra-condensed;
-                    font-weight: 600;
-                }
-            }
-            .text-3 {
-                margin-bottom: 100px;
-                margin-top: 20px;
-                font-size: large;
-            }
-        }
-    }
     .col-mid {
 
 
@@ -625,40 +510,7 @@ $large: 1500px;
     font-family: $font;
     width: 1000px;
 
-    .col-top-p4 {
-        padding: 0;
-        font-family: $font;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        text-transform: uppercase;
-        text-align: left;
-        margin: 0;
-        margin-top: 10px;
-        .col-top-left {
-            background-color: #247695;
-            color: $targetvet-pale-tan;
-            padding-left: 5%;
-            width: 370px;
-            .text{
-                display: flex;
-                flex-direction: column;
-                margin: 0px;
-                margin-top: 30px;
-                padding: 0px;
-                .text-2 {
-                    font-size: 30px;
-                    font-stretch: ultra-condensed;
-                    font-weight: 600;
-                }
-            }
-            .text-3 {
-                margin-bottom: 100px;
-                margin-top: 20px;
-                font-size: large;
-            }
-        }
-    }
+
     .col-top-right {
         width: 60%;
     }

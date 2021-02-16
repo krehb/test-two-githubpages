@@ -1,5 +1,5 @@
-import React, {useRef} from 'react';
-import { Container, Table, Jumbotron } from 'react-bootstrap';
+import React, {useRef, useState, useEffect} from 'react';
+import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
 
 import SideNav from '../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
@@ -18,6 +18,7 @@ import cube from '../../assets/img/equine/cube.png'
 import igg from '../../assets/img/equine/igg.png'
 import cube110 from '../../assets/img/equine/cube110.png'
 import cube712 from '../../assets/img/equine/cube712.png'
+import foalHorseImg from '../../assets/img/equine/horse-and-foal.jpg'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,17 +28,32 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 export default function IgG(products) {
 
+    const [sticky, setSticky] = useState(false);
+
     //scroll to section 1
     const myRef1 = useRef(null)
     const myRef2 = useRef(null)
     const myRef3 = useRef(null)
     const executeScroll = (e) => scrollToRef(e)
 
+    window.onscroll = () => {
+        if(window.pageYOffset >= 130){
+            setSticky(true)
+        } else {
+            setSticky(false)
+        }
+    }
 
+    let renderNavClass = ''
+    if(sticky){
+        renderNavClass = {position: 'fixed', top: 0}
+    } else {
+        renderNavClass = {}
+    }
 
   return (
 <div>
-    <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav ">
+    <nav  className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav " style={renderNavClass} >
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul className="navbar-nav align-items-center">
             <li className="nav-item my-item">
@@ -60,16 +76,14 @@ export default function IgG(products) {
     </nav>
     <div className='container-w-side-nav' >
         <SideNav/>
-      <div className='equine-igg' >
+      <div className='equine-igg'  >
         <div className='col-top' >
             <div className='col-top-left' >
+                <img src={foalHorseImg} />
                 <div className='text' >
-                    <span className='text-1' ></span>
-                    <span className='text-2' >
-                    Healthy foals are priceless.
-                    </span>
+                    <span className='text-1' >Healthy foals are priceless.</span>
                 </div>
-                <div className='text-3' >
+                <div className='text-3' style={{fontSize: '25px'}} >
                 Reduce the risk. Protect your foals.
                 </div>
             </div>

@@ -9,6 +9,7 @@ import Test from '../../assets/img/equine/test.jpg'
 import InterImg from '../../assets/img/equine/equine-progesterone-levels.png'
 import ImgProduct from '../../assets/img/equine/quickp4-product.jpg'
 import Logo from '../../assets/img/equine/logo-small.png'
+import twoLadiesWithHorse from '../../assets/img/equine/two-ladies-with-horse.jpg'
 
 import QuickP4EquineTable from './quickp4Table';
 import CycleChart from './cyclechart';
@@ -28,11 +29,26 @@ export default function QuickP4Equine(products) {
     const myRef4 = useRef(null)
     const executeScroll = (e) => scrollToRef(e)
 
-    
+    const [sticky, setSticky] = useState(false);
+
+    window.onscroll = () => {
+        if(window.pageYOffset >= 130){
+            setSticky(true)
+        } else {
+            setSticky(false)
+        }
+    }
+
+    let renderNavClass = ''
+    if(sticky){
+        renderNavClass = {position: 'fixed', top: 0, zIndex: 2}
+    } else {
+        renderNavClass = {}
+    }
 
   return (
 <div>
-    <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav ">
+    <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav " style={renderNavClass} >
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul className="navbar-nav align-items-center">
             <li className="nav-item my-item">
@@ -62,19 +78,20 @@ export default function QuickP4Equine(products) {
     <div className='container-w-side-nav' >
         <SideNav/>
         <div className='equine-quickp4' >
-            <div className='col-top-p4' >
-                <div className='col-top-left' >
-                    <div className='text' >
-                        <span className='text-2' >
-                        On-site progesterone number in minutes.
-                        </span>
-                    </div>
-                    <div className='text-3' >
-                    Know when the CL is active.
-                    </div>
+
+
+            <div className='col-top' >
+            <div className='col-top-left' >
+                <img src={twoLadiesWithHorse} />
+                <div className='text' >
+                    <span className='text-1' style={{fontSize: '25px'}} >On-site progesterone number in minutes.</span>
                 </div>
+                <div className='text-3' style={{fontSize: '25px'}} >
+                Know when the CL is active.
+                </div>
+            </div>
                 <div className='col-top-right' >
-                    <ReactPlayer className='q4-vid' url='https://www.youtube.com/embed/IETL5ldRWFk' controls={true} playing={true} muted loop={true} />
+                    <ReactPlayer  url='https://www.youtube.com/embed/IETL5ldRWFk' controls={true} playing={true} muted loop={true} />
                 </div>
             </div>
             
@@ -103,7 +120,7 @@ export default function QuickP4Equine(products) {
             </div>
 
             <div ref={myRef2} >
-                <QuickP4EquineTable />
+                <QuickP4EquineTable   />
             </div>
 
             <div ref={myRef3} className='why' style={{textAlign: 'left', paddingLeft: '50px', paddingTop: '50px'}} >
