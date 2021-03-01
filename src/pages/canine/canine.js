@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import SideNav from '../../components/side-nav-pages/sideNavPages'
 import pugs from '../../assets/img/canine/pug-with-puppies.jpg'
@@ -11,7 +11,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function Equine(products) {
+export default function Canine(products) {
+
+    const [videoWidth, setVideoWidth] = useState(false)
+    useEffect(() => {
+        if(window.innerWidth >= 480){
+            setVideoWidth(false)
+        } else {
+            
+            setVideoWidth(true)
+            console.log(window.innerWidth)
+        } 
+    },[]);
+
+    let renderVideoWidth = null
+    if(videoWidth){
+        renderVideoWidth = '100%'
+    } else  {
+        renderVideoWidth = null
+    }
 
     const imgStyle = {
         width: '130px',
@@ -35,39 +53,17 @@ export default function Equine(products) {
 <div>
     <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav ">
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        {/* <ul className="navbar-nav align-items-center">
-            <li className="nav-item my-item">
-                <a className="nav-link"  >
-                <Link className='nav-link' to='/equine-quickp4' >
-                    Equine Progesterone
-                </Link>
-                </a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <Link className='nav-link' to='/equine-igg' >
-                    Cube Foal IgG
-                </Link>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >Infection Detection (SAA)</a>
-            </li>
-        </ul> */}
+
       </div>
     </nav>
     <div className='container-w-side-nav'>
         <SideNav/>
-      <div className='equine' style={{width: '1200px'}} >
+      <div className='custom-container'  >
 
         <h2 style={{color: '#317C97', fontWeight: '600', marginTop: '30px', letterSpacing: '-2px'}} >Canine Progesterone & Relaxin Testing</h2>
 
         <div className='col-top' >
-            <div className='col-top-left' >
+            <div className='col-top-left top-left' >
                 <img src={pugs} />
                 <div className='text' >
                     <span className='text-1' >Timing is everything</span>
@@ -76,8 +72,8 @@ export default function Equine(products) {
                 Improve success from breeding to birth
                 </div>
             </div>
-            <div className='col-top-right' >
-                <ReactPlayer  url='https://www.youtube.com/embed/g8uU-ID7M8Y' controls={true} playing={true} loop={true} />
+            <div className='col-top-right top-right' >
+                <ReactPlayer  url='https://www.youtube.com/embed/g8uU-ID7M8Y' width={renderVideoWidth} controls={true} playing={true} loop={true} />
             </div>
         </div>
         
@@ -89,8 +85,8 @@ export default function Equine(products) {
         </div>
 
 
-        <div style={{display: 'flex', justifyContent: 'center', color: '#317C97', backgroundColor: '#eafbffea', padding: '30px'}} >
-            <div>
+        <div style={{display: 'flex', justifyContent: 'center', flexWrap:'wrap', color: '#317C97', backgroundColor: '#eafbffea', padding: '30px'}} >
+            <div style={{width: '300px'}} >
                 <h3 style={{fontWeight: '600', letterSpacing: '-1px'}} >Breeding & C-Section Timing - Visual Results</h3>
                 <h4 style={orangeText} >Target</h4>
                 <img style={imgStyle} src={target} />
@@ -102,7 +98,7 @@ export default function Equine(products) {
                 <div style={lineStyle} ></div>
                 <p>Accurately time C-Section</p>
             </div>
-            <div>
+            <div style={{width: '300px'}} >
                 <h3 style={{fontWeight: '600', letterSpacing: '-1px'}} >Breeding & C-Section Timing - Number Results</h3>
                 <h4  style={orangeText} >Quick P4 with Cube</h4>
                 <img style={imgStyle} src={quickp4} />
@@ -114,7 +110,7 @@ export default function Equine(products) {
                 <div style={lineStyle} ></div>
                 <p>2yr+ Shelf Life &#9679; Room Temp Tests</p>
             </div>
-            <div>
+            <div style={{width: '300px'}} >
                 <h3 style={{fontWeight: '600', letterSpacing: '-1px'}} >Pregnancy Testing</h3>
                 <h4 style={orangeText} >Relaxin Pro</h4>
                 <img style={imgStyle} src={relaxin} />
@@ -128,7 +124,7 @@ export default function Equine(products) {
             </div>
         </div>
 
-        <div style={{backgroundColor: '#317C97', color: 'white', padding: '50px 0px 30px 0px', marginTop: '30px'}} >
+        <div style={{backgroundColor: '#317C97', color: 'white', padding: '50px 10px 30px 10px', marginTop: '30px'}} >
             <FontAwesomeIcon icon={faQuoteLeft} style={{marginRight: '10px'}} />I bought a Target Canine Ovulation kit after being unsuccessful at breeding my labrador for 2 years. Before trying this kit, I spent all sorts of money on alternatives. The Target test indicated to breed on day 22. She was willing to be bred by the stud dog and as a result I had a litter of 11 puppies!<FontAwesomeIcon style={{marginLeft: '10px'}} icon={faQuoteRight} />
             <p style={{fontStyle: 'italic', marginTop: '20px'}} >- Eric Taylor, PA</p>
         </div>

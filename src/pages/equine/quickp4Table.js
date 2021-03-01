@@ -35,7 +35,7 @@ export default function QuickP4EquineTable(products) {
   return (
     <div style={{backgroundColor: 'rgb(219, 235, 248)', paddingTop: '50px'}} >
             <h3>Table 1. <span style={{color: 'rgb(14, 87, 119)', fontWeight: 600, fontStyle: 'italic'}} >Quick P4 </span><img src={Logo} width='30px' /> vs. Lab Results for Pregnant Mares</h3>
-            <Table style={{backgroundColor: 'white', marginTop: '30px'}} striped bordered hover>
+            <Table className='quickp4table'  style={{backgroundColor: 'white', marginTop: '30px',}} striped bordered hover>
                 <thead>
                     <tr>
                         <th>Lateral Flow Quick P4</th>
@@ -54,7 +54,7 @@ export default function QuickP4EquineTable(products) {
             <br></br>
             
             <h3>Table 1. <span style={{color: 'rgb(14, 87, 119)', fontWeight: 600, fontStyle: 'italic'}} >Quick P4 </span><img src={Logo} width='30px' /> vs. Lab Results for Pregnant Mares</h3>
-            <Table style={{backgroundColor: 'white', marginTop: '30px'}} striped bordered hover>
+            <Table className='quickp4table-2' style={{backgroundColor: 'white', marginTop: '30px'}} striped bordered hover>
                 <thead>
                     <tr>
                         <th>Lateral Flow Quick P4</th>

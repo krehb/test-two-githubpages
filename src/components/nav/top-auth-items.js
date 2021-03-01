@@ -3,26 +3,9 @@ import { Link } from 'react-router-dom';
 import app from '../../config/base';
 
 
-export default function TopAuthItems() {
-
-    const [loggedIn, setLoggedIn] = useState(false);
+export default function TopAuthItems({loggedIn }) {
 
 
-
-    useEffect(() => {
-        // Update the document title using the browser API
-
-        app.auth().onAuthStateChanged(function(user) {
-            if (user) {
-              // User is signed in.
-              setLoggedIn(true)              
-            } else {
-              // No user is signed in.
-              setLoggedIn(false)
-            }
-        });
-
-    },[]);
 
 
     let items = null

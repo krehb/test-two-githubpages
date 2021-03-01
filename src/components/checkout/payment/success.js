@@ -1,6 +1,6 @@
 import React, { useEffect}  from 'react';
 import { Container, Col, Row} from 'react-bootstrap';
-
+import dogo from '../../../assets/img/dog.png'
 
 
 const Success = ({setCart }) => {
@@ -13,8 +13,11 @@ const Success = ({setCart }) => {
     <div >
         <Container>
             <Row>
-            <Col>
-                <h3>Your Order Has Been Successful</h3>
+            <Col sm>
+                <h3 style={{marginTop: '20px'}} >Your Order Has Been Successful</h3>
+            </Col>
+            <Col sm>
+                <img src={dogo} width='300px' /> 
             </Col>
             </Row>
         </Container>

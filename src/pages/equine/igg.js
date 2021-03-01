@@ -51,6 +51,26 @@ export default function IgG(products) {
         renderNavClass = {}
     }
 
+
+    const [videoWidth, setVideoWidth] = useState(false)
+    useEffect(() => {
+        if(window.innerWidth >= 480){
+            setVideoWidth(false)
+        } else {
+            
+            setVideoWidth(true)
+            console.log(window.innerWidth)
+        } 
+    },[]);
+
+    let renderVideoWidth = null
+    if(videoWidth){
+        renderVideoWidth = '100%'
+    } else  {
+        renderVideoWidth = null
+    }
+
+
   return (
 <div>
     <nav  className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav " style={renderNavClass} >
@@ -76,9 +96,9 @@ export default function IgG(products) {
     </nav>
     <div className='container-w-side-nav' >
         <SideNav/>
-      <div className='equine-igg'  >
+      <div className='custom-container equine-igg'  >
         <div className='col-top' >
-            <div className='col-top-left' >
+            <div className='col-top-left top-left' >
                 <img src={foalHorseImg} />
                 <div className='text' >
                     <span className='text-1' >Healthy foals are priceless.</span>
@@ -87,8 +107,8 @@ export default function IgG(products) {
                 Reduce the risk. Protect your foals.
                 </div>
             </div>
-            <div className='col-top-right' >
-                <ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' controls={true} playing={true} muted loop={true} />
+            <div className='col-top-right top-right' >
+                <ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
             </div>
         </div>
         
@@ -101,7 +121,7 @@ export default function IgG(products) {
                 <h1><span className='targetvet' >Immuno-Chek G</span><img className='jumbo-logo' src={Logo} /> vs. SNAP</h1>
             </Container>
         </Jumbotron>
-            <Table striped bordered hover>
+            <Table className='igg-table' striped bordered hover>
                 <thead>
                     <tr>
                     <th>Foal ID</th>
@@ -175,7 +195,7 @@ export default function IgG(products) {
             <Jumbotron className='igg-jumbo' fluid>
             <Container>
                 <h3>Examples of Visual Results</h3>
-                <Table striped bordered hover>
+                <Table className='igg-table-2' striped bordered hover>
                 <thead>
                     <tr>
                     <th>Foal ID</th>

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import { Button, Jumbotron, Container } from 'react-bootstrap';
 
 import SideNav from '../../components/side-nav-pages/sideNavPages';
@@ -21,6 +21,25 @@ import { faInfo, faArrowAltCircleDown, faAngleDown } from '@fortawesome/free-sol
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
 export default function QuickP4Equine(products) {
+
+    const [videoWidth, setVideoWidth] = useState(false)
+    useEffect(() => {
+        if(window.innerWidth >= 480){
+            setVideoWidth(false)
+        } else {
+            
+            setVideoWidth(true)
+            console.log(window.innerWidth)
+        } 
+    },[]);
+
+    let renderVideoWidth = null
+    if(videoWidth){
+        renderVideoWidth = '100%'
+    } else  {
+        renderVideoWidth = null
+    }
+
 
     //scroll to section 1
     const myRef1 = useRef(null)
@@ -77,11 +96,11 @@ export default function QuickP4Equine(products) {
     </nav>
     <div className='container-w-side-nav' >
         <SideNav/>
-        <div className='equine-quickp4' >
+        <div className='custom-container equine-quickp4' >
 
 
             <div className='col-top' >
-            <div className='col-top-left' >
+            <div className='col-top-left top-left' >
                 <img src={twoLadiesWithHorse} />
                 <div className='text' >
                     <span className='text-1' style={{fontSize: '25px'}} >On-site progesterone number in minutes.</span>
@@ -90,8 +109,8 @@ export default function QuickP4Equine(products) {
                 Know when the CL is active.
                 </div>
             </div>
-                <div className='col-top-right' >
-                    <ReactPlayer  url='https://www.youtube.com/embed/IETL5ldRWFk' controls={true} playing={true} muted loop={true} />
+                <div className='col-top-right top-right' >
+                    <ReactPlayer  url='https://www.youtube.com/embed/IETL5ldRWFk' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
                 </div>
             </div>
             
@@ -102,8 +121,8 @@ export default function QuickP4Equine(products) {
 
             <div ref={myRef1} >
                 <h3>Equine Progesterone Cycle</h3>
-                <CycleChart/>
-                <ImgCycle />
+                <CycleChart  />
+                <ImgCycle  />
             </div>
 
             <div className='cube-test' >
@@ -123,7 +142,7 @@ export default function QuickP4Equine(products) {
                 <QuickP4EquineTable   />
             </div>
 
-            <div ref={myRef3} className='why' style={{textAlign: 'left', paddingLeft: '50px', paddingTop: '50px'}} >
+            <div ref={myRef3} className='why' style={{textAlign: 'left',  paddingTop: '50px'}} >
                 <h1 >Why Progesterone</h1>
                 <p>Determination of progesterone is very important in many aspects of a mare’s reproductive cycle – in maintaining pregnancy, determining where the mare is in the cycle, embryo viability … and more.</p>
                 <p>Because of the delay and difficulty in getting accurate progesterone results from a laboratory, equine practitioners have used extensive progesterone supplementation rather than planning actions based on knowledge of actual progesterone levels present.</p>
@@ -135,7 +154,7 @@ export default function QuickP4Equine(products) {
 
                 <div style={{textAlign: 'center' }} >
                     <h3>Interpretation and Accuracy with Cube Reader</h3>
-                    <img src={InterImg} width='700px' />
+                    <img src={InterImg}  />
                     <div>
                         <ul  style={{textAlign: 'left', paddingLeft: '150px', paddingTop: '20px'}} >
                             <li>Calculation is the result of multiple photos (data points).</li>
@@ -149,11 +168,11 @@ export default function QuickP4Equine(products) {
 
             <div ref={myRef4} className='benefites-container' >
                 <h3   >Benefits</h3>
-                <div style={{display: 'flex', paddingLeft: '50px'}} >
+                <div style={{display: 'flex',  flexWrap: 'wrap'}} >
                     <div style={{paddingLeft: '20px'}}>
                         <img src={ImgProduct} />
                     </div>
-                    <div style={{textAlign: 'left', paddingLeft: '20px'}}>
+                    <div style={{textAlign: 'left', paddingLeft: '20px', width: '300px'}}>
                         <h5>Quick P4 Progesterone Kit – Quantitative Results with Cube Reader</h5>
                         <ul>
                             <li>Cube Reader can be used with the Immuno-Chek G and Equichek-SAA kits to get a number result!</li>

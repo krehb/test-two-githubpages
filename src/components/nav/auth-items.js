@@ -4,14 +4,10 @@ import { Link, useLocation } from 'react-router-dom';
 import app from '../../config/base';
 
 
-export default function AuthItems() {
+export default function AuthItems({loggedIn}) {
 
-    const [loggedIn, setLoggedIn] = useState(false);
     const [currentUrl, setCurrentUrl] = useState('');
-
-
     let location = useLocation();
-
     
 
     useEffect(() => {
@@ -19,17 +15,7 @@ export default function AuthItems() {
 
         setCurrentUrl(location.pathname)
 
-        app.auth().onAuthStateChanged(function(user) {
-            if (user) {
-              // User is signed in.
-              setLoggedIn(true)              
-            } else {
-              // No user is signed in.
-              setLoggedIn(false)
-            }
-        });
-
-    },[location]);
+    },[location, loggedIn]);
 
 
     let items = null

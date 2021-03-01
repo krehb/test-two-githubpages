@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Chart } from "react-google-charts";
 
 import img1 from '../../assets/img/equine/img1.jpg'
@@ -9,7 +9,24 @@ import img4 from '../../assets/img/equine/img4.jpg'
 export default function CycleChart(products) {
 
 
+    const [videoWidth, setVideoWidth] = useState(false)
+    useEffect(() => {
+        if(window.innerWidth >= 950){
+            setVideoWidth(false)
+            console.log(window.innerWidth)
+        } else {
+            
+            setVideoWidth(true)
+            console.log(window.innerWidth)
+        } 
+    },[]);
 
+    let renderVideoWidth = null
+    if(videoWidth){
+        renderVideoWidth = '100%'
+    } else  {
+        renderVideoWidth = '950px'
+    }
     
 
   return (
@@ -19,7 +36,7 @@ export default function CycleChart(products) {
         
 
         <Chart 
-            width={'950px'}
+            width={renderVideoWidth}
             height={'400px'}
             chartType="AreaChart"
             loader={<div>Loading Chart</div>}

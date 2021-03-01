@@ -258,7 +258,7 @@ export default function App() {
             </Route>
             {/* <PrivateRoute exact path='/' component={Home} /> */}
           </Switch>
-          <Footer />
+          <Footer category={category} />
         </div>
       </Router>
     </AuthProvider>

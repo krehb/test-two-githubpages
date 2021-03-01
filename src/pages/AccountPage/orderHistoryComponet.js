@@ -43,9 +43,9 @@ export default function OrderHistory({order, index, setCart}) {
                     </tr>
                     </thead>
                     <tbody>
-                    {order.order.map(item => {
+                    {order.order.map((item, index) => {
                         return (
-                            <tr>
+                            <tr key={index} >
                                 <td><Image className='order-img' src={item.img}  /></td>
                                 <td><h6>{item.title}</h6><h6>{item.subtitle}</h6><h6>{item.qty * item.test} tests</h6></td>
                                 <td>{item.qty}</td>

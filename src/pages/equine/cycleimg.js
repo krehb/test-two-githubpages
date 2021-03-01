@@ -52,7 +52,7 @@ export default function ImgChart() {
   return (
     <div>
 
-        <div style={{textAlign: 'left', display: 'flex', justifyContent: 'center', }} >
+        <div style={{textAlign: 'left', display: 'flex', justifyContent: 'center', flexWrap:'wrap' }} >
             <div>
                 <img  src={img1} style={{opacity: renderOpacity1}} />
                 <div style={{ display: 'flex'}} >

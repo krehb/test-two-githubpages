@@ -6,10 +6,15 @@ import { Container, Image } from 'react-bootstrap';
 import SideNav from '../components/side-nav-pages/sideNavPages'
 
 const Home = () => {
+
+
+
+    
+
     return (
         <div className='container-w-side-nav'>
-        <SideNav/>
-        {/* <Container> */}
+        <SideNav className='side-nav'  />
+        <div className='custom-container' >
                 <div className='home' >
                     <div className='col-top' >
                         <div className='col-top-left' >
@@ -60,7 +65,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-        {/* </Container> */}
+            </div>
         </div>
     )
 }

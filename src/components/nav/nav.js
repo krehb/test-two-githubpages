@@ -52,7 +52,7 @@ const Nav = ({cart, setCategory}) => {
         <div className='my-nav' >
             <Container fluid  >
                 <Row className='top-auth' >
-                    <TopAuthItems />
+                    <TopAuthItems loggedIn={loggedIn} />
                 </Row>
                 <div className='nav-parent'>
                     <div className='nav-child1' >
@@ -92,7 +92,7 @@ const Nav = ({cart, setCategory}) => {
                 </div>
 
             </Container>
-            <AuthItems/>
+            <AuthItems loggedIn={loggedIn} />
         </div>
   );
 }

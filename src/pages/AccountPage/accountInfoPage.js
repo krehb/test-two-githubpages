@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {  Button } from 'react-bootstrap';
 import app from '../../config/base';
 import firebase from 'firebase';
 import moment from 'moment';
@@ -15,6 +16,8 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
     const [saveEmail, setSavedEmail] = useState();
     const [saveOrderCount, setSavedOrderCount] = useState();
     const [userId, setUserId] = useState('')
+
+    const [showOrders, setShowOrders] = useState(false);
 
     const [editAddress, setEditAddress] = useState(false);
     const [street, setStreet] = useState();
@@ -70,6 +73,7 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
             } else {
               // No user is signed in.
                 signInPage()
+                console.log('not logged in')
             }
         });
     },[]);
@@ -123,17 +127,24 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
     let renderOrders = null
     if (ordersArray === undefined){
     } else if (ordersArray.length > 0) {
-        renderOrders = (
-            ordersArray.map((order, index) => {
-                return <OrderHistory key={index} setCart={setCart} index={index} order={order} />
-            })
-        );
+
+        if(showOrders){
+            renderOrders = (
+                ordersArray.map((order, index) => {
+                    return <OrderHistory key={index} setCart={setCart} index={index} order={order} />
+                })
+            );
+        } else {
+            renderOrders = null
+        }
+
     }
 
+    
 
 
   return (
-            <div className='account' >
+            <div className='account'  >
 
                 <div className='account-top' >
 
@@ -158,6 +169,10 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
                     </div>
                 </div>
 
+                </div>
+
+                <div>
+                    <Button onClick={() => setShowOrders(!showOrders)} >Order History</Button>
                 </div>
 
                 <div>
