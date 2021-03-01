@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/test-two-githubpages/static/css/main.eca011e5.chunk.css",
-    "main.js": "/test-two-githubpages/static/js/main.367b2b6e.chunk.js",
-    "main.js.map": "/test-two-githubpages/static/js/main.367b2b6e.chunk.js.map",
+    "main.css": "/test-two-githubpages/static/css/main.31387506.chunk.css",
+    "main.js": "/test-two-githubpages/static/js/main.6f044a6e.chunk.js",
+    "main.js.map": "/test-two-githubpages/static/js/main.6f044a6e.chunk.js.map",
     "runtime-main.js": "/test-two-githubpages/static/js/runtime-main.89d2767e.js",
     "runtime-main.js.map": "/test-two-githubpages/static/js/runtime-main.89d2767e.js.map",
-    "static/js/2.795a4b9a.chunk.js": "/test-two-githubpages/static/js/2.795a4b9a.chunk.js",
-    "static/js/2.795a4b9a.chunk.js.map": "/test-two-githubpages/static/js/2.795a4b9a.chunk.js.map",
+    "static/js/2.bcd425a2.chunk.js": "/test-two-githubpages/static/js/2.bcd425a2.chunk.js",
+    "static/js/2.bcd425a2.chunk.js.map": "/test-two-githubpages/static/js/2.bcd425a2.chunk.js.map",
     "index.html": "/test-two-githubpages/index.html",
-    "static/css/main.eca011e5.chunk.css.map": "/test-two-githubpages/static/css/main.eca011e5.chunk.css.map",
-    "static/js/2.795a4b9a.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.795a4b9a.chunk.js.LICENSE.txt",
+    "static/css/main.31387506.chunk.css.map": "/test-two-githubpages/static/css/main.31387506.chunk.css.map",
+    "static/js/2.bcd425a2.chunk.js.LICENSE.txt": "/test-two-githubpages/static/js/2.bcd425a2.chunk.js.LICENSE.txt",
     "static/media/Equine-QuickP4-vs-Lab-data.20d1c102.pdf": "/test-two-githubpages/static/media/Equine-QuickP4-vs-Lab-data.20d1c102.pdf",
     "static/media/c-Relaxin-Pro.86102994.jpg": "/test-two-githubpages/static/media/c-Relaxin-Pro.86102994.jpg",
     "static/media/store.css": "/test-two-githubpages/static/media/siberian-huskies-play-with-pup-3-1024x682.b183e868.jpg",
@@ -18,6 +18,7 @@
     "static/media/cube110.c7314fb6.png": "/test-two-githubpages/static/media/cube110.c7314fb6.png",
     "static/media/cube712.ea4e8c42.png": "/test-two-githubpages/static/media/cube712.ea4e8c42.png",
     "static/media/dog-icon.016eaeaf.png": "/test-two-githubpages/static/media/dog-icon.016eaeaf.png",
+    "static/media/dog.fafc5b72.png": "/test-two-githubpages/static/media/dog.fafc5b72.png",
     "static/media/equine-progesterone-levels.e621eef5.png": "/test-two-githubpages/static/media/equine-progesterone-levels.e621eef5.png",
     "static/media/horse-and-foal.402ae1c7.jpg": "/test-two-githubpages/static/media/horse-and-foal.402ae1c7.jpg",
     "static/media/pages.css": "/test-two-githubpages/static/media/horse-dog.9b6c48e9.png",
@@ -44,8 +45,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.89d2767e.js",
-    "static/js/2.795a4b9a.chunk.js",
-    "static/css/main.eca011e5.chunk.css",
-    "static/js/main.367b2b6e.chunk.js"
+    "static/js/2.bcd425a2.chunk.js",
+    "static/css/main.31387506.chunk.css",
+    "static/js/main.6f044a6e.chunk.js"
   ]
 }
