@@ -4,7 +4,7 @@ import { Container, Col, Row, Image } from 'react-bootstrap';
 import SideNav from '../../components/side-nav-pages/sideNavPages'
 
 
-export default function Progesterone(products) {
+export default function Progesterone({passingData}) {
 
 
 
@@ -35,7 +35,7 @@ export default function Progesterone(products) {
       </div>
     </nav>
     <div className='container-w-side-nav' >
-    <SideNav/>
+    <SideNav passingData={passingData} />
       <div className='canine' >
         <div className='col-top' >
             <div className='col-top-left' >

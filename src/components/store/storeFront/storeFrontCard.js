@@ -5,7 +5,7 @@ import products from '../../../products';
 import '../store.css'
 import InfoAccordion from './infoAccordion';
 
-export default function MyCard({data, group, addToCartHandler, cart, instockArray, accordion, setAccordion }) {
+export default function MyCard({data, group, addToCartHandler, cart, instockArray, accordion, setAccordion, category }) {
 
 
     const [renderPrice, setRenderPrice] = useState();
@@ -14,6 +14,7 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
     const [loadSpinner, setLoadSpinner] = useState(false);
     const [qty, setQty] = useState(1);
     const [instock, setInstock] = useState(false)
+    const [rerenderAccordion, setRerenderAccordion] = useState(false)
 
     useEffect(() => {
         // Update the document title using the browser API
@@ -25,9 +26,12 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
                 setInstock(true) 
             }
         });
-
     },[]);
 
+    //when you nav to a new product category, this is triggered to close the "additional info" accordion
+    useEffect(() => {
+        setRerenderAccordion(false)
+    },[category]);
 
 
     const selectionCollapseHandler = (sectionData) => {
@@ -61,7 +65,7 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
         renderCheckout = null
     }
     let renderAccordion = null
-    if (accordion){
+    if (rerenderAccordion){
         renderAccordion = (
             <InfoAccordion data={data} />
         )
@@ -69,7 +73,7 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
         renderAccordion = null
     }
     let expanded = null
-    if (accordion){
+    if (rerenderAccordion){
         expanded = '-'
     } else {
         expanded = '+'
@@ -139,7 +143,7 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
             <div className='child2' >
                 <h6 className='title' >{data.title}<span> {data.test} tests</span></h6>
                 <h6 className='subtitle' >{data.subtitle}</h6>
-                <h6 className='info' onClick={() => {setAccordion(!accordion)}} ><span className='button' >Additional Info</span><span className='plus' >{expanded}</span></h6>
+                <h6 className='info' onClick={() => {setRerenderAccordion(!rerenderAccordion)}} ><span className='button' >Additional Info</span><span className='plus' >{expanded}</span></h6>
             </div>
 
             <div className='child3' >

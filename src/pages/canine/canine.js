@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function Canine(products) {
+export default function Canine({passingData}) {
 
     const [videoWidth, setVideoWidth] = useState(false)
     useEffect(() => {
@@ -57,7 +57,7 @@ export default function Canine(products) {
       </div>
     </nav>
     <div className='container-w-side-nav'>
-        <SideNav/>
+        <SideNav passingData={passingData} />
       <div className='custom-container'  >
 
         <h2 style={{color: '#317C97', fontWeight: '600', marginTop: '30px', letterSpacing: '-2px'}} >Canine Progesterone & Relaxin Testing</h2>

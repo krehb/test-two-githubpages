@@ -22,7 +22,7 @@ $medium: 900px;
     .top-auth {
         justify-content: flex-end;
         .top-auth-child {
-            padding: 10px 10px 10px 10px;
+            padding: 10px 10px 0px 10px;
         }
 
         .create-account {
@@ -48,14 +48,16 @@ $medium: 900px;
         justify-content: center;
         //img
         .nav-child1 {
-            width: 200px;
+            margin-top: 10px;
+            width: 100px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: flex-end;
             flex-grow: 2;
             .nav-child-img {
-                margin-bottom: 10px;
+                margin-bottom: 5px;
+                width: 220px;
             }
             @media screen and (max-width: $small) {
                 justify-content: center;
@@ -77,7 +79,7 @@ $medium: 900px;
                 justify-content: flex-end;
                 .my-nav-item {
                     padding-left: 18px;
-                    padding-bottom: 30px;
+                    padding-bottom: 18px;
                     font-size: 20px;
                     color: rgb(107, 107, 107);
                     @media screen and (max-width: $small) {

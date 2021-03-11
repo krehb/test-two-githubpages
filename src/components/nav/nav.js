@@ -51,9 +51,9 @@ const Nav = ({cart, setCategory}) => {
   return (
         <div className='my-nav' >
             <Container fluid  >
-                <Row className='top-auth' >
+                {/* <Row className='top-auth' >
                     <TopAuthItems loggedIn={loggedIn} />
-                </Row>
+                </Row> */}
                 <div className='nav-parent'>
                     <div className='nav-child1' >
                         <div className='nav-child-img' >
@@ -89,8 +89,10 @@ const Nav = ({cart, setCategory}) => {
                             {navAccount}
                         </div>
                     </div>
+                    <div className='top-auth'>
+                        <TopAuthItems loggedIn={loggedIn} />
+                    </div>
                 </div>
-
             </Container>
             <AuthItems loggedIn={loggedIn} />
         </div>

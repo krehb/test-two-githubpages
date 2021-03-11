@@ -1,19 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './pages.css'
 import dogIcon from '../assets/img/home/dog-icon.png';
 import horseIcon from '../assets/img/home/horse-icon.png'
 import { Container, Image } from 'react-bootstrap';
 import SideNav from '../components/side-nav-pages/sideNavPages'
 
-const Home = () => {
+const Home = ({passingData}) => {
 
 
 
-    
 
     return (
         <div className='container-w-side-nav'>
-        <SideNav className='side-nav'  />
+        <SideNav passingData={passingData} className='side-nav'  />
         <div className='custom-container' >
                 <div className='home' >
                     <div className='col-top' >

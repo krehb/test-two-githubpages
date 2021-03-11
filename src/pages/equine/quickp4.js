@@ -3,6 +3,7 @@ import { Button, Jumbotron, Container } from 'react-bootstrap';
 
 import SideNav from '../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
+import { Link} from 'react-router-dom';
 
 import Cube from '../../assets/img/equine/cube.jpg'
 import Test from '../../assets/img/equine/test.jpg'
@@ -20,7 +21,7 @@ import { faInfo, faArrowAltCircleDown, faAngleDown } from '@fortawesome/free-sol
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function QuickP4Equine(products) {
+export default function QuickP4Equine({passingData}) {
 
     const [videoWidth, setVideoWidth] = useState(false)
     useEffect(() => {
@@ -95,7 +96,7 @@ export default function QuickP4Equine(products) {
       </div>
     </nav>
     <div className='container-w-side-nav' >
-        <SideNav/>
+        <SideNav passingData={passingData} />
         <div className='custom-container equine-quickp4' >
 
 
@@ -103,7 +104,7 @@ export default function QuickP4Equine(products) {
             <div className='col-top-left top-left' >
                 <img src={twoLadiesWithHorse} />
                 <div className='text' >
-                    <span className='text-1' style={{fontSize: '25px'}} >On-site progesterone number in minutes.</span>
+                    <span className='text-1' style={{fontSize: '22px'}} >On-site progesterone number in minutes.</span>
                 </div>
                 <div className='text-3' style={{fontSize: '25px'}} >
                 Know when the CL is active.
@@ -125,7 +126,7 @@ export default function QuickP4Equine(products) {
                 <ImgCycle  />
             </div>
 
-            <div className='cube-test' >
+            <div className='cube-test'  >
                 <Jumbotron fluid>
                     <Container className='head' >
                         <h1>Number Results</h1>
@@ -134,8 +135,16 @@ export default function QuickP4Equine(products) {
                         </h1>
                     </Container>
                 </Jumbotron>
-                <img src={Cube} width='300px' />
-                <img src={Test} width='300px' />
+                <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
+                    <div>
+                        <img src={Cube} width='300px' />
+                        <h6>Cube Reader</h6>
+                    </div>
+                    <div>
+                        <img src={Test} width='300px' style={{marginTop: '100px', marginBottom: '30px'}} />
+                        <h6>Get number results in 10 minutes​ using the Cube reader.</h6>
+                    </div>
+                </div>
             </div>
 
             <div ref={myRef2} >
@@ -168,8 +177,8 @@ export default function QuickP4Equine(products) {
 
             <div ref={myRef4} className='benefites-container' >
                 <h3   >Benefits</h3>
-                <div style={{display: 'flex',  flexWrap: 'wrap'}} >
-                    <div style={{paddingLeft: '20px'}}>
+                <div style={{display: 'flex', justifyContent: 'center',  flexWrap: 'wrap', }} >
+                    <div style={{paddingLeft: '20px',}}>
                         <img src={ImgProduct} />
                     </div>
                     <div style={{textAlign: 'left', paddingLeft: '20px', width: '300px'}}>
@@ -189,7 +198,31 @@ export default function QuickP4Equine(products) {
                 <Button style={{marginLeft: '50px'}}>Buy</Button>
             </div>
 
-
+            <Jumbotron fluid>
+            <Container>
+                <h1>one cube three tests</h1>
+                <p style={{marginTop: '20px'}} >
+                <span style={{marginRight: '70px',}} >
+                    
+                    <Link className='side-nav-link canine ' to='/equine-igg' >
+                    Equine Immuno-Chek G Foal IgG Kit
+                    </Link>
+                </span>
+                <span style={{marginRight: '70px',}}>
+                    
+                    <Link className='side-nav-link canine ' to='/equine-quickp4' >
+                    Quick P4 Progesterone Kit
+                    </Link>
+                </span>
+                <span>
+                    
+                    <Link className='side-nav-link canine ' to='/equine-saa' >
+                    EquiChek™ SAA Kit
+                    </Link>
+                </span>
+                </p>
+            </Container>
+            </Jumbotron>
 
             </div>
         </div>

@@ -1,33 +1,77 @@
 import React, {useState, useEffect} from 'react';
 import { Form, FormControl } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import dogIcon from '../../assets/img/home/dog-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
+import SideNavEquine from './equine';
+import SideNavCanine from './canine';
+
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
-function SideNav(){
+export default function SideNav({passingData}){
 
-    const [sticky, setSticky] = useState(false);
-
-    const [formSelect, setFormSelect] = useState('All');
-    const [igg, setIgg] = useState(false);
-    const [saa, setSaa] = useState(false);
-    const [equick, setEQuick] = useState(false);
-
+    let location = useLocation()
+    const [sticky, setSticky] = useState(true);
     const [screenSizeSmall, setScreenSizeSmall] = useState(false)
+    const [currentUrl, setCurrentUrl] = useState('');
     useEffect(() => {
+
         if(window.innerWidth >= 480){
             setScreenSizeSmall(false)
         } else {
-            
             setScreenSizeSmall(true)
-            console.log(window.innerWidth)
         } 
+
+
+        setCurrentUrl(location.pathname)
+
+        if(location.pathname === '/canine'){
+            console.log(passingData)
+            passingData.setCanine(true)
+            passingData.setEquine(false)
+            passingData.setIgg(false)
+            passingData.setEQuick(false)
+            passingData.setSaa(false)
+        } else if(location.pathname === '/equine'){
+            passingData.setEquine(true)
+            passingData.setCanine(false)
+            console.log(location.pathname)
+        } else if(location.pathname === '/equine-igg'){
+            passingData.setEquine(true)
+            passingData.setCanine(false)
+            passingData.setIgg(true)
+            console.log(location.pathname)
+        }
+        else if(location.pathname === '/equine-quickp4'){
+            passingData.setEquine(true)
+            passingData.setCanine(false)
+            passingData.setEQuick(true)
+            console.log(location.pathname)
+        }else if(location.pathname === '/equine-saa'){
+            passingData.setEquine(true)
+            passingData.setCanine(false)
+            passingData.setEQuick(true)
+            passingData.setSaa(true)
+            console.log(location.pathname)
+        } else {
+            console.log(location.pathname)
+        }
+
     },[]);
 
 
+    window.onscroll = () => {
+        console.log('is activated')
+        if(window.pageYOffset >= 130){
+            setSticky(true)
+            console.log(window.pageYOffset)
+        } else {
+            console.log(window.pageYOffset)
+            setSticky(false)
+        }
+    }
 
 
 
@@ -45,95 +89,17 @@ function SideNav(){
         history.push(`/${e}`);
     }
 
-    window.onscroll = () => {
-        if(window.pageYOffset >= 130){
-            setSticky(true)
-        } else {
-            setSticky(false)
-        }
-    }
+
 
     let renderNavClass = ''
     if(sticky){
-        renderNavClass = {position: 'fixed', top: 0}
+        renderNavClass = {
+            position: 'fixed', 
+            top: '160px', 
+            // overflowY: 'scroll',
+        }
     } else {
         renderNavClass = {}
-    }
-
-    let renderIgG = null
-    let renderIgGButton = faAngleRight 
-    if(igg){ renderIgG = (
-        <>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Immuno-Chek G vs SNAP
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    How To Run Test
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Benefits
-                    </Link>
-                </h6>
-        </>
-        )
-        renderIgGButton = faAngleDown
-    }
-
-    let renderSaa = null
-    let renderSaaButton = faAngleRight 
-    if(saa){ renderSaa = (
-        <>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Immuno-Chek G vs SNAP
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    How To Run Test
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Benefits
-                    </Link>
-                </h6>
-        </>
-        )
-        renderSaaButton = faAngleDown
-    }
-    let renderEQuick = null
-    let renderEQuickButton = faAngleRight 
-    if(equick){ renderEQuick = (
-        <>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Progesterone Cycle
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Quick P4 vs Lab
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link '  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Why Progesterone
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover sub-nav-link'  onClick={() => navigateToPage('equine-igg')}  >
-                    <Link className='side-nav-link' style={subjectIndent2} to='/equine-igg' >
-                    Benefits
-                    </Link>
-                </h6>
-        </>
-        )
-        renderEQuickButton = faAngleDown
     }
 
 
@@ -176,54 +142,15 @@ function SideNav(){
         <div style={{width: '200px', marginRight: '20px'}} ></div>
         <div className='side-nav' style={renderNavClass} >
 
-                <h6 className='product-title no-hover other-side-nav' onClick={() => navigateToPage('')} style={{marginTop: '10px'}} >
-                    <Link className='side-nav-link ' style={{fontSize: '26px'}} to='/canine' >
+                <h6 className='product-title no-hover other-side-nav' onClick={() => navigateToPage('')} style={{marginTop: '10px', marginRight: '10px'}} >
+                    <Link className='side-nav-link ' style={{fontSize: '20px'}} to='/canine' >
                         Home
                     </Link>
                 </h6>
-                <h6 className='product-title no-hover canine-side-nav' onClick={() => navigateToPage('canine')}  >
-                    <Link className='side-nav-link ' style={{fontSize: '26px'}} to='/canine' >
-                        Canine
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover canine-side-nav'  onClick={() => navigateToPage('canine-progesterone')}  style={subjectIndent}  >
-                    <Link className='side-nav-link ' to='/canine-progesterone' >
-                        Target Progesterone
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover canine-side-nav'  onClick={() => navigateToPage('canine-relaxin')}  style={subjectIndent} >
-                    <Link className='side-nav-link ' to='/canine-relaxin' >
-                        Pregnancy Relaxin
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover canine-side-nav'  onClick={() => navigateToPage('canine-quickp4')}  style={subjectIndent} >
-                    <Link className='side-nav-link ' to='/canine-quickp4' >
-                        Quick P4 Progesterone
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover equine-nav'  onClick={() => navigateToPage('equine')}  >
-                    <Link className='side-nav-link' to='/equine' style={{fontSize: '26px'}} >
-                        Equine
-                    </Link>
-                </h6>
-                <h6 className='product-title no-hover equine-nav'   >
-                    <FontAwesomeIcon onClick={() => {setEQuick(!equick)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderEQuickButton} />
-                    <Link className='side-nav-link' style={subjectIndent, {fontSize: '14px', padding: '0px 0px 0px 5px'}} to='/equine-quickp4' > Equine Progesterone</Link>
-                </h6>
-                {renderEQuick}
-                <h6 className='product-title no-hover equine-nav'   >
-                    <FontAwesomeIcon onClick={() => {setIgg(!igg)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderIgGButton} />
-                    <Link className='side-nav-link' style={subjectIndent} to='/equine-igg' > IgG</Link>
-                </h6>
-                {renderIgG}
-                <h6 className='product-title no-hover equine-nav'    >
-                    <FontAwesomeIcon onClick={() => {setSaa(!saa)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderSaaButton} />
-                    <Link className='side-nav-link' style={subjectIndent} to='/equine-saa' > SAA</Link>
-                </h6>
-                {renderSaa}
-                
-                <h6 className='product-title no-hover  other-side-nav' onClick={() => navigateToPage('store')} style={{marginTop: '10px'}} >
-                    <Link className='side-nav-link ' style={{fontSize: '26px'}} to='/canine' >
+                <SideNavCanine passingData={passingData} />
+                <SideNavEquine passingData={passingData} />
+                <h6 className='product-title no-hover  other-side-nav' onClick={() => navigateToPage('store')} style={{marginTop: '10px', marginRight: '10px'}} >
+                    <Link className='side-nav-link ' style={{fontSize: '20px'}} to='/canine' >
                         Store
                     </Link>
                 </h6>
@@ -240,5 +167,3 @@ function SideNav(){
     </>
   );
 };
-
-export default SideNav;

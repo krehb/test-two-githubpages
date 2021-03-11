@@ -71,7 +71,7 @@ const StoreFrontDeck = ({products, category, group, addToCartHandler, cart, setC
             {filterButtons}
             {list.map(x => 
             <div>
-                <MyCard accordion={accordion} setAccordion={setAccordion} instockArray={instockArray} key={x.id} cart={cart} setCart={setCart} data={x} group={group} addToCartHandler={addToCartHandler} />
+                <MyCard accordion={accordion} setAccordion={setAccordion} category={category} instockArray={instockArray} key={x.id} cart={cart} setCart={setCart} data={x} group={group} addToCartHandler={addToCartHandler} />
             </div> )}
         </div>
     </div>

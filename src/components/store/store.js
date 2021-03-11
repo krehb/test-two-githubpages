@@ -10,6 +10,7 @@ const Store = ({products, group, categories, setCategoryHandler, category, addTo
 
     const [accordion, setAccordion] = useState(false);
 
+
   return (
     <div className='store' >
         <Container  >

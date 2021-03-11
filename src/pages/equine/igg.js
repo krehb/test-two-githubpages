@@ -26,7 +26,7 @@ import { faFlask, faHistory } from '@fortawesome/free-solid-svg-icons'
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function IgG(products) {
+export default function IgG({passingData}) {
 
     const [sticky, setSticky] = useState(false);
 
@@ -95,7 +95,7 @@ export default function IgG(products) {
       </div>
     </nav>
     <div className='container-w-side-nav' >
-        <SideNav/>
+        <SideNav passingData={passingData}/>
       <div className='custom-container equine-igg'  >
         <div className='col-top' >
             <div className='col-top-left top-left' >

@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useLocation
 } from "react-router-dom";
 import firebase from 'firebase';
 
@@ -20,7 +21,7 @@ import Relaxin from './pages/canine/relaxin';
 import Equine from './pages/equine/equine';
 import IgG from './pages/equine/igg';
 import QuickP4Equine from './pages/equine/quickp4';
-import Saa from './pages/equine/saa';
+import Saa from './pages/equine/saa/saa';
 
 import AccountInfo from './pages/AccountPage/accountInfoPage';
 
@@ -49,6 +50,10 @@ export default function App() {
   const database = firebase.database();
   const ref = database.ref('products');
 
+
+
+
+
   // firebase products array for showing either product is in stock or not
   const [instockArray, setInstockArray] = useState([]);
 
@@ -57,6 +62,37 @@ export default function App() {
   const [cart, setCart] = useState([])
   const [priceTotal, setPriceTotal] = useState(0);
   
+
+  //side nav state
+  const [canine, setCanine] = useState(false);
+  const [igg, setIgg] = useState(false);
+  const [saa, setSaa] = useState(false);
+  const [equick, setEQuick] = useState(false);
+  const [equine, setEquine] = useState(false);
+
+  const passingData = {
+      canine: canine,
+      setCanine: setCanine,
+
+      equine: equine,
+      setEquine: setEquine,
+      igg: igg,
+      setIgg: setIgg,
+      saa: saa,
+      setSaa: setSaa,
+      equick: equick,
+      setEQuick: setEQuick,
+  }
+
+
+  // useEffect(() => {
+  //   console.log(location.pathname)
+
+  //   // if(location.pathname === 'canine'){
+  //   //   console.log('canninine')
+  //   // }
+    
+  // },[location]);
 
 
 
@@ -200,28 +236,28 @@ export default function App() {
           <Nav cart={cart} setCategory={setCategory} />
           <Switch>
             <Route path="/canine">
-              <Canine />
+              <Canine passingData={passingData}/>
             </Route>
             <Route path="/canine-progesterone">
-              <Progesterone />
+              <Progesterone passingData={passingData}/>
             </Route>
             <Route path="/canine-quickp4">
-              <QuickP4Canine />
+              <QuickP4Canine passingData={passingData}/>
             </Route>
             <Route path="/canine-relaxin">
-              <Relaxin />
+              <Relaxin passingData={passingData}/>
             </Route>
             <Route path="/equine">
-              <Equine />
+              <Equine passingData={passingData}/>
             </Route>
             <Route path="/equine-igg">
-              <IgG />
+              <IgG passingData={passingData}/>
             </Route>
             <Route path="/equine-saa">
-              <Saa />
+              <Saa passingData={passingData}/>
             </Route>
             <Route path="/equine-quickp4">
-              <QuickP4Equine />
+              <QuickP4Equine passingData={passingData} />
             </Route>
             <Route path="/store">
               <Store className='store'
@@ -253,8 +289,8 @@ export default function App() {
             <Route path='/account' >
               <AccountInfo cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
             </Route>
-            <Route exact path='/' >
-              <Home/>
+            <Route exact  path='/' >
+              <Home passingData={passingData}/>
             </Route>
             {/* <PrivateRoute exact path='/' component={Home} /> */}
           </Switch>
