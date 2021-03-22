@@ -1,9 +1,10 @@
 import React, {useRef, useState, useEffect} from 'react';
 import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
-
+import { Link, useHistory } from 'react-router-dom';
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
 
+import CubeOn from '../../../assets/img/equine/cube-on.png'
 import Video from '../../../components/video/video';
 import Logo from '../../../assets/img/equine/logo-small.png'
 import snap1 from '../../../assets/img/equine/snap1.png'
@@ -81,6 +82,10 @@ export default function IgG({passingData}) {
     <div className='container-w-side-nav' >
         <SideNav passingData={passingData}/>
       <div className='custom-container equine-igg'  >
+
+      <h2 style={{color: '#317C97', fontWeight: '600', marginTop: '30px',marginBottom: '0px', letterSpacing: '-2px', textAlign: 'left'}} >Horse Infection Detection & Health Screening</h2>
+      <h5 style={{color: '#317C97', fontWeight: '500', marginTop: '0px', letterSpacing: '-2px', textAlign: 'left', paddingLeft: '100px'}} >SAA</h5>
+
         <div className='col-top' >
             <div className='col-top-left top-left' >
                 <img src={foalHorseImg} />
@@ -175,9 +180,35 @@ export default function IgG({passingData}) {
             </div>           
         </div>
 
-        <div>
-            <p>Note: The same Cube Reader can be used with the Immuno-Chek G and Quick P4 kits to get a number result!</p>
-        </div>
+        <div  className=' one-cube-three-test-container ' >
+            <Container>
+                <div style={{display:'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
+                    <h1 style={{paddingTop: '40px'}} ><span style={{fontWeight: 600}} >ONE</span> cube</h1>
+                    <img src={CubeOn} style={{width: '150px'}} />
+                </div>
+                <div style={{display:'flex', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0px'}}>
+                    <h1 style={{paddingRight:'100px'}} ><span style={{fontWeight: 600}} >THREE</span> tests</h1>
+                </div>
+                
+                <p style={{marginTop: '10px'}} >
+                <span style={{marginRight: '70px',}}  className=' one-cube-three-test ' >
+                    <Link className=' one-cube-three-test ' to='/equine-igg' >
+                    Immuno-Chek G Foal IgG Kit
+                    </Link>
+                </span>
+                <span style={{marginRight: '70px',}} className=' one-cube-three-test ' >
+                    <Link className=' one-cube-three-test ' to='/equine-quickp4' >
+                    Quick P4 Progesterone Kit
+                    </Link>
+                </span>
+                <span className=' one-cube-three-test ' >
+                    <Link className=' one-cube-three-test ' to='/equine-saa' >
+                    EquiChek™ SAA Kit
+                    </Link>
+                </span>
+                </p>
+            </Container>
+            </div>
 
     </div>
     </div>

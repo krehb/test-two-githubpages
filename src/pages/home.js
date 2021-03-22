@@ -34,7 +34,8 @@ const Home = ({passingData}) => {
                         <div className='underline-bar' ></div>
                         <div className='mid-body' >
                             <p>Playing the guessing game is no fun when it comes to breeding, pregnancy, birth and infection detection. There is too much to lose.</p>
-                            <p>Start your winning streak with a revolutionary, hand-held test giving you lab-quality data in minutes. Know exactly. Time perfectly. Respond early. You’ve got this.</p>
+                            <span>Start your winning streak with a revolutionary, hand-held test giving you lab-quality data in minutes. Know exactly. Time perfectly. Respond early.</span>
+                            <br></br><span>You’ve got this.</span>
                         </div>
                     </div>
                     <div className='col-bottom' >

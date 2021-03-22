@@ -12,15 +12,16 @@ import firebase from 'firebase';
 
 //pages
 import Home from './pages/home';
+import HomePar from './pages/homeParallax'
 
 import Canine from './pages/canine/canine';
-import Progesterone from './pages/canine/progestrone';
+import Progesterone from './pages/canine/progestrone/progestrone';
 import QuickP4Canine from './pages/canine/quickp4';
 import Relaxin from './pages/canine/relaxin';
 
 import Equine from './pages/equine/equine';
-import IgG from './pages/equine/igg';
-import QuickP4Equine from './pages/equine/quickp4';
+import IgG from './pages/equine/igg/igg';
+import QuickP4Equine from './pages/equine/quickp4/quickp4';
 import Saa from './pages/equine/saa/saa';
 
 import AccountInfo from './pages/AccountPage/accountInfoPage';
@@ -85,14 +86,7 @@ export default function App() {
   }
 
 
-  // useEffect(() => {
-  //   console.log(location.pathname)
 
-  //   // if(location.pathname === 'canine'){
-  //   //   console.log('canninine')
-  //   // }
-    
-  // },[location]);
 
 
 
@@ -229,11 +223,14 @@ export default function App() {
 
 
 
+
+
+
   return (
     <AuthProvider>
       <Router>
         <div>
-          <Nav cart={cart} setCategory={setCategory} />
+          <Nav cart={cart} setCategory={setCategory}  />
           <Switch>
             <Route path="/canine">
               <Canine passingData={passingData}/>
@@ -290,7 +287,7 @@ export default function App() {
               <AccountInfo cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
             </Route>
             <Route exact  path='/' >
-              <Home passingData={passingData}/>
+              <HomePar passingData={passingData}/>
             </Route>
             {/* <PrivateRoute exact path='/' component={Home} /> */}
           </Switch>

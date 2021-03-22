@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import app from '../../config/base';
 import firebase from 'firebase';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import AuthItems from './auth-items';
 import { AuthProvider } from '../../config/Auth';
@@ -12,8 +13,21 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 const Nav = ({cart, setCategory}) => {
 
     const db = firebase.firestore();
-    
+    let location = useLocation();
+
+    const style1 ={
+        opacity: .8,
+        zIndex: 5,
+        position: 'fixed',
+        width: '100%'
+    }
+    const style2 = {
+        
+    }
+
     const [loggedIn, setLoggedIn] = useState(false);
+    const [renderStyle, setRenderStyle] = useState(false)
+
 
     useEffect(() => {
         // Update the document title using the browser API
@@ -27,6 +41,16 @@ const Nav = ({cart, setCategory}) => {
             }
         });
     },[]);
+
+    useEffect(() => {
+
+        if(location.pathname === '/'){
+            setRenderStyle(true)
+        } else {
+            setRenderStyle(false)
+        }
+
+    },[location.pathname]);
 
     let navCart = null
     if(cart.length === 0){
@@ -47,9 +71,15 @@ const Nav = ({cart, setCategory}) => {
         )
     } else { navAccount = null}
 
+    let renderNewStyle = null
+    if(renderStyle){
+        renderNewStyle = style1
+    } else {
+        renderNewStyle = style2
+    }
 
   return (
-        <div className='my-nav' >
+        <div className='my-nav' style={renderNewStyle} >
             <Container fluid  >
                 {/* <Row className='top-auth' >
                     <TopAuthItems loggedIn={loggedIn} />

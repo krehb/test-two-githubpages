@@ -10,6 +10,8 @@ $medium: 1000px;
 $large: 1500px;
 
 
+
+
 .container-w-side-nav {
     display: flex;
     justify-content: center;
@@ -117,6 +119,22 @@ $large: 1500px;
     }
 }
 
+.one-cube-three-test-container {
+
+    background-color: rgb(220, 235, 238);
+    padding-bottom: 10px;
+    
+    .one-cube-three-test {
+    
+        color: #3186ad;
+        font-weight: 600;
+        :hover {
+            text-decoration: none;
+            font-weight: 600;
+            color: #3caed4;
+        }
+    }
+}
 
 .home {
     display: flex;

@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { Chart } from "react-google-charts";
 
-import img1 from '../../assets/img/equine/img1.jpg'
-import img2 from '../../assets/img/equine/img2.jpg'
-import img3 from '../../assets/img/equine/img3.jpg'
-import img4 from '../../assets/img/equine/img4.jpg'
+import img1 from '../../../assets/img/equine/img1.jpg'
+import img2 from '../../../assets/img/equine/img2.jpg'
+import img3 from '../../../assets/img/equine/img3.jpg'
+import img4 from '../../../assets/img/equine/img4.jpg'
 
 export default function CycleChart(products) {
 
@@ -13,11 +13,11 @@ export default function CycleChart(products) {
     useEffect(() => {
         if(window.innerWidth >= 950){
             setVideoWidth(false)
-            console.log(window.innerWidth)
+            // console.log(window.innerWidth)
         } else {
             
             setVideoWidth(true)
-            console.log(window.innerWidth)
+            // console.log(window.innerWidth)
         } 
     },[]);
 

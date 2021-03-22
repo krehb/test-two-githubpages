@@ -42,6 +42,10 @@ function Footer({category}) {
         renderStyleFooter = {position: 'static', width: '100%', bottom: 0}
     }
 
+    if (currentUrl === '/'){
+        renderStyleFooter = {display: 'none'}
+    }
+
 
     if (!(category === 'none') && !(category === 'Canine Pregnancy Relaxin')){
         renderStyleFooter = {position: 'static', width: '100%'};

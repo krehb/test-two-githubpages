@@ -1,16 +1,17 @@
 import React, {useRef, useState, useEffect} from 'react';
 import { Button, Jumbotron, Container } from 'react-bootstrap';
 
-import SideNav from '../../components/side-nav-pages/sideNavPages';
+import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
 import { Link} from 'react-router-dom';
 
-import Cube from '../../assets/img/equine/cube.jpg'
-import Test from '../../assets/img/equine/test.jpg'
-import InterImg from '../../assets/img/equine/equine-progesterone-levels.png'
-import ImgProduct from '../../assets/img/equine/quickp4-product.jpg'
-import Logo from '../../assets/img/equine/logo-small.png'
-import twoLadiesWithHorse from '../../assets/img/equine/two-ladies-with-horse.jpg'
+import Cube from '../../../assets/img/equine/cube.jpg'
+import CubeOn from '../../../assets/img/equine/cube-on.png'
+import Test from '../../../assets/img/equine/test.jpg'
+import InterImg from '../../../assets/img/equine/equine-progesterone-levels.png'
+import ImgProduct from '../../../assets/img/equine/quickp4-product.jpg'
+import Logo from '../../../assets/img/equine/logo-small.png'
+import twoLadiesWithHorse from '../../../assets/img/equine/two-ladies-with-horse.jpg'
 
 import QuickP4EquineTable from './quickp4Table';
 import CycleChart from './cyclechart';
@@ -51,13 +52,13 @@ export default function QuickP4Equine({passingData}) {
 
     const [sticky, setSticky] = useState(false);
 
-    window.onscroll = () => {
-        if(window.pageYOffset >= 130){
-            setSticky(true)
-        } else {
-            setSticky(false)
-        }
-    }
+    // window.onscroll = () => {
+    //     if(window.pageYOffset >= 130){
+    //         setSticky(true)
+    //     } else {
+    //         setSticky(false)
+    //     }
+    // }
 
     let renderNavClass = ''
     if(sticky){
@@ -70,7 +71,7 @@ export default function QuickP4Equine({passingData}) {
 <div>
     <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav " style={renderNavClass} >
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul className="navbar-nav align-items-center">
+        {/* <ul className="navbar-nav align-items-center">
             <li className="nav-item my-item">
                 <a className="nav-link" onClick={() => executeScroll(myRef1)} >Progesterone Cycle</a>
             </li>
@@ -92,12 +93,14 @@ export default function QuickP4Equine({passingData}) {
             <li className="nav-item my-item">
                 <a className="nav-link" onClick={() => executeScroll(myRef4)} >Benefits</a>
             </li>
-        </ul>
+        </ul> */}
       </div>
     </nav>
     <div className='container-w-side-nav' >
         <SideNav passingData={passingData} />
         <div className='custom-container equine-quickp4' >
+
+        <h2 style={{color: '#317C97', fontWeight: '600', marginTop: '30px', letterSpacing: '-2px', textAlign: 'left'}} >Equine Progesterone</h2>
 
 
             <div className='col-top' >
@@ -198,31 +201,35 @@ export default function QuickP4Equine({passingData}) {
                 <Button style={{marginLeft: '50px'}}>Buy</Button>
             </div>
 
-            <Jumbotron fluid>
+            <div  className=' one-cube-three-test-container ' >
             <Container>
-                <h1>one cube three tests</h1>
-                <p style={{marginTop: '20px'}} >
-                <span style={{marginRight: '70px',}} >
-                    
-                    <Link className='side-nav-link canine ' to='/equine-igg' >
-                    Equine Immuno-Chek G Foal IgG Kit
+                <div style={{display:'flex', justifyContent: 'center', flexWrap: 'wrap'}}>
+                    <h1 style={{paddingTop: '40px'}} ><span style={{fontWeight: 600}} >ONE</span> cube</h1>
+                    <img src={CubeOn} style={{width: '150px'}} />
+                </div>
+                <div style={{display:'flex', justifyContent: 'center', flexWrap: 'wrap', marginTop: '0px'}}>
+                    <h1 style={{paddingRight:'100px'}} ><span style={{fontWeight: 600}} >THREE</span> tests</h1>
+                </div>
+                
+                <p style={{marginTop: '10px'}} >
+                <span style={{marginRight: '70px',}}  className=' one-cube-three-test ' >
+                    <Link className=' one-cube-three-test ' to='/equine-igg' >
+                    Immuno-Chek G Foal IgG Kit
                     </Link>
                 </span>
-                <span style={{marginRight: '70px',}}>
-                    
-                    <Link className='side-nav-link canine ' to='/equine-quickp4' >
+                <span style={{marginRight: '70px',}} className=' one-cube-three-test ' >
+                    <Link className=' one-cube-three-test ' to='/equine-quickp4' >
                     Quick P4 Progesterone Kit
                     </Link>
                 </span>
-                <span>
-                    
-                    <Link className='side-nav-link canine ' to='/equine-saa' >
+                <span className=' one-cube-three-test ' >
+                    <Link className=' one-cube-three-test ' to='/equine-saa' >
                     EquiChek™ SAA Kit
                     </Link>
                 </span>
                 </p>
             </Container>
-            </Jumbotron>
+            </div>
 
             </div>
         </div>

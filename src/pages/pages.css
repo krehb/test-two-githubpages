@@ -137,6 +137,22 @@
   border-radius: 5px;
 }
 
+.one-cube-three-test-container {
+  background-color: #dcebee;
+  padding-bottom: 10px;
+}
+
+.one-cube-three-test-container .one-cube-three-test {
+  color: #3186ad;
+  font-weight: 600;
+}
+
+.one-cube-three-test-container .one-cube-three-test :hover {
+  text-decoration: none;
+  font-weight: 600;
+  color: #3caed4;
+}
+
 .home {
   display: -webkit-box;
   display: -ms-flexbox;

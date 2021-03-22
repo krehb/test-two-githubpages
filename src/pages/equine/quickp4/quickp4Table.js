@@ -4,11 +4,11 @@ import { Container, Table, Jumbotron } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleUp, faFileDownload } from '@fortawesome/free-solid-svg-icons'
 
-import pdf from '../../assets/img/equine/Equine-QuickP4-vs-Lab-data.pdf';
+import pdf from '../../../assets/img/equine/Equine-QuickP4-vs-Lab-data.pdf';
 
 import Data1 from './data1';
 import Data2 from './data2';
-import Logo from '../../assets/img/equine/logo-small.png'
+import Logo from '../../../assets/img/equine/logo-small.png'
 
 export default function QuickP4EquineTable(products) {
 

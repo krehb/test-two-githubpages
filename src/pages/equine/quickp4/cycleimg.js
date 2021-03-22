@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { Chart } from "react-google-charts";
+import {useSpring, animated} from 'react-spring'
 
-import img1 from '../../assets/img/equine/img1.jpg'
-import img2 from '../../assets/img/equine/img2.jpg'
-import img3 from '../../assets/img/equine/img3.jpg'
-import img4 from '../../assets/img/equine/img4.jpg'
+import img1 from '../../../assets/img/equine/img1.jpg'
+import img2 from '../../../assets/img/equine/img2.jpg'
+import img3 from '../../../assets/img/equine/img3.jpg'
+import img4 from '../../../assets/img/equine/img4.jpg'
 
 export default function ImgChart() {
     const [imgOpacity, setOpacity] = useState(1)
@@ -13,6 +13,8 @@ export default function ImgChart() {
     let renderOpacity2 = 0.5
     let renderOpacity3 = 0.5
     let renderOpacity4 = 0.5
+
+    
 
     useEffect(() => {
         setTimeout(function(){ 

@@ -5,8 +5,8 @@ import dogIcon from '../../assets/img/home/dog-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 
-import SideNavEquine from './equine';
-import SideNavCanine from './canine';
+import SideNavEquine from './equine/equine';
+import SideNavCanine from './canine/canine';
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
@@ -28,7 +28,6 @@ export default function SideNav({passingData}){
         setCurrentUrl(location.pathname)
 
         if(location.pathname === '/canine'){
-            console.log(passingData)
             passingData.setCanine(true)
             passingData.setEquine(false)
             passingData.setIgg(false)
@@ -37,26 +36,29 @@ export default function SideNav({passingData}){
         } else if(location.pathname === '/equine'){
             passingData.setEquine(true)
             passingData.setCanine(false)
-            console.log(location.pathname)
+           
         } else if(location.pathname === '/equine-igg'){
             passingData.setEquine(true)
             passingData.setCanine(false)
             passingData.setIgg(true)
-            console.log(location.pathname)
+           
         }
         else if(location.pathname === '/equine-quickp4'){
             passingData.setEquine(true)
             passingData.setCanine(false)
             passingData.setEQuick(true)
-            console.log(location.pathname)
+           
         }else if(location.pathname === '/equine-saa'){
             passingData.setEquine(true)
             passingData.setCanine(false)
-            passingData.setEQuick(true)
-            passingData.setSaa(true)
-            console.log(location.pathname)
-        } else {
-            console.log(location.pathname)
+            passingData.setEQuick(false)
+            passingData.setSaa(true)  
+        }else if(location.pathname === '/'){
+            passingData.setCanine(false)
+            passingData.setEquine(false)
+            passingData.setIgg(false)
+            passingData.setEQuick(false)
+            passingData.setSaa(false)
         }
 
     },[]);
@@ -66,9 +68,7 @@ export default function SideNav({passingData}){
         console.log('is activated')
         if(window.pageYOffset >= 130){
             setSticky(true)
-            console.log(window.pageYOffset)
         } else {
-            console.log(window.pageYOffset)
             setSticky(false)
         }
     }
@@ -154,7 +154,6 @@ export default function SideNav({passingData}){
                         Store
                     </Link>
                 </h6>
-
         </div>
     </div>
         )
