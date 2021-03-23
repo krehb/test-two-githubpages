@@ -5,15 +5,11 @@ import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
 
 
-import Logo from '../../../assets/img/equine/logo-small.png'
-import cube150 from '../../../assets/img/equine/cube-new-adadpter150-300x210.png'
-import igg from '../../../assets/img/equine/Equichek-generic-1024x768.jpg'
-import WhatYouSee from '../../../assets/img/equine/What-you-see.png'
-import SaaUses from '../../../assets/img/equine/saa-uses.png'
-import foalHorseImg from '../../../assets/img/equine/checking-horse-leg-injury-for-infection.jpg'
+import productPhoto from '../../../assets/img/canine/cup-target.jpg'
 
 import DogPic from '../../../assets/img/canine/dog-with-puppy.jpg'
 import Diagram from '../../../assets/img/canine/progesterone-c-diagram.png'
+import CubeTest from '../../../assets/img/canine/targetvet-cup-gif.gif'
 
 import Interpretation from './interpretation'
 
@@ -119,51 +115,49 @@ export default function Progesterone({passingData}) {
             <Container>
                 
                 <Interpretation/>
-                <iframe src="https://giphy.com/embed/0ld9SaDL41JvZjlEt7" width="414" height="480" ></iframe>
+                
             </Container>
         </Jumbotron>
-        <Jumbotron ref={myRef2} fluid className='how-it-works' >
-        <Container>
-            <h1>Results In 10 min <FontAwesomeIcon icon={faHistory} /></h1>
-            <div className='steps' >
-            
+
+        <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '30px'}}>
+            <div>
+                <img src={CubeTest} style={{width: '200px'}} />
             </div>
-            <div className='ten-min' style={{fontSize: '14px', fontWeight: 500, textTransform: 'none', color: '#595959'}} >
-                <div style={{backgroundColor: 'white', margin: '5px', padding: '5px', width: '400px', boxShadow: '1px 3px 3px #888888',}} >
-                    <p style={{textAlign: 'left', paddingLeft: '20px'}} ><span style={{fontWeight: 600}} >Equichek™ - SAA Visual</span>, or</p>
-                    <img src={WhatYouSee} />
-                    <p style={{textAlign: 'left', paddingLeft: '20px'}}>Conc Range 0-200 ug/ml</p>
-                </div>
-                <div style={{backgroundColor: 'white', margin: '5px', padding: '5px', width: '400px', boxShadow: '1px 3px 3px #888888',}}>
-                    <p style={{textAlign: 'left', paddingLeft: '20px'}} ><span style={{fontWeight: 600}}>EquiChek™-SAA Quantitative</span> with Cube to get a number</p>
-                    <img src={cube150} />
-                </div>
+            <div style={{width: '500px', marginTop: '60px'}} >
+                <h3>Technology in Target Test Cup</h3>
+                <p>Target vertical filter design allows efficient washing of all unwanted blood components. Color produced is accurately related only to the Progesterone in the serum sample.</p>
             </div>
-        </Container>
-        </Jumbotron>
+        </div>
+
+
 
         <div ref={myRef3} className='benefites-container' >
             <br></br>
             <h1>Benefits</h1>
             <hr></hr>
             <div className='benefites' >
-                <img className='table-logo' src={igg} width='250px' height='200px' />
+                <img className='table-logo' src={productPhoto} width='250px' height='200px' />
                 <div>
-                    <h4>EquiChek™ SAA kit benefits</h4>
+                    <h4>Target Test – Visual Readings</h4>
                     <ul>
-                        <li>10 minute number results with optional optical Cube reader</li>
+                        <li>9 minute results</li>
                         <li>On-site testing</li>
-                        <li>Result lines are visible to the eye</li>
-                        <li>Room temperature stable</li>
-                        <li>Long shelf life stability</li>
+                        <li>One Year shelf-life</li>
+                        <li>Cut your costs</li>
+                        <li>Filter format</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Videos</h4>
+                    <ul>
+                        <li><a href='https://youtu.be/HutIA9p7XTg' target='blank'>How to Run a Target test</a></li>
+                        <li><a href='https://youtu.be/Vx02EIU_Y4c' target='blank' >How to Draw Blood</a></li>
                     </ul>
                 </div>
             </div>           
         </div>
 
-        <div>
-            <p>Note: The same Cube Reader can be used with the Immuno-Chek G and Quick P4 kits to get a number result!</p>
-        </div>
+
 
     </div>
     </div>

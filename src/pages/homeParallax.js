@@ -34,7 +34,7 @@ export default class extends React.Component {
                 <Parallax.Layer offset={2} speed={1} style={{ backgroundColor: 'rgb(255, 255, 180)' }} />
 
 
-                <Parallax.Layer offset={1.4} speed={-0.3} style={{ pointerEvents: 'none' }}>
+                <Parallax.Layer offset={1.6} speed={-0.3} style={{ pointerEvents: 'none' }}>
                 <div style={{display: 'flex'}}>
                     <img src={Dog} style={{ width: '15%', marginLeft: '68%' }} />
                     <img src={Dog} style={{ width: '5%', height: '5%', marginLeft: '-40px', marginTop: '60px' }} />
@@ -55,7 +55,7 @@ export default class extends React.Component {
                     style={{ display: 'block', width: '15%', marginLeft: '80%' }}
                 />
                 </Parallax.Layer>
-                <Parallax.Layer offset={0.4} speed={0.8} style={{ opacity: 0.8 }}>
+                <Parallax.Layer offset={0.4} speed={-1.05} style={{ opacity: 0.8, zIndex: 1 }}>
                 <img
                     src={DogAndWomen}
                     style={{ display: 'block', width: '25%', marginLeft: '10%',  }}
@@ -121,8 +121,11 @@ export default class extends React.Component {
                     <div style={{width: '100%', height: '90px', backgroundColor: '#74e560'}} ></div>
                 </Parallax.Layer>
 
-                {/* Page 2 */}
 
+
+
+
+                {/* Page 2 */}
                 <Parallax.Layer
                 offset={1}
                 speed={0.1}
@@ -136,7 +139,7 @@ export default class extends React.Component {
                 </div>
                 </Parallax.Layer>
 
-                <Parallax.Layer offset={1.7} speed={-0.2} style={{display: 'flex', marginLeft: '24%'}}  >
+                <Parallax.Layer offset={1.7} speed={0.4} style={{display: 'flex', marginLeft: '30%'}}  >
                     <div style={{display: 'flex'}}  >
                                   {/* cup test */}
                         <div style={{width: '70px', height: '35px', backgroundColor: 'white', marginLeft: '30px', marginTop: '20px', zIndex: '-2'}} ></div>
@@ -162,7 +165,7 @@ export default class extends React.Component {
                         <h6>Target Progesterone (Quant.)</h6>
                     </div>
                 </Parallax.Layer>
-                <Parallax.Layer offset={1.7} speed={0.9} style={{display: 'flex', marginLeft: '50%'}} >
+                <Parallax.Layer offset={1.8} speed={0.4} style={{display: 'flex', marginLeft: '30%'}} >
                     <div style={{display: 'flex'}} >
                         {/* lateral flow */}
                         <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center'}} >
@@ -177,8 +180,22 @@ export default class extends React.Component {
                 </Parallax.Layer>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 {/* Page 3 */}
-                <Parallax.Layer offset={2.4} speed={-0.3} style={{ opacity: 0.9, marginLeft: '10%', display: 'flex' }}>
+                <Parallax.Layer offset={2.5} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%', display: 'flex' }}>
                     {/* lateral flow */}
                     <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
                         <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
@@ -187,7 +204,7 @@ export default class extends React.Component {
                     </div>
                     <div style={{marginTop: '20px', marginLeft: '10px'}} ><h6>Equine Progesterone</h6></div>
                 </Parallax.Layer>
-                <Parallax.Layer offset={2.5} speed={0.6} style={{ opacity: 0.9, marginLeft: '10%', display: 'flex' }}>
+                <Parallax.Layer offset={2.4} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%', display: 'flex' }}>
                     {/* lateral flow */}
                     <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
                         <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
@@ -196,7 +213,7 @@ export default class extends React.Component {
                     </div>
                     <div style={{marginTop: '20px', marginLeft: '20px'}} ><h6>IgG</h6></div>
                 </Parallax.Layer>
-                <Parallax.Layer offset={2.6} speed={-0.4} style={{ opacity: 0.9, marginLeft: '10%',  display: 'flex' }}>
+                <Parallax.Layer offset={2.6} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%',  display: 'flex' }}>
                     {/* lateral flow */}
                     <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
                         <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
@@ -207,9 +224,9 @@ export default class extends React.Component {
                 </Parallax.Layer>
 
                 <Parallax.Layer
-                offset={2}
+                offset={1.9}
                 speed={-0}
-                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '0%', marginTop: '%' }}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '10%', marginTop: '%' }}
                 onClick={() => this.parallax.scrollTo(0)}>
                 <div>
                 <h1>Equine Tests</h1>

@@ -16,8 +16,8 @@ import HomePar from './pages/homeParallax'
 
 import Canine from './pages/canine/canine';
 import Progesterone from './pages/canine/progestrone/progestrone';
-import QuickP4Canine from './pages/canine/quickp4';
-import Relaxin from './pages/canine/relaxin';
+import QuickP4Canine from './pages/canine/progestrone-cube/quickp4';
+import Relaxin from './pages/canine/relaxin/relaxin';
 
 import Equine from './pages/equine/equine';
 import IgG from './pages/equine/igg/igg';

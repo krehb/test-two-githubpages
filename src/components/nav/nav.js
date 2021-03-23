@@ -16,7 +16,7 @@ const Nav = ({cart, setCategory}) => {
     let location = useLocation();
 
     const style1 ={
-        opacity: .8,
+        opacity: 1,
         zIndex: 5,
         position: 'fixed',
         width: '100%'
