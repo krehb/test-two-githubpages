@@ -3,8 +3,8 @@ $targetvet-text-blue: #317C97;
 $orange:#D16000;
 $col3: #BEC8D4;
 $font: Arial, Helvetica, sans-serif;
-
-
+$canineColor: #2B6C86;
+$equineColor: #F9EEC7;
 $small: 500px;
 $medium: 1000px;
 $large: 1500px;
@@ -18,9 +18,11 @@ $large: 1500px;
     @media screen and (max-width: $small) {
         flex-direction: column;
     }
+    
     .side-nav {
         width: 200px;
         margin-right: 20px;
+        
     }
     .mobile-sidenav {
         margin: 0px;
@@ -102,11 +104,14 @@ $large: 1500px;
 
 
     .canine-side-nav {
-        background-color: rgb(255, 197, 197);
+        background-color: $canineColor;
         border-radius: 5px;
+        .side-nav-link{
+            color: #F9EEC7;
+        }
     }
     .equine-nav {
-        background-color: rgb(255, 255, 180);
+        background-color: #F9EEC7;
         border-radius: 5px;
     }
     .other-side-nav {
@@ -181,7 +186,7 @@ $large: 1500px;
         }
         .col-top-right{
             width: 50%;
-            height: 310px;
+            height: 390px;
             @media screen and (min-width: $large) {
                 width: 45%;
                 height: 510px;
@@ -614,3 +619,8 @@ $large: 1500px;
 }
 
 
+.switchStyle {
+    :hover {
+        color: #3190af;
+    }
+}

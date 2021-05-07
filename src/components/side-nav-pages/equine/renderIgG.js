@@ -41,17 +41,17 @@ export default function RenderIgG({passingData}){
     let renderIgGButton = faAngleRight 
     if(passingData.igg){ renderIgG = (
         <animated.div style={props}>
-                <h6 className='product-title no-hover sub-nav-link'  style={{marginRight: '10px'}} onClick={() => subhandler(600)}  >
+                <h6 className='product-title no-hover sub-nav-link'  style={{marginRight: '10px'}} onClick={() => subhandler(880)}  >
                     <Link className='side-nav-link' style={subjectIndent2}  >
                     Immuno-Chek G vs SNAP
                     </Link>
                 </h6>
-                <h6 className='product-title no-hover sub-nav-link'  style={{marginRight: '10px'}} onClick={() => subhandler(1900)}  >
+                <h6 className='product-title no-hover sub-nav-link'  style={{marginRight: '10px'}} onClick={() => subhandler(2200)}  >
                     <Link className='side-nav-link' style={subjectIndent2}  >
                     How To Run Test
                     </Link>
                 </h6>
-                <h6 className='product-title no-hover sub-nav-link'  style={{marginRight: '10px'}} onClick={() => subhandler(3300)}  >
+                <h6 className='product-title no-hover sub-nav-link'  style={{marginRight: '10px'}} onClick={() => subhandler(3600)}  >
                     <Link className='side-nav-link' style={subjectIndent2}  >
                     Benefits
                     </Link>
@@ -67,9 +67,9 @@ export default function RenderIgG({passingData}){
   
   return (
     <>
-            <h6 className='product-title no-hover equine-nav' style={{marginRight: '10px'}} onClick={() => {passingData.setIgg(!passingData.igg); navigateToPage('equine-igg')}} >
+            <h6 className='product-title no-hover equine-nav' style={{marginRight: '10px'}} onClick={() => {passingData.setIgg(!passingData.igg); navigateToPage('equine-igg');         window.scroll(0, 0);}} >
                 <FontAwesomeIcon onClick={() => {passingData.setIgg(!passingData.igg); console.log('clicked',passingData.igg)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderIgGButton} />
-                <Link className='side-nav-link' style={subjectIndent} to='/equine-igg' > IgG</Link>
+                <Link className='side-nav-link'  style={subjectIndent} to='/equine-igg' > IgG</Link>
             </h6>
             {renderIgG}
     </>

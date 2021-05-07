@@ -82,7 +82,7 @@ export default function RenderQuick({passingData}){
   
   return (
     <>
-            <h6 className='product-title no-hover equine-nav' style={{marginRight: '10px'}} onClick={() => {passingData.setEQuick(!passingData.equick); navigateToPage('equine-quickp4')}}   >
+            <h6 className='product-title no-hover equine-nav' style={{marginRight: '10px'}} onClick={() => {passingData.setEQuick(!passingData.equick); navigateToPage('equine-quickp4');  window.scroll(0, 0);}}   >
             <FontAwesomeIcon onClick={() => {passingData.setEQuick(!passingData.equick)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderEQuickButton} />
             <Link className='side-nav-link' style={subjectIndent} to='/equine-quickp4' > Equine Progesterone</Link>
             </h6>

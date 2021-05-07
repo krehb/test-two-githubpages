@@ -13,7 +13,7 @@ const StoreFrontGallery = ({ categories, setCategoryHandler}) => {
   return (
     <div className='storefront-gallery' >
 
-        <Container fluid >
+        <Container fluid style={{width: '900px'}}>
             <Row>
                 <Col>
                     <h1 className='header' >Caring For Your Animals with Easy Tests</h1>

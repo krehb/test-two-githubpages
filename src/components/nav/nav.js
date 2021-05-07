@@ -8,7 +8,7 @@ import AuthItems from './auth-items';
 import { AuthProvider } from '../../config/Auth';
 import TopAuthItems from './top-auth-items';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 const Nav = ({cart, setCategory}) => {
 
@@ -44,7 +44,7 @@ const Nav = ({cart, setCategory}) => {
 
     useEffect(() => {
 
-        if(location.pathname === '/'){
+        if(location.pathname === '/parallax'){
             setRenderStyle(true)
         } else {
             setRenderStyle(false)
@@ -58,7 +58,7 @@ const Nav = ({cart, setCategory}) => {
     } else {
         navCart = (
             <Link className='my-nav-item' to='/cart' >
-            Cart({cart.length})
+                <FontAwesomeIcon icon={faShoppingCart} />({cart.length})
             </Link>
         )
     }
@@ -108,7 +108,7 @@ const Nav = ({cart, setCategory}) => {
                             </Link>
                         </div>
                         <div className='nav-child-list no-hover ' >
-                            <Link onClick={() => setCategory('none')} className='my-nav-item' to='/store' >
+                            <Link onClick={() => setCategory('none')} className='my-nav-item' to='/store/gallery' >
                             Store
                             </Link>
                         </div>

@@ -80,7 +80,7 @@ const Shipping = () => {
     renderAddressForm = (
       <div>
         {renderedAddress}
-        <Button onClick={() => setEdit(true)} >edit</Button>
+        <Button onClick={() => setEdit(true)} style={{marginLeft: '10px', padding: '5px', backgroundColor: '#317C97', fontSize: '10px'}} >edit</Button>
       </div>
     )
   }

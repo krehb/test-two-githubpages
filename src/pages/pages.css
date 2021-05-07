@@ -118,12 +118,16 @@
 }
 
 .container-w-side-nav .canine-side-nav {
-  background-color: #ffc5c5;
+  background-color: #2B6C86;
   border-radius: 5px;
 }
 
+.container-w-side-nav .canine-side-nav .side-nav-link {
+  color: #F9EEC7;
+}
+
 .container-w-side-nav .equine-nav {
-  background-color: #ffffb4;
+  background-color: #F9EEC7;
   border-radius: 5px;
 }
 
@@ -220,7 +224,7 @@
 
 .home .col-top .col-top-right {
   width: 50%;
-  height: 310px;
+  height: 390px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -793,5 +797,9 @@
   background-color: whitesmoke;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+
+.switchStyle :hover {
+  color: #3190af;
 }
 /*# sourceMappingURL=pages.css.map */

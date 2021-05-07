@@ -9,9 +9,9 @@
 }
 
 .my-nav .top-auth {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .my-nav .top-auth .top-auth-child {
@@ -43,14 +43,13 @@
   display: flex;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .my-nav .nav-parent .nav-child1 {
-  margin-top: 10px;
-  width: 100px;
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,12 +59,13 @@
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-flex: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-left: 200px;
+  -webkit-box-flex: .2;
+      -ms-flex-positive: .2;
+          flex-grow: .2;
 }
 
 .my-nav .nav-parent .nav-child1 .nav-child-img {
@@ -86,6 +86,7 @@
 
 .my-nav .nav-parent .nav-child2 {
   width: 200px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,13 +195,205 @@
 
 .product-list .product-title:hover {
   cursor: pointer;
-  background-color: #ddf6ff;
+  background-color: #dfdea6;
   border-radius: 5px;
   text-decoration: none;
 }
 
 .product-list .product-title .side-nav-link {
   color: #5f5f5f;
+}
+
+.product-list .product-title-canine {
+  font-weight: 600;
+  color: #5f5f5f;
+  font-size: 15px;
+  padding: 10px 10px 10px 10px;
+}
+
+.product-list .product-title-canine:hover {
+  cursor: pointer;
+  background-color: #338eaf;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.product-list .product-title-canine .side-nav-link {
+  color: #5f5f5f;
+}
+
+.product-list #Canine {
+  background-color: #2B6C86;
+  color: #F9EEC7;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.product-list #Equine {
+  background-color: #F9EEC7;
+  color: #2B6C86;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.storefront-gallery {
+  margin-bottom: 10%;
+}
+
+.storefront-gallery .header {
+  color: #094f70;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 28px;
+}
+
+.storefront-gallery .img-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.storefront-gallery .img-group .img-gallery-col {
+  margin-left: 50px;
+  width: 200px;
+  color: #fcfcfc;
+  text-shadow: 1px 1px 3px #292929;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-gallery-text {
+  border-radius: 15px;
+  width: 200px;
+  height: 160px;
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-1 {
+  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-1 .text-img-cat-1 {
+  background-color: rgba(0, 0, 0, 0.404);
+  height: 153px;
+  border-radius: 7px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-1 .text-img-cat-1:hover {
+  background-color: #2b6c86c9;
+  height: 153px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-2 {
+  background-image: url("../../assets/img/products/igg-cube-10.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-2 .text-img-cat-2 {
+  background-color: rgba(0, 0, 0, 0.404);
+  height: 153px;
+  border-radius: 7px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-2 .text-img-cat-2:hover {
+  background-color: #f9eec7b6;
+  height: 153px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-3 {
+  background-image: url("../../assets/img/equine/saa.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-3 .text-img-cat-3 {
+  background-color: rgba(0, 0, 0, 0.404);
+  height: 153px;
+  border-radius: 7px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-3 .text-img-cat-3:hover {
+  background-color: #f9eec7b6;
+  height: 153px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-4 {
+  background-image: url("https://storage.googleapis.com/www.inputllc.net/products/relaxin.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-4 .text-img-cat-4 {
+  background-color: rgba(0, 0, 0, 0.404);
+  height: 153px;
+  border-radius: 7px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-4 .text-img-cat-4:hover {
+  background-color: #2b6c86c9;
+  height: 153px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-5 {
+  background-image: url("../../assets/img/equine/quickp4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-5 .text-img-cat-5 {
+  background-color: rgba(0, 0, 0, 0.404);
+  height: 153px;
+  border-radius: 7px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-5 .text-img-cat-5:hover {
+  background-color: #f9eec7b6;
+  height: 153px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-6 {
+  background-image: url("../../assets/img/canine/box-cube.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-6 .text-img-cat-6 {
+  background-color: rgba(0, 0, 0, 0.404);
+  height: 153px;
+  border-radius: 7px;
+}
+
+.storefront-gallery .img-group .img-gallery-col .img-cat-6 .text-img-cat-6:hover {
+  background-color: #2b6c86c9;
+  height: 153px;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .store {
@@ -222,87 +415,6 @@
     border-radius: 5px;
     padding: 10px;
   }
-}
-
-.store .storefront-gallery {
-  margin-bottom: 10%;
-}
-
-.store .storefront-gallery .header {
-  color: #094f70;
-  text-align: center;
-  padding-bottom: 10px;
-  font-size: 28px;
-}
-
-.store .storefront-gallery .img-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: wrap;
-      flex-flow: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col {
-  margin-left: 50px;
-  width: 200px;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-cat-1 {
-  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-cat-2 {
-  background-image: url("../../assets/img/products/igg-cube-10.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-cat-3 {
-  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-cat-4 {
-  background-image: url("../../assets/img/products/igg-cube-10.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-cat-5 {
-  background-image: url("../../assets/img/products/canine-ovulation-kit-12.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-cat-6 {
-  background-image: url("../../assets/img/products/igg-cube-10.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.store .storefront-gallery .img-group .img-gallery-col .img-gallery-text {
-  color: white;
-  border-radius: 15px;
-  width: 200px;
-  height: 160px;
-  text-align: center;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 25px;
 }
 
 .store .storefront {
@@ -340,7 +452,7 @@
 }
 
 .store .storefront .card-parent .child1 {
-  width: 200px;
+  width: 250px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -352,7 +464,7 @@
 }
 
 .store .storefront .card-parent .child2 {
-  width: 300px;
+  width: 250px;
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
           flex-grow: 4;
@@ -434,29 +546,6 @@
   color: #fff;
   padding: 10px 8px 5px 8px;
   margin-left: 10px;
-}
-
-.store .storefront .card-parent .child3 .adding .add-to-cart-button {
-  background-color: #338fb1;
-  color: white;
-  padding: 6px 8px 6px 12px;
-  margin-left: 10px;
-  border: none;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.store .storefront .card-parent .child3 .adding .add-to-cart-button:hover {
-  background-color: #287794;
-}
-
-.store .storefront .card-parent .child3 .adding .qty {
-  background-color: #caf1ff;
-  cursor: pointer;
-  border: none;
-  padding-left: 5px;
-  padding-top: 7px;
-  padding-bottom: 8px;
 }
 
 .store .storefront .card-parent .child3 .adding .right {
@@ -574,6 +663,104 @@
   background-size: contain;
 }
 
+.add-to-cart-button {
+  background-color: #338fb1;
+  color: white;
+  padding: 6px 8px 6px 12px;
+  margin-left: 10px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #287794;
+}
+
+.qty {
+  background-color: #caf1ff;
+  cursor: pointer;
+  border: none;
+  padding-left: 5px;
+  padding-top: 7px;
+  padding-bottom: 8px;
+}
+
+.accordion .accordion-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.accordion .accordion-head .collapse-head {
+  padding: 5px 10px 5px 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #8a8a8a;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .accordion .accordion-head .collapse-head {
+    font-size: 12px;
+  }
+}
+
+.accordion .accordion-head .selected {
+  background-color: #ddf6ff;
+  -webkit-box-shadow: 2px 2px 2px  #cae0e9;
+          box-shadow: 2px 2px 2px  #cae0e9;
+  color: #414141;
+}
+
+.accordion .collapse-body {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .accordion .collapse-body {
+    font-size: 12px;
+  }
+}
+
+.my-card {
+  height: 153px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.my-card .text {
+  padding-top: 55px;
+  padding-left: 10px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px #1f1f1f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 43px;
+}
+
+@media screen and (max-width: 500px) {
+  .my-card .text {
+    font-size: 28px;
+  }
+}
+
+.img {
+  height: 150px;
+  width: auto;
+  background-position: center;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.img-front {
+  background-image: url("../../assets/img/siberian-huskies-play-with-pup-3-1024x682.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
 .cart {
   margin-top: 20px;
   margin-bottom: 28%;
@@ -626,6 +813,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

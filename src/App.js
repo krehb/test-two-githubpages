@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useLocation
+  useHistory
 } from "react-router-dom";
 import firebase from 'firebase';
 
@@ -26,6 +26,13 @@ import Saa from './pages/equine/saa/saa';
 
 import AccountInfo from './pages/AccountPage/accountInfoPage';
 
+import EmailTest from './pages/EmailTest';
+
+//store
+import StoreFront from './pages/store/front'
+import StoreDeck from './pages/store/deck'
+import ProductInfo from './pages/store/product-info'
+
 //components
 import Store from './components/store/store';
 import Nav from './components/nav/nav';
@@ -33,6 +40,7 @@ import Footer from './components/footer/footer';
 import Cart from './components/cart/cart';
 import Checkout from './components/checkout/checkout';
 import Success from './components/checkout/payment/success';
+
 
 //config
 import { AuthProvider } from './config/Auth';
@@ -118,13 +126,49 @@ export default function App() {
         type: 'Canine',
         class: 'img-cat-1',
         id: 124,
+        img: 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/store-top-img/dog-with-puppy-300x200.jpg',
+        pathname: '/store/canine-progesterone',
+        highlight: ['9 minute results', 'On-site testing', 'One Year shelf-life', 'Cut your costs', 'Filter format']
+      },      
+      {
+          name: 'Canine Pregnancy Relaxin',
+          group: 3,
+          type: 'Canine',
+          class: 'img-cat-4',
+          id: 224,
+          img: 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/store-top-img/vets-use-relaxin-pro-300x200.jpg',
+          pathname: '/store/canine-relaxin',
+          highlight: ['Detect dog pregnancy earlier', 'Accurate results in minutes', 'Reliable and specific', 'Cut your costs', 'Get a head start on nutritional supplements', 'Indicates loss in pregnancy']
       },
+      {
+        name: 'Canine Quick P4 Progesterone',
+        group: 2,
+        type: 'Canine',
+        class: 'img-cat-6',
+        id: 924,
+        img: 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/store-top-img/p-5-shutterstock_205679125-300x200.jpg',
+        pathname: '/store/canine-quick-p4',
+        highlight: ['10 minute number results with optical cube reader', 'On-site testing', 'Visual not fluorescence technology', 'Result lines are visible to the eye', 'Room temperature stable', 'Long shelf life stability']
+      },
+      {
+        name: 'Equine P4 Quick Progesterone',
+        group: 4,
+        type: 'Equine',
+        class: 'img-cat-5',
+        id: 824,
+        img: 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/store-top-img/two-ladies-with-horse-300x200.jpg',
+        pathname: '/store/equine-progesterone',
+        highlight: ['10-minute number results with optical cube reader', 'On-site testing','Visual, not fluorescence technology', 'Room temperature stable', 'Long shelf life stability']
+    },
       {
         name: 'Equine IgG',
         group: 5,
         type: 'Equine',
         class: 'img-cat-2',
         id: 123,
+        img: 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/store-top-img/foal-standing-beside-horse-500x412.jpg',
+        pathname: '/store/equine-igg',
+        highlight: ['On-site, 10-minute results', 'Easy to use and interpret','Test & Treat immediately','No refrigeration required','Accurate & Reliable over Long shelf life (2+ years)']
       },
       {
         name: 'Equine SAA',
@@ -132,28 +176,12 @@ export default function App() {
         type: 'Equine',
         class: 'img-cat-3',
         id: 154,
-      },        
-      {
-          name: 'Canine Pregnancy Relaxin',
-          group: 3,
-          type: 'Canine',
-          class: 'img-cat-4',
-          id: 224,
-      },
-      {
-          name: 'Equine P4 Quick Progesterone',
-          group: 4,
-          type: 'Equine',
-          class: 'img-cat-5',
-          id: 824,
-      },
-      {
-          name: 'Canine Quick P4 Progesterone',
-          group: 2,
-          type: 'Canine',
-          class: 'img-cat-6',
-          id: 924,
-      }
+        img: 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/store-top-img/checking-horse-leg-injury-for-infection-300x200.jpg',
+        pathname: '/store/equine-saa',
+        highlight: ['10 minute number results with optional optical Cube reader', 'On-site testing', 'Result lines are visible to the eye','Room temperature stable', 'Long shelf life stability']
+      },  
+
+
   ]
 
   useEffect(() => {
@@ -162,7 +190,7 @@ export default function App() {
   
   const setCategoryHandler = (categorySelected) => {
 
-    if (categorySelected === 'none'){
+    if (categorySelected.name === 'none'){
       setCategory('none')
     } else {
       setCategory(categorySelected.name)
@@ -172,6 +200,7 @@ export default function App() {
 
   const addToCartHandler = (itemSelected) => {
 
+
     let newProduct = {
       title: itemSelected.product.title,
       subtitle: itemSelected.product.subtitle,
@@ -179,7 +208,8 @@ export default function App() {
       img: itemSelected.product.img,
       price: itemSelected.product.price,
       test: itemSelected.product.test,
-      id: itemSelected.product.id
+      id: itemSelected.product.id,
+      icon: itemSelected.product.icon
     }
 
     setCart(cart => [...cart, newProduct ] );
@@ -193,7 +223,8 @@ export default function App() {
           img: item.img,
           price: item.price,
           test: item.test,
-          id: item.id
+          id: item.id,
+          icon: itemSelected.icon
         }
         setCart(cart.filter(item => item.id !== itemSelected.product.id))
         setCart(cart => [...cart, newDouble ] );
@@ -221,7 +252,18 @@ export default function App() {
     setPriceTotal(newGroup.reduce(reducer))
   }
 
-
+  const [parallaxDom, setParallaxDom] = useState('')
+  let history = useHistory();
+  function handleClick() {
+    history.push(`/${parallaxDom}`);
+  }
+  const parallaxRouter = (e) => {
+    console.log('parallax router was clicked',e)
+    history.push("/store");
+    // setParallaxDom(e)
+    // handleClick();
+    window.scroll(0,0)
+  }
 
 
 
@@ -236,27 +278,30 @@ export default function App() {
               <Canine passingData={passingData}/>
             </Route>
             <Route path="/canine-progesterone">
-              <Progesterone passingData={passingData}/>
+              <Progesterone passingData={passingData} setCategoryHandler={setCategoryHandler} setGroup={setGroup} />
             </Route>
             <Route path="/canine-quickp4">
-              <QuickP4Canine passingData={passingData}/>
+              <QuickP4Canine passingData={passingData} setCategoryHandler={setCategoryHandler} setGroup={setGroup} />
             </Route>
             <Route path="/canine-relaxin">
-              <Relaxin passingData={passingData}/>
+              <Relaxin passingData={passingData} setCategoryHandler={setCategoryHandler} setGroup={setGroup} />
             </Route>
             <Route path="/equine">
               <Equine passingData={passingData}/>
             </Route>
             <Route path="/equine-igg">
-              <IgG passingData={passingData}/>
+              <IgG passingData={passingData} setCategoryHandler={setCategoryHandler} setGroup={setGroup} />
             </Route>
             <Route path="/equine-saa">
-              <Saa passingData={passingData}/>
+              <Saa passingData={passingData} setCategoryHandler={setCategoryHandler}  setGroup={setGroup}/>
             </Route>
             <Route path="/equine-quickp4">
-              <QuickP4Equine passingData={passingData} />
+              <QuickP4Equine passingData={passingData} setCategoryHandler={setCategoryHandler} setGroup={setGroup} />
             </Route>
-            <Route path="/store">
+            <Route path="/test">
+                <EmailTest/>
+            </Route>
+            <Route path="/store" exact >
               <Store className='store'
               products={products}
               group={group} 
@@ -267,6 +312,26 @@ export default function App() {
               cart={cart}
               setCart={setCart}
               instockArray={instockArray} />
+            </Route>
+            <Route  path="/store/gallery" exact>
+              <StoreFront               categories={categories} 
+              setCategoryHandler={setCategoryHandler}  />
+            </Route>
+            <Route path="/store/:id">
+              <StoreDeck               
+              products={products}
+              group={group} 
+              categories={categories} 
+              setCategoryHandler={setCategoryHandler} 
+              category={category} 
+              addToCartHandler={addToCartHandler}
+              cart={cart}
+              setCart={setCart}
+              instockArray={instockArray}
+               />
+            </Route>
+            <Route path="/product-info/:id">
+              <ProductInfo addToCartHandler={addToCartHandler} />
             </Route>
             <Route path='/cart' >
               <Cart cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
@@ -286,8 +351,11 @@ export default function App() {
             <Route path='/account' >
               <AccountInfo cart={cart} clearCart={clearCartHandler} cart={cart} setCart={setCart} setPriceTotal={setPriceTotal} priceTotal={priceTotal} removeItemHandler={removeItemHandler} />
             </Route>
+            <Route exact  path='/parallax' >
+              <HomePar parallaxRouter={parallaxRouter} passingData={passingData}/>
+            </Route>
             <Route exact  path='/' >
-              <HomePar passingData={passingData}/>
+              <Home passingData={passingData}/>
             </Route>
             {/* <PrivateRoute exact path='/' component={Home} /> */}
           </Switch>

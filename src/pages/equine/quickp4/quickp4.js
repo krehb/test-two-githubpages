@@ -3,7 +3,7 @@ import { Button, Jumbotron, Container } from 'react-bootstrap';
 
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
-import { Link} from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 
 import Cube from '../../../assets/img/equine/cube.jpg'
 import CubeOn from '../../../assets/img/equine/cube-on.png'
@@ -17,12 +17,10 @@ import QuickP4EquineTable from './quickp4Table';
 import CycleChart from './cyclechart';
 import ImgCycle from './cycleimg';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfo, faArrowAltCircleDown, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function QuickP4Equine({passingData}) {
+export default function QuickP4Equine({passingData, setCategoryHandler, setGroup}) {
 
     const [videoWidth, setVideoWidth] = useState(false)
     useEffect(() => {
@@ -42,6 +40,13 @@ export default function QuickP4Equine({passingData}) {
         renderVideoWidth = null
     }
 
+    let history = useHistory();
+    const routeBuyHandler = () => {
+        setCategoryHandler('Equine P4 Quick Progesterone')
+        setGroup(4)
+        history.push("/store");
+        window.scroll(0,0)
+    }
 
     //scroll to section 1
     const myRef1 = useRef(null)
@@ -50,50 +55,14 @@ export default function QuickP4Equine({passingData}) {
     const myRef4 = useRef(null)
     const executeScroll = (e) => scrollToRef(e)
 
-    const [sticky, setSticky] = useState(false);
 
-    // window.onscroll = () => {
-    //     if(window.pageYOffset >= 130){
-    //         setSticky(true)
-    //     } else {
-    //         setSticky(false)
-    //     }
-    // }
 
-    let renderNavClass = ''
-    if(sticky){
-        renderNavClass = {position: 'fixed', top: 0, zIndex: 2}
-    } else {
-        renderNavClass = {}
-    }
 
   return (
 <div>
-    <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav " style={renderNavClass} >
+    <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav "  >
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        {/* <ul className="navbar-nav align-items-center">
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef1)} >Progesterone Cycle</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef2)} >Quick P4 vs Lab</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef3)} >Why Progesterone</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef4)} >Benefits</a>
-            </li>
-        </ul> */}
+
       </div>
     </nav>
     <div className='container-w-side-nav' >
@@ -118,9 +87,17 @@ export default function QuickP4Equine({passingData}) {
                 </div>
             </div>
             
-            <div className='text-under' >
-                <p>Don’t lose that foal! Learn about the mare and her cycle with an economical, easy-to-use progesterone test. Unsuccessful breeding? Rebreed sooner with early pregnancy detection. Discover if costly regumate therapy is necessary.</p>
+
+            <div className='col-mid' style={{marginTop: '30px'}} >
+                <Jumbotron style={{backgroundColor: '#d9e1f1'}} fluid>
+                    <Container >
+                        <p style={{fontSize: '30px', fontWeight: '600',  color: '#365F91'}}>Don’t lose that foal!</p>
+                        <p>Learn about the mare and her cycle with an economical, easy-to-use progesterone test. Unsuccessful breeding? Rebreed sooner with early pregnancy detection. Discover if costly regumate therapy is necessary.</p>
+                    </Container>
+                </Jumbotron>
             </div>
+
+
 
 
             <div ref={myRef1} >
@@ -198,7 +175,7 @@ export default function QuickP4Equine({passingData}) {
                     </div>
                     
                 </div>
-                <Button style={{marginLeft: '50px'}}>Buy</Button>
+                <Button onClick={routeBuyHandler} style={{marginLeft: '50px'}}>Buy</Button>
             </div>
 
             <div  className=' one-cube-three-test-container ' >

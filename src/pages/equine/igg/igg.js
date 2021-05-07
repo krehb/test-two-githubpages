@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
+import { Container, Table, Jumbotron, Button } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
@@ -24,13 +24,13 @@ import foalHorseImg from '../../../assets/img/equine/horse-and-foal.jpg'
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask, faHistory } from '@fortawesome/free-solid-svg-icons'
+import { faFlask, faHistory, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function IgG({passingData}) {
+export default function IgG({passingData, setCategoryHandler, setGroup}) {
+    
 
-    const [sticky, setSticky] = useState(false);
 
     //scroll to section 1
     const myRef1 = useRef(null)
@@ -38,20 +38,18 @@ export default function IgG({passingData}) {
     const myRef3 = useRef(null)
     const executeScroll = (e) => scrollToRef(e)
 
-    window.onscroll = () => {
-        if(window.pageYOffset >= 130){
-            setSticky(true)
-        } else {
-            setSticky(false)
-        }
+    const [video, setVideo] = useState(2)
+
+
+    let history = useHistory();
+    const routeBuyHandler = () => {
+        setCategoryHandler('Equine IgG')
+        setGroup(5)
+        history.push("/store");
+        window.scroll(0,0)
     }
 
-    let renderNavClass = ''
-    if(sticky){
-        renderNavClass = {position: 'fixed', top: 0}
-    } else {
-        renderNavClass = {}
-    }
+
 
 
     const [videoWidth, setVideoWidth] = useState(false)
@@ -69,31 +67,40 @@ export default function IgG({passingData}) {
     if(videoWidth){
         renderVideoWidth = '100%'
     } else  {
-        renderVideoWidth = null
+        renderVideoWidth = '100%'
+    }
+
+    let renderVideoContent = null
+    if(video === 1){
+        renderVideoContent = (<ReactPlayer  url='https://www.youtube.com/embed/g8uU-ID7M8Y' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />)
+    } else if (video === 2){
+        renderVideoContent = (<ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />)
+    } else {
+        renderVideoContent = (<ReactPlayer  url='https://www.youtube.com/embed/LOdu5UdSAn0' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />)
+    }
+
+    const videoArrowLeftHandler = () => {
+        if(video === 0){
+            setVideo(3);
+        } else {
+            setVideo(video - 1)
+        }
+    }
+
+    const videoArrowRightHandler = () => {
+        if(video === 4){
+            setVideo(1);
+        } else {
+            setVideo(video + 1)
+        }
     }
 
 
   return (
 <div>
-    <nav  className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav " style={renderNavClass} >
+    <nav  className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav "  >
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul className="navbar-nav align-items-center">
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef1)} >Immuno-Chek G vs SNAP</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef2)} >How to Run Test</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" onClick={() => executeScroll(myRef3)} >Benefits</a>
-            </li>
-        </ul>
+
       </div>
     </nav>
     <div className='container-w-side-nav' >
@@ -115,12 +122,29 @@ export default function IgG({passingData}) {
                 Reduce the risk. Protect your foals.
                 </div>
             </div>
-            <div className='col-top-right top-right' >
-                <ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
+            <div className='col-top-right top-right' style={{display: 'flex'}} >
+
+                <div style={{zIndex: 7, marginRight: '-10px'}}>
+                    <FontAwesomeIcon onClick={videoArrowLeftHandler} style={{marginTop: '150px', marginRight: '-40px', color: 'white'}} icon={faChevronLeft} size="3x" />
+                </div>
+                <div style={{width: '600px', zIndex: 1}} >
+                    {renderVideoContent}
+                </div>
+                <div style={{zIndex: 7}}>
+                    <FontAwesomeIcon onClick={videoArrowRightHandler} style={{marginTop: '150px',  marginLeft: '-40px', color: 'white'}} icon={faChevronRight} size="3x" />
+                </div>
             </div>
         </div>
         
-
+        <div className='col-mid' style={{marginTop: '30px'}} >
+            <Jumbotron style={{backgroundColor: '#d9e1f1'}} fluid>
+                <Container >
+                    <p style={{fontSize: '30px', fontWeight: '600',  color: '#365F91'}}>Your foal may need your help!</p>
+                    <p>Armed with no antibodies, foals can be at high risk for infection and disease. Quickly take steps to boost foals’ immunoglobulin (IgG) levels before serious complications arise. Reduce hassle.</p>
+                    <p><span style={{paddingRight: '20px',fontSize: '22px', fontWeight: '600', color: '#365F91'}} >Save money.</span><span style={{fontSize: '22px', fontWeight: '600', color: '#365F91'}}  >Raise healthy foals.</span></p>
+                </Container>
+            </Jumbotron>
+        </div>
 
         <div className='col-mid' >
         <Jumbotron ref={myRef1} className='igg-jumbo' fluid>
@@ -338,7 +362,10 @@ export default function IgG({passingData}) {
                         <li>Accurate & Reliable over Long shelf life (2+ years)</li>
                     </ul>
                 </div>
-            </div>           
+            </div> 
+            <div style={{marginBottom: '20px'}}>
+                <Button onClick={routeBuyHandler} >Buy</Button>
+            </div>          
         </div>
 
         <div  className=' one-cube-three-test-container ' >

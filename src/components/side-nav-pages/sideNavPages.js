@@ -65,7 +65,6 @@ export default function SideNav({passingData}){
 
 
     window.onscroll = () => {
-        console.log('is activated')
         if(window.pageYOffset >= 130){
             setSticky(true)
         } else {
@@ -149,7 +148,7 @@ export default function SideNav({passingData}){
                 </h6>
                 <SideNavCanine passingData={passingData} />
                 <SideNavEquine passingData={passingData} />
-                <h6 className='product-title no-hover  other-side-nav' onClick={() => navigateToPage('store')} style={{marginTop: '10px', marginRight: '10px'}} >
+                <h6 className='product-title no-hover  other-side-nav' onClick={() => navigateToPage('store/gallery')} style={{marginTop: '10px', marginRight: '10px'}} >
                     <Link className='side-nav-link ' style={{fontSize: '20px'}} to='/canine' >
                         Store
                     </Link>

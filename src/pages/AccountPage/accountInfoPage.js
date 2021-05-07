@@ -5,7 +5,7 @@ import firebase from 'firebase';
 import moment from 'moment';
 import {useHistory} from 'react-router-dom';
 import OrderHistory from './orderHistoryComponet';
-
+import AdminSection from './admin'
 
 export default function AccountInfo({cart, clearCart, setCart, removeItemHandler, priceTotal}) {
 
@@ -48,6 +48,12 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
                     setSavedOrderCount(numOfOrders.orderCount)
                     setSavedEmail(user.email)
                 })
+
+                //admin
+                user.getIdTokenResult().then(IdTokenResult => {
+                    console.log(IdTokenResult.claims.admin)
+                })
+
 
                 db.collection('users').doc(user.uid).collection('orders').get().then( snapshot => {
                     let b = []
@@ -178,7 +184,8 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
                 <div>
                     {renderOrders}
                 </div>
-
+                
+                <AdminSection/>
             </div>
   );
 }

@@ -23,6 +23,8 @@ const Horse = 'https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%2
 export default class extends React.Component {
 
 
+    
+
     render() {
 
 
@@ -110,7 +112,7 @@ export default class extends React.Component {
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
 
                 
-                <div style={{textAlign: 'center'}} >
+                <div style={{textAlign: 'center'}}  >
                     <h1>Caring for your Pets</h1>
                     <h2>with Easy Tests</h2>
                     
@@ -139,7 +141,8 @@ export default class extends React.Component {
                 </div>
                 </Parallax.Layer>
 
-                <Parallax.Layer offset={1.7} speed={0.4} style={{display: 'flex', marginLeft: '30%'}}  >
+                <a href='/canine-progesterone'>
+                <Parallax.Layer offset={1.7} speed={0.4} style={{display: 'flex', marginLeft: '30%', zIndex: 1}}  >
                     <div style={{display: 'flex'}}  >
                                   {/* cup test */}
                         <div style={{width: '70px', height: '35px', backgroundColor: 'white', marginLeft: '30px', marginTop: '20px', zIndex: '-2'}} ></div>
@@ -152,7 +155,9 @@ export default class extends React.Component {
                         <h6  >Target Progesterone (Visual)</h6>
                     </div>
                 </Parallax.Layer>
-                <Parallax.Layer offset={1.6} speed={0.4} style={{display: 'flex', marginLeft: '30%'}} >
+                </a>
+                <a href='/canine-quickp4' >
+                <Parallax.Layer offset={1.6} speed={0.4} style={{display: 'flex', marginLeft: '30%', zIndex: 1}} >
                     <div style={{display: 'flex'}} >
                         {/* lateral flow */}
                         <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center'}} >
@@ -165,7 +170,10 @@ export default class extends React.Component {
                         <h6>Target Progesterone (Quant.)</h6>
                     </div>
                 </Parallax.Layer>
-                <Parallax.Layer offset={1.8} speed={0.4} style={{display: 'flex', marginLeft: '30%'}} >
+                </a>
+
+                <a href='/canine-relaxin'>
+                <Parallax.Layer offset={1.8} speed={0.4} style={{display: 'flex', marginLeft: '30%', zIndex: 1}} >
                     <div style={{display: 'flex'}} >
                         {/* lateral flow */}
                         <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center'}} >
@@ -178,7 +186,7 @@ export default class extends React.Component {
                         <h6>Pregnancy Test</h6>
                     </div>
                 </Parallax.Layer>
-
+                </a>
 
 
 
@@ -195,16 +203,8 @@ export default class extends React.Component {
 
 
                 {/* Page 3 */}
-                <Parallax.Layer offset={2.5} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%', display: 'flex' }}>
-                    {/* lateral flow */}
-                    <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
-                        <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
-                            <div style={{width: '4px', height: '12px', backgroundColor: 'red', marginLeft: '10px'}} ></div>
-                        </div>
-                    </div>
-                    <div style={{marginTop: '20px', marginLeft: '10px'}} ><h6>Equine Progesterone</h6></div>
-                </Parallax.Layer>
-                <Parallax.Layer offset={2.4} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%', display: 'flex' }}>
+                <a href='/equine-igg'>
+                <Parallax.Layer offset={2.4} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%', display: 'flex', zIndex: 1 }}  >
                     {/* lateral flow */}
                     <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
                         <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
@@ -213,7 +213,22 @@ export default class extends React.Component {
                     </div>
                     <div style={{marginTop: '20px', marginLeft: '20px'}} ><h6>IgG</h6></div>
                 </Parallax.Layer>
-                <Parallax.Layer offset={2.6} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%',  display: 'flex' }}>
+                </a>
+
+                <a href='/equine-quickp4'>
+                <Parallax.Layer offset={2.5} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%', display: 'flex', zIndex: 1 }} onClick={()=> this.props.parallaxRouter('equine-quickp4')}>
+                    {/* lateral flow */}
+                    <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
+                        <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
+                            <div style={{width: '4px', height: '12px', backgroundColor: 'red', marginLeft: '10px'}} ></div>
+                        </div>
+                    </div>
+                    <div style={{marginTop: '20px', marginLeft: '10px'}} ><h6>Equine Progesterone</h6></div>
+                </Parallax.Layer>
+                </a>
+
+                <a href='/equine-saa'>
+                <Parallax.Layer offset={2.6} speed={0.6} style={{ opacity: 0.9, marginLeft: '30%',  display: 'flex', zIndex: 1 }} onClick={()=> this.props.parallaxRouter('equine-saa')}>
                     {/* lateral flow */}
                     <div style={{width: '150px', height: '40px',marginTop: '10px', marginLeft: '30px', backgroundColor: 'white', borderRadius: '10px', display: 'flex', justifyContent: 'center', border: '1px solid black'}} >
                         <div style={{width: '35px', height: '12px', backgroundColor: '#e8eae8', marginTop: '15px'}} >
@@ -222,12 +237,13 @@ export default class extends React.Component {
                     </div>
                     <div style={{marginTop: '20px', marginLeft: '20px'}} ><h6>SAA</h6></div>
                 </Parallax.Layer>
+                </a>
 
                 <Parallax.Layer
                 offset={1.9}
                 speed={-0}
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginLeft: '10%', marginTop: '%' }}
-                onClick={() => this.parallax.scrollTo(0)}>
+                onClick={()=>console.log(' was Clicked')}>
                 <div>
                 <h1>Equine Tests</h1>
                 <h5>Advanced. Accurate. Simple.</h5>

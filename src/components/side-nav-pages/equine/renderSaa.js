@@ -71,7 +71,7 @@ export default function RenderSAA({passingData}){
   
   return (
     <>
-            <h6 className='product-title no-hover equine-nav' style={{marginRight: '10px'}} onClick={() => {passingData.setSaa(!passingData.saa); navigateToPage('equine-saa')}} >
+            <h6 className='product-title no-hover equine-nav' style={{marginRight: '10px'}} onClick={() => {passingData.setSaa(!passingData.saa); navigateToPage('equine-saa');  window.scroll(0, 0);}} >
                 <FontAwesomeIcon onClick={() => {passingData.setSaa(!passingData.saa); console.log(passingData.saa, 'saa')}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderSaaButton} />
                 <Link className='side-nav-link' style={subjectIndent} to='/equine-saa' > SAA</Link>
             </h6>

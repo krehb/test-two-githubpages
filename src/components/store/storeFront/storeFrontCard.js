@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import products from '../../../products';
 import '../store.css'
 import InfoAccordion from './infoAccordion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faTint } from '@fortawesome/free-solid-svg-icons'
 
 export default function MyCard({data, group, addToCartHandler, cart, instockArray, accordion, setAccordion, category }) {
 
@@ -57,7 +59,10 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
     let renderCheckout = null
     if(cart.length > 0){
         renderCheckout = (
-            <Link onClick={() => setAccordion(false)} to='/cart' >
+            <Link 
+            // onClick={() => setAccordion(false)}
+             to='/cart'
+             >
                 <button className='checkout' >Checkout &#8594;</button>
             </Link>
         )
@@ -81,9 +86,13 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
     let renderInstock = null
     if (!instock){
         renderInstock = (
-            <div className='out-of-stock'  >
-                <h6 >Out of Stock</h6>
-            </div>
+            // <div className='out-of-stock'  >
+            //     <h6 >Out of Stock</h6>
+            // </div>
+            <>
+            <button className='add-to-cart-button'  onClick={() => combineAddtoCartHandler(data, qty)} >Add to Cart</button>
+            <span className='qty' onClick={() => setQty(qty + 1)}> +</span><span className='qty'> ({renderQty}) </span><span className='qty right' onClick={() => setQty(qty - 1)} >- </span>
+            </>
         )
     } else {
         renderInstock = (
@@ -128,25 +137,57 @@ export default function MyCard({data, group, addToCartHandler, cart, instockArra
 
 
 
+    //for rendering the correct icon
+    let renderIcon = null
+    if(data.icon === 1){
+        //viusal icon
+        renderIcon = ( <div style={{marginBottom: '10px'}} ><FontAwesomeIcon icon={faEye} /> VISUAL Kit</div>)
+    } else if (data.icon === 2) {
+        //test icon
+        renderIcon = ( <div style={{marginBottom: '10px', display: 'flex'}}><div style={{ marginRight: '5px', marginTop: '5px', width: '20px', height: '10px', backgroundColor: 'white', borderRadius: '2px', border: '1px solid black'}} ><div style={{width: '7px', height: '4px', backgroundColor: '#eaeaea', zIndex: 1, borderRadius: '5px', border: '1px solid black', marginTop: '2px', marginLeft: '5px'}} ></div></div> Kit</div> )
+    } else if(data.icon === 3) {
+        //cube icon
+        renderIcon = ( <div style={{marginBottom: '10px', display: 'flex'}}><div style={{ marginRight: '5px', marginTop: '2px', width: '15px', height: '15px', backgroundColor: '#CD4B3B', borderRadius: '2px', border: '1px solid black'}} ><div style={{width: '7px', height: '4px', backgroundColor: '#afb5b2', zIndex: 1, borderRadius: '5px', border: '1px solid black', marginTop: '3px', marginLeft: '3px'}} ></div></div> Kit</div> )
+    } else if(data.icon === 4) {
+        //no icon
+        renderIcon = ( <div  style={{marginBottom: '10px', display: 'flex'}} ><FontAwesomeIcon icon={faTint} style={{ color: 'red', marginRight: '7px'}} />Collection</div>)
+    } else {
+        renderIcon = null
+    }
+
+
+
+
+
 
     let productCard = null;
 
     if( data.group === group ){
         productCard = (
 
-        <div className='card-parent' >
+        <div className='card-parent' style={{width: '800px'}} >
 
             <div className='child1' >
                 <Image className='img' src={data.img} />
             </div>
 
             <div className='child2' >
-                <h6 className='title' >{data.title}<span> {data.test} tests</span></h6>
-                <h6 className='subtitle' >{data.subtitle}</h6>
-                <h6 className='info' onClick={() => {setRerenderAccordion(!rerenderAccordion)}} ><span className='button' >Additional Info</span><span className='plus' >{expanded}</span></h6>
+                <h6 className='title' ><Link to={data.pathname} >{data.title}</Link><span> <span style={{fontWeight: 700, fontSize: '18px'}} >
+                {data.test}
+                </span>{data.icon === 4 ? ' tubes' : ' tests'}</span>
+                </h6>
+                <h6 className='subtitle' > {renderIcon} {data.subtitle}</h6>
+                {/* <h6 className='info' 
+                onClick={() => {setRerenderAccordion(!rerenderAccordion)}}
+                 >
+                <span className='button' >Additional Info</span>
+                <span className='plus' >{expanded}</span>
+                
+                </h6> */}
             </div>
 
             <div className='child3' >
+                <div style={{paddingLeft: '50px', paddingBottom: '10px'}} >${data.price}.00</div>
                 {addingButton}
                 <div className='child' >
                     {renderCheckout}

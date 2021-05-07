@@ -33,10 +33,15 @@ export default function SideNavCanine({ passingData}){
 
     const history = useHistory();
 
+
     const subjectIndent = {
         padding: '10px 0px 10px 10px',
         fontSize: '12px',
-        marginRight: '10px'
+        marginRight: '10px',
+        color: '#F9EEC7',
+        '&:hover': {
+            color: 'red'
+        }
     }
     const subjectIndent2 = {
         padding: '0px 0px 0px 30px',
@@ -71,21 +76,21 @@ export default function SideNavCanine({ passingData}){
     if(passingData.canine){
         renderSubNav = (
             <animated.div style={props}>
-            <h6 className='product-title no-hover canine-side-nav'   onClick={() => navigateToPage('canine-progesterone')}  style={subjectIndent}  >
+            <h6 className='product-title-canine no-hover canine-side-nav'   onClick={() => navigateToPage('canine-progesterone')}  style={subjectIndent}  >
             <FontAwesomeIcon onClick={() => {passingData.setCanine(!passingData.canine)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderCanineArrow} />
                 <Link className='side-nav-link ' style={subjectIndent} to='/canine-progesterone' >
                     Target Progesterone
                 </Link>
             </h6>
-            <h6 className='product-title no-hover canine-side-nav'   onClick={() => navigateToPage('canine-relaxin')}  style={subjectIndent} >
+            <h6 className='product-title-canine no-hover canine-side-nav'   onClick={() => navigateToPage('canine-relaxin')}  style={subjectIndent} >
             <FontAwesomeIcon onClick={() => {passingData.setCanine(!passingData.canine)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderCanineArrow} />
                 <Link className='side-nav-link ' style={subjectIndent} to='/canine-relaxin' >
                     Pregnancy Relaxin
                 </Link>
             </h6>
-            <h6 className='product-title no-hover canine-side-nav'  onClick={() => navigateToPage('canine-quickp4')}  style={subjectIndent} >
-            <FontAwesomeIcon onClick={() => {passingData.setCanine(!passingData.canine)}} style={{margin: '0px 0px 0px 10px', fontSize: '20px'}} icon={renderCanineArrow} />
-                <Link style={subjectIndent} className='side-nav-link ' to='/canine-quickp4' >
+            <h6 className='product-title-canine no-hover canine-side-nav'  onClick={() => navigateToPage('canine-quickp4')}  style={subjectIndent} >
+            <FontAwesomeIcon onClick={() => {passingData.setCanine(!passingData.canine)}} style={{margin: '0px 0px 0px 10px',color: '#F9EEC7', fontSize: '20px'}} icon={renderCanineArrow} />
+                <Link style={subjectIndent}  className='side-nav-link '  to='/canine-quickp4' >
                     Quick P4 Progesterone
                 </Link>
             </h6>
@@ -96,9 +101,9 @@ export default function SideNavCanine({ passingData}){
   
   return (
     <>
-        <h6 className='product-title no-hover canine-side-nav' style={{marginRight: '10px'}} onClick={() => navigateToPage('canine')}  >
-        <FontAwesomeIcon onClick={() => {passingData.setCanine(!passingData.canine)}} style={{margin: '0px 10px 0px 10px', fontSize: '20px'}} icon={renderCanineArrow} />
-            <Link className='side-nav-link ' style={{fontSize: '20px'}} to='/canine' >
+        <h6 className='product-title-canine no-hover canine-side-nav' style={{marginRight: '10px'}} onClick={() => navigateToPage('canine')}  >
+        <FontAwesomeIcon onClick={() => {passingData.setCanine(!passingData.canine)}} style={{margin: '0px 10px 0px 10px', fontSize: '20px',color: '#F9EEC7'}} icon={renderCanineArrow} />
+            <Link className='side-nav-link ' style={{fontSize: '20px', color: '#F9EEC7'}} to='/canine' >
                 Canine
             </Link>
         </h6>

@@ -11,6 +11,7 @@ export default function InfoAccordion({data }) {
         setInfo(data.description)
     },[]);
 
+    
 
 
     const selectionCollapseHandler = (sectionData) => {
@@ -21,12 +22,10 @@ export default function InfoAccordion({data }) {
 
 
     const instructionsHandler = (data) => {
-        console.log(data)
         let renderInstructionLink = (
             <a href={data} target='blank' > Intructions.pdf </a>
         )
         setInfo([' '])
-        console.log(info)
         setRenderInstructions(true)
     }
 
@@ -35,7 +34,7 @@ export default function InfoAccordion({data }) {
     if(renderInstructions){
         renderInstructionsSpot = (
             <div style={{paddingBottom: '40px', fontSize: '20px', paddingLeft: '20px'}}>
-            <a style={{ color: 'grey'}} href='https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/Target_Canine-instr.pdf' target='blank' > Intructions.pdf </a>
+            <a style={{ color: 'grey'}} href={data.instructions[0]} target='blank' > Intructions.pdf </a>
             </div>
         )
         renderInstructionsClass = 'collapse-head selected'
@@ -61,7 +60,7 @@ export default function InfoAccordion({data }) {
             <span onClick={() => selectionCollapseHandler(data.highlights)} className={isSelected(data.highlights)} >Highlights</span>
             <span onClick={() => instructionsHandler(data.instructions)} className={renderInstructionsClass} >Instruction</span>
         </div>
-        <div className='collapse-body'>
+        <div className='collapse-body' style={{width: 700}} >
             {info.map(text => <p>{text}</p>)}
             {renderInstructionsSpot}
         </div>

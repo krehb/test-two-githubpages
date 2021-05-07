@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
+import { Container, Table, Jumbotron, Button } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
@@ -14,12 +15,10 @@ import CubeTest from '../../../assets/img/canine/targetvet-cup-gif.gif'
 import Interpretation from './interpretation'
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask, faHistory } from '@fortawesome/free-solid-svg-icons'
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function Progesterone({passingData}) {
+export default function Progesterone({passingData, setCategoryHandler, setGroup}) {
 
     const [sticky, setSticky] = useState(false);
 
@@ -35,6 +34,14 @@ export default function Progesterone({passingData}) {
         } else {
             setSticky(false)
         }
+    }
+
+    let history = useHistory();
+    const routeBuyHandler = () => {
+        setCategoryHandler('Target Canine Progesterone')
+        setGroup(1)
+        history.push("/store");
+        window.scroll(0,0)
     }
 
     let renderNavClass = ''
@@ -81,7 +88,7 @@ export default function Progesterone({passingData}) {
                 </div>
             </div>
             <div className='col-top-right top-right' >
-                <ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
+                <ReactPlayer  url='https://www.youtube.com/embed/HutIA9p7XTg' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
             </div>
         </div>
         
@@ -90,7 +97,7 @@ export default function Progesterone({passingData}) {
         <div className='col-mid' >
         <Jumbotron ref={myRef1} className='igg-jumbo' fluid>
             <Container>
-                <h3>One easy, On-site Test, Detect Progesterone</h3>
+                <h3 style={{color: '#365F91', fontWeight: 600}}>One easy, On-site Test, Detect Progesterone</h3>
                 <p>Something about why progesterone and what is the purpose</p>
                 {/* <ol style={{textAlign: 'left', marginLeft: '60px'}}>
                     <li>to accurately predict ovulation and target optimal breeding dates</li>
@@ -154,7 +161,10 @@ export default function Progesterone({passingData}) {
                         <li><a href='https://youtu.be/Vx02EIU_Y4c' target='blank' >How to Draw Blood</a></li>
                     </ul>
                 </div>
-            </div>           
+            </div>  
+            <div style={{marginBottom: '30px'}} >
+                <Button onClick={routeBuyHandler}>Buy</Button>
+            </div>         
         </div>
 
 

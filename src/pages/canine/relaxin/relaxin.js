@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
+import { Container, Table, Jumbotron, Button } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
 
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
@@ -15,12 +16,11 @@ import Chart from './relaxin-chart'
 
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask, faHistory } from '@fortawesome/free-solid-svg-icons'
+
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function Progesterone({passingData}) {
+export default function Progesterone({passingData, setCategoryHandler, setGroup}) {
 
     const [sticky, setSticky] = useState(false);
 
@@ -36,6 +36,14 @@ export default function Progesterone({passingData}) {
         } else {
             setSticky(false)
         }
+    }
+
+    let history = useHistory();
+    const routeBuyHandler = () => {
+        setCategoryHandler('Canine Pregnancy Relaxin')
+        setGroup(3)
+        history.push("/store");
+        window.scroll(0,0)
     }
 
     let renderNavClass = ''
@@ -91,8 +99,10 @@ export default function Progesterone({passingData}) {
         <div className='col-mid' >
         <Jumbotron ref={myRef1} className='igg-jumbo' fluid>
             <Container style={{textAlign: 'left'}}>
-                <h3 style={{textAlign: 'center'}} >Canine Pregnancy Testing with Relaxin Pro</h3>
-                <p>Is your dog really pregnant? Know early. Discover underlying causes of a lost pregnancy. Save time. Save money. Use Relaxin Pro.</p>
+                <h3 style={{textAlign: 'center', color: '#365F91', fontWeight: 600}} >Canine Pregnancy Testing with Relaxin Pro</h3>
+                <p style={{textAlign: 'center'}} >Is your dog really pregnant? Know early.</p>
+                <p style={{textAlign: 'center'}} >Discover underlying causes of a lost pregnancy.</p>
+                <p style={{textAlign: 'center', color: '#365F91', fontWeight: 600}}> Save time. <span style={{marginLeft: '20px', marginRight: '20px'}} >Save money.</span> Use Relaxin Pro.</p>
                 
                 <div style={{display: 'flex'}} >
                     
@@ -145,7 +155,10 @@ export default function Progesterone({passingData}) {
                         <li>Indicates loss in pregnancy</li>
                     </ul>
                 </div>
-            </div>           
+            </div> 
+            <div style={{marginBottom: '30px'}} >
+                <Button onClick={routeBuyHandler} >Buy</Button>
+            </div>          
         </div>
 
 

@@ -6,7 +6,7 @@ import relaxin from '../../assets/img/canine/c-Relaxin-Pro.jpg'
 import target from '../../assets/img/canine/target.jpg'
 import quickp4 from '../../assets/img/canine/quickp4.jpg'
 import ReactPlayer from 'react-player/youtube'
-
+import { Container, Jumbotron } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -65,27 +65,31 @@ export default function Canine({passingData}) {
         <div className='col-top' >
             <div className='col-top-left top-left' >
                 <img src={pugs} />
-                <div className='text' >
+                <div className='text' style={{marginTop: '20px'}} >
                     <span className='text-1' >Timing is everything</span>
                 </div>
-                <div className='text-3' style={{letterSpacing: '-1px', fontSize: '26px'}} >
+                {/* <div className='text-3' style={{letterSpacing: '-1px', fontSize: '26px'}} >
                 Improve success from breeding to birth
-                </div>
+                </div> */}
             </div>
             <div className='col-top-right top-right' >
-                <ReactPlayer  url='https://www.youtube.com/embed/g8uU-ID7M8Y' width={renderVideoWidth} controls={true} playing={true} loop={true} />
+                <ReactPlayer  url='https://www.youtube.com/embed/HutIA9p7XTg' width={renderVideoWidth} controls={true} playing={true} loop={true} />
             </div>
         </div>
-        
-        <div className='col-mid' >
-            <div className='mid-head' ></div>
-            <div className='mid-body' >
-                <p>Accurately predict ovulation. Detect pregnancy early. Know exactly when to time a C-section for the healthiest puppies. Worry less. Achieve more.</p>
-            </div>
+        <div className='col-mid' style={{marginTop: '30px'}} >
+        <Jumbotron style={{backgroundColor: '#d9e1f1', textAlign: 'center'}} fluid>
+        <Container >
+            <div style={{color: '#365F91', fontSize: '30px', fontWeight: '600', marginBottom: '20px'}} >Improve Success from Breeding to Birth.</div>
+            <p>Accurately predict ovulation.</p>
+            <p>Detect pregnancy early!</p>
+            <p>Know exactly when to time a C-section for the healthiest puppies.</p>
+            <p><span style={{paddingRight: '20px',fontSize: '22px', fontWeight: '600', color: '#365F91'}} >Worry less.</span><span style={{fontSize: '22px', fontWeight: '600', color: '#365F91'}}  >Achieve more.</span></p>
+        </Container>
+        </Jumbotron>
         </div>
 
 
-        <div style={{display: 'flex', justifyContent: 'center', flexWrap:'wrap', color: '#317C97', backgroundColor: '#eafbffea', padding: '30px'}} >
+        <div style={{display: 'flex', justifyContent: 'center', flexWrap:'wrap', color: '#317C97', backgroundColor: '#eafbffea', padding: '30px', textAlign: 'center'}} >
             <div style={{width: '300px'}} >
                 <h3 style={{fontWeight: '600', letterSpacing: '-1px'}} >Breeding & C-Section Timing - Visual Results</h3>
                 <h4 style={orangeText} >Target</h4>
@@ -111,7 +115,7 @@ export default function Canine({passingData}) {
                 <p>2yr+ Shelf Life &#9679; Room Temp Tests</p>
             </div>
             <div style={{width: '300px'}} >
-                <h3 style={{fontWeight: '600', letterSpacing: '-1px'}} >Pregnancy Testing</h3>
+                <h3 style={{fontWeight: '600', letterSpacing: '-1px'}} >Pregnancy Testing - Visual Results</h3>
                 <h4 style={orangeText} >Relaxin Pro</h4>
                 <img style={imgStyle} src={relaxin} />
                 <p>Determine Pregnancy at ~23 days</p>

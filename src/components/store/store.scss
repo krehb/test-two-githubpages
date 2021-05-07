@@ -2,7 +2,10 @@ $numberTestButton: #b8b8b8;
 $numberTestButtonSelect: #646464;
 $targetvetdarkblue: #094f70;
 $targetvetlightblue: #207595;
-
+$canineColor: #2B6C86;
+$equineColor: #F9EEC7;
+$canineHoverColor: #2b6c86c9;
+$equineHoverColor: #f9eec7b6;
 
 $small: 500px;
 $medium: 900px;
@@ -20,7 +23,7 @@ $medium: 900px;
     background-color: 	#eafbffea;
     color: #000;
     .top-auth {
-        justify-content: flex-end;
+        justify-content: flex-start;
         .top-auth-child {
             padding: 10px 10px 0px 10px;
         }
@@ -45,16 +48,16 @@ $medium: 900px;
     .nav-parent {
         display: flex;
         flex-flow: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         //img
         .nav-child1 {
-            margin-top: 10px;
-            width: 100px;
+            margin-top: 20px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: flex-end;
-            flex-grow: 2;
+            justify-content: flex-start;
+            margin-left: 200px;
+            flex-grow: .2;
             .nav-child-img {
                 margin-bottom: 5px;
                 width: 220px;
@@ -69,6 +72,7 @@ $medium: 900px;
         //nav links
         .nav-child2 {
             width: 200px;
+            height: 80px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -143,13 +147,42 @@ $medium: 900px;
         padding: 10px 10px 10px 10px;
         &:hover {
             cursor: pointer;
-            background-color: #ddf6ff;
+            background-color: #dfdea6;
             border-radius: 5px;
             text-decoration: none;
         }
         .side-nav-link {
             color: rgb(95, 95, 95);
         }
+    }
+    .product-title-canine {
+        font-weight: 600;
+        color: rgb(95, 95, 95);
+        font-size: 15px;
+        padding: 10px 10px 10px 10px;
+        &:hover {
+            cursor: pointer;
+            background-color: #338eaf;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .side-nav-link {
+            color: rgb(95, 95, 95);
+        }
+    }
+
+    #Canine {
+        background-color: $canineColor;
+        color: $equineColor;
+        border-radius: 10px;
+        margin: 5px
+    }
+    #Equine {
+        background-color: $equineColor;
+        color: $canineColor;
+        border-radius: 10px;
+        margin: 5px
+
     }
 }
 
@@ -167,7 +200,143 @@ $medium: 900px;
 
 
 
+.storefront-gallery {
 
+    margin-bottom: 10%;
+
+    .header {
+        color: $targetvetdarkblue;
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 28px;
+    }
+    .img-group {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        .img-gallery-col {
+            margin-left: 50px;
+            width: 200px;
+            color: rgb(252, 252, 252);
+            text-shadow: 1px 1px 3px rgb(41, 41, 41);
+            .img-gallery-text {
+                border-radius: 15px;
+                width: 200px;
+                height: 160px;
+                text-align: center;
+                padding-top: 20px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 25px;
+            }
+            
+            .img-cat-1 {
+                background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                .text-img-cat-1 {
+                    background-color: rgba(0, 0, 0, 0.404);
+                    height: 153px;
+                    border-radius: 7px;
+                    &:hover {
+                        background-color: $canineHoverColor;
+                        height: 153px;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+            .img-cat-2 {
+                background-image: url('../../assets/img/products/igg-cube-10.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                .text-img-cat-2 {
+                    background-color: rgba(0, 0, 0, 0.404);
+                    height: 153px;
+                    border-radius: 7px;
+                    &:hover {
+                        background-color: $equineHoverColor;
+                        height: 153px;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .img-cat-3 {
+                background-image: url('../../assets/img/equine/saa.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                .text-img-cat-3 {
+                    background-color: rgba(0, 0, 0, 0.404);
+                    height: 153px;
+                    border-radius: 7px;
+                    &:hover {
+                        background-color: $equineHoverColor;
+                        height: 153px;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .img-cat-4 {
+                background-image: url('https://storage.googleapis.com/www.inputllc.net/products/relaxin.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                .text-img-cat-4 {
+                    background-color: rgba(0, 0, 0, 0.404);
+                    height: 153px;
+                    border-radius: 7px;
+                    &:hover {
+                        background-color: $canineHoverColor;
+                        height: 153px;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .img-cat-5 {
+                background-image: url('../../assets/img/equine/quickp4.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                .text-img-cat-5 {
+                    background-color: rgba(0, 0, 0, 0.404);
+                    height: 153px;
+                    border-radius: 7px;
+                    &:hover {
+                        background-color: $equineHoverColor;
+                        height: 153px;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .img-cat-6 {
+                background-image: url('../../assets/img/canine/box-cube.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                .text-img-cat-6 {
+                    background-color: rgba(0, 0, 0, 0.404);
+                    height: 153px;
+                    border-radius: 7px;
+                    &:hover {
+                        background-color: $canineHoverColor;
+                        height: 153px;
+                        border-radius: 7px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 
 
@@ -199,73 +368,7 @@ $medium: 900px;
 
 
 
-    .storefront-gallery {
-
-        margin-bottom: 10%;
-
-        .header {
-            color: $targetvetdarkblue;
-            text-align: center;
-            padding-bottom: 10px;
-            font-size: 28px;
-        }
-        .img-group {
-            display: flex;
-            flex-flow: wrap;
-            justify-content: center;
-            .img-gallery-col {
-                margin-left: 50px;
-                width: 200px;
-                .img-cat-1 {
-                    background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .img-cat-2 {
-                    background-image: url('../../assets/img/products/igg-cube-10.jpg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .img-cat-3 {
-                    background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .img-cat-4 {
-                    background-image: url('../../assets/img/products/igg-cube-10.jpg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .img-cat-5 {
-                    background-image: url('../../assets/img/products/canine-ovulation-kit-12.jpg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .img-cat-6 {
-                    background-image: url('../../assets/img/products/igg-cube-10.jpg');
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    background-size: cover;
-                }
-                .img-gallery-text {
-                    color: white;
-                    border-radius: 15px;
-                    width: 200px;
-                    height: 160px;
-                    text-align: center;
-                    padding-top: 20px;
-                    padding-left: 10px;
-                    padding-right: 10px;
-                    font-size: 25px;
-                }
-            }
-        }
-    }
+    
 
 
 
@@ -295,7 +398,7 @@ $medium: 900px;
             border: 2px rgb(238, 238, 238) solid;
             border-radius: 5px;
             .child1 {
-                width: 200px;
+                width: 250px;
                 flex-grow: 1;
                 .img {
                     border-radius: 3px;
@@ -303,7 +406,7 @@ $medium: 900px;
                 }
             }
             .child2 {
-                width: 300px;
+                width: 250px;
                 flex-grow: 4;
                 display:flex;
                 flex-direction: column;
@@ -350,26 +453,7 @@ $medium: 900px;
                         padding: 10px 8px 5px 8px;
                         margin-left: 10px;
                     }
-                    .add-to-cart-button {
-                        background-color: #338fb1;
-                        color: white;
-                        padding: 6px 8px 6px 12px;
-                        margin-left: 10px;
-                        border: none;
-                        border-top-left-radius: 5px;
-                        border-bottom-left-radius: 5px;
-                        &:hover {
-                            background-color:#287794;
-                        }
-                    }
-                    .qty {
-                        background-color: #caf1ff;
-                        cursor: pointer;
-                        border: none;
-                        padding-left: 5px;
-                        padding-top: 7px;
-                        padding-bottom: 8px;
-                    }
+
                     .right {
                         padding-right: 5px;
                         border-top-right-radius: 5px;
@@ -468,7 +552,86 @@ $medium: 900px;
     }
 }
 
+.add-to-cart-button {
+    background-color: #338fb1;
+    color: white;
+    padding: 6px 8px 6px 12px;
+    margin-left: 10px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    &:hover {
+        background-color:#287794;
+    }
+}
+.qty {
+    background-color: #caf1ff;
+    cursor: pointer;
+    border: none;
+    padding-left: 5px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+}
 
+.accordion {
+    .accordion-head {
+        display: flex;
+
+        .collapse-head {
+            padding: 5px 10px 5px 10px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(138, 138, 138);
+            cursor: pointer;
+            @media screen and (max-width: $small) {
+                font-size: 12px;
+            }
+        }
+        .selected {
+            background-color: #ddf6ff;
+            box-shadow: 2px 2px 2px  #cae0e9;
+            color: rgb(65, 65, 65);
+        }
+    }
+    .collapse-body {
+        margin-top: 10px;
+        @media screen and (max-width: $small) {
+            font-size: 12px;
+        }
+    }    
+}
+.my-card {
+    height: 153px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    .text{
+        padding-top: 55px;
+        padding-left: 10px;
+        color: white;
+        font-weight: 500;
+        text-shadow: 2px 2px #1f1f1f;
+        font-family: Verdana, Geneva, Tahoma, sans-serif; 
+        font-size: 43px;
+        @media screen and (max-width: $small) {
+            font-size: 28px;
+        }
+    }
+}
+
+.img {
+    height: 150px;
+    width: auto;
+    background-position: center;
+    border-radius: 10px;
+    background-size: cover;
+}
+.img-front {
+    background-image: url('../../assets/img/siberian-huskies-play-with-pup-3-1024x682.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 
 
 
@@ -514,6 +677,7 @@ $medium: 900px;
 
 .checkout-parent {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
     margin-bottom: 18%;

@@ -1,9 +1,9 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
+import { Container, Jumbotron, Button } from 'react-bootstrap';
 
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
-
+import {  useHistory } from 'react-router-dom';
 
 import productPhoto from '../../../assets/img/canine/box-cube.jpg'
 
@@ -15,12 +15,9 @@ import Chart from './cube-progest-chart'
 
 
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFlask, faHistory } from '@fortawesome/free-solid-svg-icons'
-
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function Progesterone({passingData}) {
+export default function Progesterone({passingData, setGroup, setCategoryHandler}) {
 
     const [sticky, setSticky] = useState(false);
 
@@ -36,6 +33,14 @@ export default function Progesterone({passingData}) {
         } else {
             setSticky(false)
         }
+    }
+
+    let history = useHistory();
+    const routeBuyHandler = () => {
+        setCategoryHandler('Canine Quick P4 Progesterone')
+        setGroup(2)
+        history.push("/store");
+        window.scroll(0,0)
     }
 
     let renderNavClass = ''
@@ -91,8 +96,9 @@ export default function Progesterone({passingData}) {
         <div className='col-mid' >
         <Jumbotron ref={myRef1} className='igg-jumbo' fluid>
             <Container style={{textAlign: 'left'}}>
-                <h3 style={{textAlign: 'center'}} >Keeping your Dogs Safe</h3>
-                <p>Keep the danger at bay. Monitor your dog’s progesterone levels to determine the proper C-section timing. You want healthy puppies! Be safe. Be secure.</p>
+                <h3 style={{textAlign: 'center', color: '#365F91', fontWeight: 600}} >Keeping your Dogs Safe</h3>
+                <p style={{textAlign: 'center'}} >Keep the danger at bay. Monitor your dog’s progesterone levels to determine the proper C-section timing. You want healthy puppies! </p>
+                <p style={{textAlign: 'center',  color: '#365F91', fontWeight: 600}}>Be safe. <span style={{marginLeft: '20px'}} >Be secure.</span></p>
                 With one easy, on-site test, detect progesterone
                 <ol>
                     <li>to accurately predict ovulation and target optimal breeding dates</li>
@@ -153,6 +159,9 @@ export default function Progesterone({passingData}) {
                         <li><a href='https://youtu.be/Vx02EIU_Y4c' target='blank' >How to Draw Blood</a></li>
                     </ul>
                 </div>
+            </div>
+            <div style={{marginBottom: '30px'}}>
+                <Button onClick={routeBuyHandler} >Buy</Button>
             </div>           
         </div>
 

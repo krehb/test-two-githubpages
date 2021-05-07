@@ -60,29 +60,6 @@ export default function Equine({passingData}) {
 <div>
     <nav className="navbar canine-nav navbar-expand-lg navbar-light bg-light small-nav ">
       <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul className="navbar-nav align-items-center">
-            <li className="nav-item my-item">
-                <a className="nav-link"  >
-                <Link className='nav-link' to='/equine-quickp4' >
-                    Equine Progesterone
-                </Link>
-                </a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <Link className='nav-link' to='/equine-igg' >
-                    IgG
-                </Link>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >|</a>
-            </li>
-            <li className="nav-item my-item">
-                <a className="nav-link" >SAA</a>
-            </li>
-        </ul>
       </div>
     </nav>
     <div className='container-w-side-nav'>
@@ -108,9 +85,13 @@ export default function Equine({passingData}) {
         
         <div className='col-mid' style={{marginTop: '30px'}} >
         <Jumbotron style={{backgroundColor: '#d9e1f1'}} fluid>
-        <Container >
-            <p><span style={{fontSize: '30px', fontWeight: '600',}} >Secure the foal you’ve been waiting for!</span> Use progesterone to learn where the mare is in her cycle to know when to breed. Use a simple test after birth to protect your newborn foal by testing for passive transfer of IgG (needs adequate levels > 800 mg/dL), and maintain your horse’s health with early infection detection with SAA testing. The cube machine reader gives exact progesterone, IgG and SAA number results.</p>
-            <p><span style={{paddingRight: '20px',fontSize: '30px', fontWeight: '600'}} >Improve your chances.</span><span style={{fontSize: '30px', fontWeight: '600'}}  >Test your horse.</span></p>
+        <Container style={{width: '600px'}} >
+            <p style={{fontSize: '30px', fontWeight: '600', color: '#365F91', marginBottom: '30px'}}>Secure the foal you’ve been waiting for!</p>
+            <p>Use progesterone to learn where the mare is in her cycle to know when to breed.</p>
+            <p> Use a simple test after birth to protect your newborn foal by testing for passive transfer of IgG (needs adequate levels > 800 mg/dL).</p>
+            <p> Maintain your horse’s health with early infection detection with SAA testing.</p>
+            <p> The cube machine reader gives exact progesterone, IgG and SAA number results.</p>
+            <p style={{ marginTop: '30px'}} ><span style={{paddingRight: '20px',fontSize: '22px', fontWeight: '600',  color: '#365F91'}} >Improve your chances.</span><span style={{fontSize: '22px', fontWeight: '600',  color: '#365F91'}}  >Test your horse.</span></p>
         </Container>
         </Jumbotron>
         </div>

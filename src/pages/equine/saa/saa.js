@@ -1,5 +1,5 @@
 import React, {useRef, useState, useEffect} from 'react';
-import { Container, Table, Jumbotron, Navbar } from 'react-bootstrap';
+import { Container, Table, Jumbotron, Button } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import SideNav from '../../../components/side-nav-pages/sideNavPages';
 import ReactPlayer from 'react-player/youtube'
@@ -31,7 +31,7 @@ import { faFlask, faHistory } from '@fortawesome/free-solid-svg-icons'
 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
-export default function IgG({passingData}) {
+export default function IgG({passingData, setCategoryHandler, setGroup}) {
 
     const [sticky, setSticky] = useState(false);
 
@@ -48,6 +48,15 @@ export default function IgG({passingData}) {
             setSticky(false)
         }
     }
+
+    let history = useHistory();
+    const routeBuyHandler = () => {
+        setCategoryHandler('Equine SAA')
+        setGroup(6)
+        history.push("/store");
+        window.scroll(0,0)
+    }
+
 
     let renderNavClass = ''
     if(sticky){
@@ -97,19 +106,20 @@ export default function IgG({passingData}) {
                 </div>
             </div>
             <div className='col-top-right top-right' >
-                <ReactPlayer  url='https://www.youtube.com/embed/Kk0XluyIxaY' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
+                <ReactPlayer  url='https://www.youtube.com/embed/g8uU-ID7M8Y' width={renderVideoWidth} controls={true} playing={true} muted loop={true} />
             </div>
         </div>
         
-
+        <div className='col-mid' style={{marginTop: '30px'}} >
+            <Jumbotron style={{backgroundColor: '#d9e1f1'}} fluid>
+                <Container >
+                    <p style={{fontSize: '30px', fontWeight: '600',  color: '#365F91'}}>Infection & Inflammation Detection</p>
+                    <p>Don’t be left in the dark. Detect infection faster than other blood tests with SAA (Serum Amyloid A) testing. Inflammation won’t have time to hinder muscle regeneration or impact performance. Faster treatment. Less severe infection. Earlier recovery. In three simple steps and 10 min, you determine if your horse has an active inflammatory condition. <a href='https://storage.googleapis.com/www.inputllc.net/TargetVet%20PDF%20instructions/Target_Canine-instr.pdf' target='blank' >EquiCheck Instructions</a></p>
+                </Container>
+            </Jumbotron>
+        </div>
 
         <div className='col-mid' >
-        <Jumbotron ref={myRef1} className='igg-jumbo' fluid>
-            <Container>
-                <h3>Infection & Inflammation Detection</h3>
-                <p>Don’t be left in the dark. Detect infection faster than other blood tests with SAA (Serum Amyloid A) testing. Inflammation won’t have time to hinder muscle regeneration or impact performance. Faster treatment. Less severe infection. Earlier recovery. In three simple steps and 10 min, you determine if your horse has an active inflammatory condition. EquiCheck Instructions</p>
-            </Container>
-        </Jumbotron>
             <div style={{display:'flex', marginBottom: '80px', flexWrap: 'wrap'}} >
                 <div style={{ height: 400, width: 400 }}>
                     <Jumbotron ref={myRef1} style={{ height: 430, width: 400, backgroundColor: 'white' }}  fluid>
@@ -177,7 +187,10 @@ export default function IgG({passingData}) {
                         <li>Long shelf life stability</li>
                     </ul>
                 </div>
-            </div>           
+            </div>    
+            <div style={{marginBottom: '30px'}}>
+                <Button onClick={routeBuyHandler} >Buy</Button>
+            </div>       
         </div>
 
         <div  className=' one-cube-three-test-container ' >
