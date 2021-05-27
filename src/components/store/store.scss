@@ -64,6 +64,7 @@ $medium: 900px;
             }
             @media screen and (max-width: $small) {
                 justify-content: center;
+                margin-left: 0px;
                 .nav-child-img {
                     margin-bottom: 0px;
                 }
@@ -633,12 +634,66 @@ $medium: 900px;
     background-size: contain;
 }
 
-
+.shipping {
+    background-color: #f2fcff;
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 7px;
+    box-shadow: 2px 3px 5px rgb(199, 198, 198);
+    border: solid 1px #cdd3cd;
+    text-align: center;
+    .change-address-shipping{
+        background-color: #17CC4D;
+        color: white;
+        margin: 5px 10px 20px 10px;
+        padding: 5px 30px 5px 30px;
+        border-radius: 6px;
+        border: none;
+        font-family: Roboto, Open Sans, Segoe UI, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .shipping-edit-group {
+        display: flex;
+        justify-content: center;
+        background-color: #317C97;
+        border-radius: 7px;
+        font-family: Roboto, Open Sans, Segoe UI, sans-serif;
+        margin-bottom: 5px;
+        .shipping-edit-title{
+            color: white;
+            padding: 10px;
+            will-change: opacity, transform;
+        }
+        .shipping-edit-input{
+            background-color: #317C97;
+            color: white;
+            outline: none;
+            border:none;
+            padding:10px;
+        }
+        ::placeholder {
+            color: rgb(226, 226, 226);
+            opacity: .8;
+        }
+        ::focus {
+            outline: none;
+        }
+    }
+}
 
 .cart {
 
-    margin-top: 20px;
-    margin-bottom: 28%;
+
+    margin: 10px 100px 200px 100px;
+    background-color: #f2fcff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 2px 3px 5px rgb(199, 198, 198);
+    border: solid 1px rgb(205, 211, 205);
+    @media screen and (max-width: $small) {
+        margin: 0px;
+    }
 
     .cart-img {
         width: 100px;
@@ -675,6 +730,21 @@ $medium: 900px;
     }
 }
 
+.payment-stripe {
+    width: 300px;
+    height: 350px;
+    margin: 0px 0px 0px 50px;
+    background-color: #f2fcff;
+    padding: 15px;
+    border-radius: 7px;
+    box-shadow: 2px 3px 5px rgb(199, 198, 198);
+    border: solid 1px rgb(205, 211, 205);
+    @media screen and (max-width: $small) {
+        margin: 0px;
+    }
+
+}
+
 .checkout-parent {
     display: flex;
     flex-wrap: wrap;
@@ -683,6 +753,13 @@ $medium: 900px;
     margin-bottom: 18%;
 
     .review {
+        background-color: #f2fcff;
+        padding: 15px;
+        border-radius: 7px;
+        box-shadow: 2px 3px 5px rgb(199, 198, 198);
+        border: solid 1px rgb(205, 211, 205);
+        margin-top: 10px;
+
         @media screen and (max-width: $small) {
             display: none;
         }

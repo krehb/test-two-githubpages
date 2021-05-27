@@ -46,8 +46,9 @@ import Success from './components/checkout/payment/success';
 import { AuthProvider } from './config/Auth';
 import SignUp from './config/SignUp';
 import Login from './config/Login';
+import ForgetPassword from './pages/AccountPage/forgetPassword';
 
-
+import app from './config/base'
 import products from './products';
 
 
@@ -268,11 +269,13 @@ export default function App() {
 
 
 
+
+
   return (
     <AuthProvider>
       <Router>
         <div>
-          <Nav cart={cart} setCategory={setCategory}  />
+          <Nav cart={cart} setCategory={setCategory} setCart={setCart} />
           <Switch>
             <Route path="/canine">
               <Canine passingData={passingData}/>
@@ -344,6 +347,9 @@ export default function App() {
             </Route>
             <Route path='/create-account'>
               <SignUp/>
+            </Route>
+            <Route path='/forget-password' >
+              <ForgetPassword/>
             </Route>
             <Route path='/success' >
               <Success setCart={setCart} />

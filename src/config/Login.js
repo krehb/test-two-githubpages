@@ -49,12 +49,28 @@ const Login = ({ history }) => {
                     Submit
                 </Button>
                 </Form>
-                <Link to='/create-account' >
-                    Create Account
-                </Link>
-
                 </Col>
             </Row>
+            <br></br>
+            <Row>
+                <Col>
+                    <Link to='/create-account' >
+                        Create Account
+                    </Link>
+                </Col>
+            </Row>
+            <br></br>
+            <Row>
+                <Col>
+                    <Link to='/forget-password' >
+                        Forget Password
+                    </Link>
+                </Col>
+            </Row>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
         </Container>
     );
 };

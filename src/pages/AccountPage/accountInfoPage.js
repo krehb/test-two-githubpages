@@ -51,7 +51,7 @@ export default function AccountInfo({cart, clearCart, setCart, removeItemHandler
 
                 //admin
                 user.getIdTokenResult().then(IdTokenResult => {
-                    console.log(IdTokenResult.claims.admin)
+                    // console.log(IdTokenResult.claims.admin)
                 })
 
 

@@ -802,4 +802,79 @@
 .switchStyle :hover {
   color: #3190af;
 }
+
+.no-hover {
+  cursor: pointer;
+}
+
+.no-hover :hover {
+  text-decoration: none;
+  color: none;
+}
+
+.no-hover :active {
+  text-decoration: none;
+}
+
+.product-page {
+  background-color: #f2fcff;
+  padding: 15px;
+  border-radius: 7px;
+  -webkit-box-shadow: 2px 3px 5px #c7c6c6;
+          box-shadow: 2px 3px 5px #c7c6c6;
+  border: solid 1px #cdd3cd;
+  margin-top: 20px;
+  width: 800px;
+}
+
+.product-details {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.product-instructions {
+  background-color: #FAEEC8;
+  border: 1px solid #f7e4a8;
+  text-align: center;
+  width: 150px;
+  margin: 10px;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.product-price {
+  background-color: #ffffff;
+  border: 1px solid #d6d6d6;
+  text-align: center;
+  font-weight: 600;
+  width: 100px;
+  height: 40px;
+  padding: 7px;
+  border-radius: 7px;
+}
+
+.product-title-page {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ececec;
+  -webkit-box-shadow: 4px 4px 5px #b1b1b1;
+          box-shadow: 4px 4px 5px #b1b1b1;
+}
+
+.product-img {
+  width: 320px;
+  border-radius: 7px;
+  -webkit-box-shadow: 4px 4px 5px #b1b1b1;
+          box-shadow: 4px 4px 5px #b1b1b1;
+}
+
+.product-d-hover {
+  background-color: #2385a8 !important;
+}
+
+.product-d-hover :hover {
+  color: white;
+  background-color: #2fb9eb !important;
+  border-radius: 30px;
+}
 /*# sourceMappingURL=pages.css.map */

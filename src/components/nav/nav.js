@@ -10,7 +10,7 @@ import TopAuthItems from './top-auth-items';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-const Nav = ({cart, setCategory}) => {
+const Nav = ({cart, setCategory, setCart}) => {
 
     const db = firebase.firestore();
     let location = useLocation();
@@ -35,9 +35,12 @@ const Nav = ({cart, setCategory}) => {
             if (user) {
               // User is signed in.
                setLoggedIn(true)
+               console.log('signed in')
             } else {
               // No user is signed in.
-              setLoggedIn(false)
+              setLoggedIn(false);
+              console.log('signed out')
+              setCart([])
             }
         });
     },[]);

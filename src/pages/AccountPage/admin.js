@@ -22,8 +22,8 @@ export default function AccountInfoAdmin({cart, clearCart, setCart, removeItemHa
 
                 //admin
                 user.getIdTokenResult().then(IdTokenResult => {
-                    console.log('are you an admin???')
-                    console.log(IdTokenResult.claims.admin)
+                    // console.log('are you an admin???')
+                    // console.log(IdTokenResult.claims.admin)
                     
                 })
             }

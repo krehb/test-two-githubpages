@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useHistory } from "react-router-dom";
-import { Container, Row, Col, Accordion, Card, Button } from 'react-bootstrap';
+import {useLocation, useHistory, Link } from "react-router-dom";
+import { Container, Row, Col, Accordion, Card, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
 import products from '../../products'
 import { LoadingSpinner } from 'video-react';
@@ -25,9 +25,9 @@ const ProductInfo = ({addToCartHandler}) => {
     const [descr, setDescr] = useState([]);
     const [highlights, setHighlights] = useState([]);
     const [instructions, setInstructions] = useState('')
+    const [showAlert, setShowAlert] = useState(false)
 
     useEffect(() => {
-
         products.forEach(product => {
             if(product.pathname === location.pathname){
 
@@ -39,6 +39,8 @@ const ProductInfo = ({addToCartHandler}) => {
                 setdata(product)
             }
         });
+
+        window.scroll(0,0)
 
     }, [location.pathname])
 
@@ -55,49 +57,61 @@ const ProductInfo = ({addToCartHandler}) => {
             product: data,
             productQty: renderQty,
         }
-
+        setShowAlert(true)
         addToCartHandler(passingElement);
     }
 
 
-
+    let renderUnit = null
+    if (data.icon === 4){
+        renderUnit = <div className='product-price' style={{marginBottom: '20px', marginLeft: '20px'}} >{data.test * renderQty} tubes</div>
+    } else if (data.icon === 3) {
+        renderUnit = <div></div>
+    } else {
+        renderUnit = <div className='product-price' style={{marginBottom: '20px', marginLeft: '20px'}} >{data.test * renderQty} tests</div>
+    }
+    
 
 
   return (
-    <div style={{display: 'flex', justifyContent: 'center', marginBottom: '250px'}} >  
-        <div style={{width: '800px', marginTop: '30px'}} >
-            <div onClick={goBack} style={{cursor: 'pointer', marginLeft:'30px'}} ><FontAwesomeIcon icon={faArrowLeft} /> Continue Shopping</div>
+    <div style={{display: 'flex', justifyContent: 'center', marginBottom: '50px'}} >  
+        <div className='product-page' >
+            {showAlert &&
+                <Alert  variant='success' onClose={()=> setShowAlert(false)} dismissible >
+                    Add to cart! <Link to='/cart' >Continue To Checkout</Link>
+                </Alert>
+            }
+            <div onClick={goBack} style={{cursor: 'pointer', marginLeft:'30px'}} ><FontAwesomeIcon icon={faArrowLeft} /> Back</div>
             <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop:'10px', marginBottom: '20px'}} >
                 <div>
-                    <img src={data.img} style={{width: '320px'}} />
+                    <img src={data.img} className='product-img' />
                 </div>
                 <div>
-                    <div style={{marginLeft: '20px', width: '300px'}} >
-                        <h3>{data.title}</h3>
-                        <div style={{display: 'flex', marginLeft: '20px', marginTop: '35px'}}>
-                            <div>${renderPrice * renderQty}.00</div>
-                            <div style={{marginBottom: '20px', marginLeft: '20px'}} >{data.test * renderQty} tests</div>
+                    <div style={{marginLeft: '20px', width: '300px', marginTop: '10px'}} >
+                        <div className='product-title-page' ><h3>{data.title}</h3></div>
+                        <div style={{display: 'flex', marginLeft: '10px', marginTop: '25px'}}>
+                            <div className='product-price' style={{marginBottom: '15px'}} >${renderPrice * renderQty}.00</div>
+                            {renderUnit}
                         </div>
-                        <button className='add-to-cart-button'  onClick={() => combineAddtoCartHandler(data)} >Add to Cart</button>
+                        <button className='add-to-cart-button'   onClick={() => combineAddtoCartHandler(data)} >Add to Cart</button>
                         <span className='qty' onClick={() => setQty(qty + 1)}> +</span><span className='qty'> ({renderQty}) </span><span className='qty right' style={{paddingRight: '10px', borderTopRightRadius: '5px', borderBottomRightRadius: '5px'}} onClick={() => setQty(qty - 1)} >- </span>
-
-                        <div style={{marginTop: '20px', marginLeft: '20px'}} >
-                            <a href={instructions} target='blank' >Instructions</a>
+                        <div  className='no-hover product-instructions'  >
+                            <a  href={instructions} className='no-hover'  target='blank' >Instructions <FontAwesomeIcon icon={faExternalLinkAlt} /></a>
                         </div>
                     </div>
                 </div>
             </div>
             <hr></hr>
             <div>
-                <Accordion>
+                <Accordion defaultActiveKey="0">
                     <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="0">
+                        <Card.Header className='no-hover product-d-hover'>
+                        <Accordion.Toggle as={Card.Body} className='product-details' variant="link" eventKey="0" >
                             Info
                         </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
-                        <Card.Body>
+                        <Card.Body >
                             {info.map(paragraph => 
                                 <p>{paragraph}</p>
                             )}
@@ -105,13 +119,13 @@ const ProductInfo = ({addToCartHandler}) => {
                         </Accordion.Collapse>
                     </Card>
                     <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="1">
+                        <Card.Header className='no-hover product-d-hover'>
+                        <Accordion.Toggle as={Card.Body} className='product-details' variant="link" eventKey="1">
                             Description
                         </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="1">
-                        <Card.Body>
+                        <Card.Body >
                             {descr.map(paragraph =>
                                 <p>{paragraph}</p>
                             )}
@@ -119,8 +133,8 @@ const ProductInfo = ({addToCartHandler}) => {
                         </Accordion.Collapse>
                     </Card>
                     <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="2">
+                        <Card.Header className='no-hover product-d-hover'>
+                        <Accordion.Toggle as={Card.Body} className='product-details' variant="link" eventKey="2">
                             Hightlights
                         </Accordion.Toggle>
                         </Card.Header>
@@ -133,8 +147,8 @@ const ProductInfo = ({addToCartHandler}) => {
                         </Accordion.Collapse>
                     </Card>
                     <Card>
-                        <Card.Header>
-                        <Accordion.Toggle as={Button} variant="link" eventKey="3">
+                        <Card.Header className='no-hover product-d-hover'>
+                        <Accordion.Toggle as={Card.Body} className='product-details' variant="link" eventKey="3">
                             Related Videos
                         </Accordion.Toggle>
                         </Card.Header>

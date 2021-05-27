@@ -21,25 +21,31 @@ const CartItem = ({item,removeItemHandler, setCart, cart}) => {
     }
 
     const qtyChangeMinHandler = (itemSelected) => {
-        let newDouble = {
-            title: item.title,
-            subtitle: item.subtitle,
-            qty: item.qty - 1,
-            img: item.img,
-            price: item.price,
-            test: item.test,
-            id: item.id
-          }
-        setCart(cart.filter(item => item.id !== itemSelected.id))
-        setCart(cart => [...cart, newDouble ] );
+
+        if(!(item.qty === 1) ){
+            let newDouble = {
+                title: item.title,
+                subtitle: item.subtitle,
+                qty: item.qty - 1,
+                img: item.img,
+                price: item.price,
+                test: item.test,
+                id: item.id
+              }
+            setCart(cart.filter(item => item.id !== itemSelected.id))
+            setCart(cart => [...cart, newDouble ] );
+        }
     }
 
     let units = null
-
-    if (item.title === 'Blood Collection'){
-        units = 'tubes'
+    if (item.icon === 4){
+        units = <h6 className='cart-title'>({item.qty * item.test}) tubes</h6>
+    } else if (item.title === 'Cube'){
+        units = <h6 className='cart-title'>{item.qty} qty</h6>
+    } else if (item.icon === 1 || 2 || 5){
+        units = <h6 className='cart-title'>({item.qty * item.test}) tests</h6>
     } else {
-        units = 'tests'
+        units = null
     }
 
 
@@ -63,7 +69,7 @@ const CartItem = ({item,removeItemHandler, setCart, cart}) => {
                 </Row>
                 <Row>
                     <Col>
-                    <h6 className='cart-title'>({item.qty * item.test}) {units}</h6>
+                        {units}
                     </Col> 
                 </Row>
             </Col>

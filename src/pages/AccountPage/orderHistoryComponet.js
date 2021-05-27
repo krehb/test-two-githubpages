@@ -86,7 +86,7 @@ export default function OrderHistory({order, index, setCart}) {
             <h6 className='title' >Order <span className='date' >{order.timeStamp}</span></h6>
         </div>
         <div className='order-cart' >
-            <span className='details' onClick={() => setShowOrder(!showOrder)} >view details ({order.order.length}) </span>
+            <span className='details' onClick={() => setShowOrder(!showOrder)} >view details ({order.length}) </span>
             <Button onClick={buyAgainHandler} >Buy Again</Button>
         </div>
     </div>

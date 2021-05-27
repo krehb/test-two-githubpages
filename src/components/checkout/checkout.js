@@ -4,28 +4,29 @@ import Summary from './summary';
 import Shipping from './shippingAddress';
 import StripeContainer from './pay-stripe/StripeContainer'
 import './pay-stripe/CardStyle.css'
+import Note from './note'
 
 const Checkout = ({cart, priceTotal }) => {
 
-    const [showItem, setShowItem] = useState(false)
-
+    const [note, setNote] = useState('')
   
+
+
 
   return (
         <div>
             <div className='checkout-parent' >
                 <div>
                     <Shipping/>
+                    <Note note={note} setNote={setNote} />
                     <Review cart={cart} priceTotal={priceTotal} />
                 </div>
-                {/* <div className='child' >
-                    <Summary priceTotal={priceTotal} cart={cart} />
-                </div> */}
 
-                <div style={{width: '300px'}} >
+                <div className='payment-stripe'  >
+                
                 <h1>Pay</h1>
                 <br></br>
-                <StripeContainer cart={cart} priceTotal={priceTotal} />
+                <StripeContainer  note={note} cart={cart} priceTotal={priceTotal} />
 
                 </div>
 
